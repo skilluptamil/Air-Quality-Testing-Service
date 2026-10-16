@@ -1,0 +1,393 @@
+/* ==========================================================================
+   AeroPure - Mold Remediation & Air Quality Testing Service
+   Dashboard Stylesheet (dashboard.css)
+   Clean, responsive, SaaS-grade styling for User, Customer, and Admin Dashboards
+   ========================================================================== */
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-body);
+}
+
+/* --- Dashboard Sidebar --- */
+.dashboard-sidebar {
+  width: 270px;
+  flex-shrink: 0;
+  background-color: var(--bg-surface);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+  z-index: 1030;
+}
+
+.dashboard-sidebar-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-sidebar-menu {
+  padding: 1.25rem 1rem;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.dashboard-menu-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  padding: 0.75rem 0.75rem 0.35rem;
+}
+
+.dashboard-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  margin-bottom: 0.25rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.dashboard-nav-link i {
+  font-size: 1.15rem;
+  width: 24px;
+  text-align: center;
+}
+
+.dashboard-nav-link:hover {
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+.dashboard-nav-link.active {
+  background-color: var(--color-primary);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.25);
+}
+
+.dashboard-sidebar-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* --- Dashboard Main Content Area --- */
+.dashboard-main {
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-topbar {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.85rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.dashboard-content-body {
+  padding: 2rem 1.75rem 3rem;
+  flex-grow: 1;
+}
+
+/* --- Metric KPI Cards --- */
+.metric-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(15, 118, 110, 0.4);
+}
+
+.metric-card.card-clickable,
+.card-clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.metric-card.card-clickable:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary);
+}
+
+/* Sharp bold black headings for all dashboard headings */
+.dashboard-topbar h5,
+.dashboard-content-body h4,
+.dashboard-content-body h5,
+.dashboard-content-body h6,
+.dashboard-menu-heading {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+[data-bs-theme="dark"] .dashboard-topbar h5,
+[data-bs-theme="dark"] .dashboard-content-body h4,
+[data-bs-theme="dark"] .dashboard-content-body h5,
+[data-bs-theme="dark"] .dashboard-content-body h6,
+[data-bs-theme="dark"] .dashboard-menu-heading {
+  color: #F8FAFC !important;
+}
+
+/* Ensure links and clickable items in activity list have smooth hover */
+.activity-item-clickable {
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0.6rem;
+  text-decoration: none;
+  display: block;
+}
+.activity-item-clickable:hover {
+  background-color: var(--color-primary-subtle);
+  transform: translateX(4px);
+}
+[dir="rtl"] .activity-item-clickable:hover {
+  transform: translateX(-4px);
+}
+
+.metric-card-chevron {
+  position: absolute;
+  bottom: 14px;
+  right: 16px;
+  font-size: 0.95rem;
+  opacity: 0.35;
+  transition: all 0.2s ease;
+  color: var(--color-primary);
+}
+
+[dir="rtl"] .metric-card-chevron {
+  right: auto;
+  left: 16px;
+  transform: scaleX(-1);
+}
+
+.metric-card.card-clickable:hover .metric-card-chevron {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .metric-card.card-clickable:hover .metric-card-chevron {
+  transform: translateX(-4px) scaleX(-1);
+}
+
+.stepper-step[data-target-tab] {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.stepper-step[data-target-tab]:hover {
+  transform: scale(1.04);
+}
+
+.metric-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.metric-val {
+  font-size: 2.15rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin: 0.5rem 0 0.25rem;
+}
+
+/* --- Remediation Job Status Tracker (Stepper) --- */
+.job-stepper {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin: 2.5rem 0 1.5rem;
+}
+
+.job-stepper::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 4px;
+  background-color: var(--border-color);
+  z-index: 1;
+}
+
+.stepper-step {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  flex: 1;
+}
+
+.stepper-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--bg-surface);
+  border: 3px solid var(--border-color);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.6rem;
+  font-weight: 700;
+  transition: all var(--transition-base);
+}
+
+.stepper-step.completed .stepper-icon {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+  color: #FFFFFF;
+}
+
+.stepper-step.active .stepper-icon {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: 0 0 0 6px var(--color-primary-subtle);
+}
+
+.stepper-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.25;
+}
+
+.stepper-step.active .stepper-label {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* --- Tables & Data Grids --- */
+.table-custom-wrapper {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.table-custom {
+  width: 100%;
+  margin-bottom: 0;
+  color: var(--text-secondary);
+}
+
+.table-custom thead th {
+  background-color: var(--bg-muted);
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table-custom tbody td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.table-custom tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-custom tbody tr:hover {
+  background-color: var(--color-primary-subtle);
+}
+
+/* --- Mobile Responsiveness for Dashboard --- */
+@media (max-width: 991.98px) {
+  .dashboard-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -280px;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .dashboard-sidebar.show {
+    left: 0;
+  }
+
+  [dir="rtl"] .dashboard-sidebar {
+    left: auto;
+    right: -280px;
+  }
+
+  [dir="rtl"] .dashboard-sidebar.show {
+    right: 0;
+  }
+
+  .job-stepper {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .job-stepper::before {
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    right: auto;
+    width: 4px;
+    height: 100%;
+  }
+
+  [dir="rtl"] .job-stepper::before {
+    left: auto;
+    right: 20px;
+  }
+
+  .stepper-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  [dir="rtl"] .stepper-step {
+    text-align: right;
+  }
+
+  .stepper-icon {
+    margin: 0;
+  }
+}

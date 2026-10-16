@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Environmental Health Blog &amp; IAQ Research - AeroPure</title>
+  <meta name="description" content="Expert insights on mold prevention, indoor air quality science, mycotoxin hazards, thermal moisture detection, and clean living tips.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Primary Header & Navbar -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg site-navbar">
+      <div class="container-fluid px-xl-5 px-lg-4 px-3">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="assets/images/logo.svg" alt="AeroPure Solutions" class="site-logo-img">
+        </a>
+
+        <!-- Mobile Controls -->
+        <div class="d-flex align-items-center gap-2 d-lg-none">
+          <button class="nav-control-btn theme-toggle-btn" aria-label="Toggle Dark/Light Mode"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
+          <button class="nav-control-btn rtl-toggle-btn" aria-label="Toggle RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
+          <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavCollapse" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="primaryNavCollapse">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-nowrap" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Home
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door"></i> Home 1 – General Services</a></li>
+                <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-wind"></i> Home 2 – Air Quality Niche</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link text-nowrap" href="about.html">About Us</a></li>
+
+            <li class="nav-item">
+              <a class="nav-link text-nowrap" href="services.html">Services</a>
+            </li>
+
+            <li class="nav-item"><a class="nav-link text-nowrap" href="pricing.html">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link active text-nowrap" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link text-nowrap" href="contact.html">Contact Us</a></li>
+          </ul>
+
+          <div class="nav-actions d-flex align-items-center gap-2 flex-nowrap">
+            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
+            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
+            <a href="login.html" class="btn btn-outline-primary btn-sm px-2 px-xl-3 text-nowrap"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+
+            <div class="dropdown">
+              <button class="btn btn-primary btn-sm btn-pill dropdown-toggle shadow-sm text-nowrap" type="button" data-bs-toggle="dropdown">
+                <i class="bi bi-speedometer2"></i> Dashboard
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow-lg">
+                <li><h6 class="dropdown-header text-uppercase text-muted" style="font-size:0.75rem;">Portal Selection</h6></li>
+                <li><a class="dropdown-item" href="customer-dashboard.html"><i class="bi bi-person-badge text-primary"></i> Customer Dashboard</a></li>
+                <li><a class="dropdown-item" href="user-dashboard.html"><i class="bi bi-person text-info"></i> User Account Dashboard</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="admin-dashboard.html"><i class="bi bi-gear-wide-connected text-warning"></i> Admin Management Portal</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================================
+       PAGE 7: BLOG LISTING
+       Section 1: Unique Blog Hero with Relevant Imagery
+       ========================================================================= -->
+  <section class="hero-wrapper" style="background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1600&auto=format&fit=crop&q=80');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content py-lg-4 text-center">
+      <div class="max-w-xl mx-auto">
+        <span class="hero-page-badge mb-3"><i class="bi bi-journal-richtext text-warning"></i> Blog</span>
+        <h1 class="display-4 fw-bold text-white mb-3">Indoor Air Quality &amp; Mold Science</h1>
+        <p class="lead text-light mb-4">
+          Evidence-based articles written by certified mycologists and indoor environmental specialists to safeguard your indoor habitat.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 2: Featured Article
+       ========================================================================= -->
+  <section class="section-py-sm bg-surface border-bottom">
+    <div class="container">
+      <div class="p-4 p-md-5 rounded-4 border bg-body shadow-sm featured-research-card">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <div class="img-hover-zoom rounded-3">
+              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1000&auto=format&fit=crop&q=80" alt="Black Mold vs Mildew Microscopic View" class="img-fluid rounded-3" style="width:100%;height:320px;object-fit:cover;">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <span class="badge bg-primary-subtle text-primary fw-bold text-uppercase px-3 py-1 rounded-pill mb-2">Featured Research</span>
+            <h2 class="mb-3">
+              <a href="blog-details.html?post=black-mold-vs-mildew" class="text-dark text-decoration-none">
+                Black Mold vs. Mildew: 5 Critical Life-Saving Differences You Must Know
+              </a>
+            </h2>
+            <p class="text-muted mb-3">
+              While mildew is superficial and easily wiped away with soap, toxic black mold (Stachybotrys chartarum) roots deep into drywall cellulose and synthesizes trichothecene mycotoxins that trigger neurological inflammation. Learn how to tell them apart.
+            </p>
+            <div class="d-flex align-items-center gap-3 text-muted small mb-4">
+              <span><i class="bi bi-person-circle text-primary me-1"></i> Dr. Marcus Vance</span>
+              <span><i class="bi bi-calendar3 me-1"></i> Oct 12, 2026</span>
+              <span><i class="bi bi-clock me-1"></i> 7 min read</span>
+            </div>
+            <a href="blog-details.html?post=black-mold-vs-mildew" class="btn btn-primary btn-pill">
+              Read Complete Article <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Sections 3 & 4: Searchable Blog Listing & Category Filters
+       ========================================================================= -->
+  <section class="py-4 bg-body border-bottom">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <!-- Live Search Bar -->
+        <div class="col-md-5">
+          <div class="input-group">
+            <span class="input-group-text bg-surface border-end-0"><i class="bi bi-search text-muted"></i></span>
+            <input type="text" id="blogSearchInput" class="form-control border-start-0" placeholder="Search articles by keyword (e.g., VOC, moisture, allergy)...">
+          </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="col-md-7 d-flex flex-wrap gap-2 justify-content-md-end">
+          <button class="btn btn-sm btn-primary category-btn active" data-category="all">All Topics</button>
+          <button class="btn btn-sm btn-light border category-btn" data-category="mold">Mold Prevention</button>
+          <button class="btn btn-sm btn-light border category-btn" data-category="air">Air Quality Science</button>
+          <button class="btn btn-sm btn-light border category-btn" data-category="health">Health &amp; Symptoms</button>
+          <button class="btn btn-sm btn-light border category-btn" data-category="tech">Thermal &amp; Equipment</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 5: Latest Articles Grid
+       ========================================================================= -->
+  <section class="section-py bg-body">
+    <div class="container">
+      <div class="text-center section-title mb-5 blog-section-heading">
+        <span class="badge-tag badge-primary-soft">Field Reports &amp; Science</span>
+        <h2 class="mt-2 text-dark fw-bold">Environmental Investigation Journal</h2>
+        <p class="text-muted">Evidence-based microbiology protocols, laboratory diagnostic guides, and air quality standards.</p>
+      </div>
+
+      <div class="row g-4" id="articlesGrid">
+        <!-- Post 1 -->
+        <div class="col-md-6 col-lg-4 blog-card-item" data-category="mold" data-title="Hidden Humidity: How Crawl Spaces Secretly Pollute Your Living Room">
+          <div class="card-custom">
+            <div class="blog-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&auto=format&fit=crop&q=80" alt="Crawl Space Moisture and Joist Inspection" class="blog-card-img rounded-3">
+            </div>
+            <span class="badge bg-primary-subtle text-primary fw-semibold mb-2 align-self-start">Mold Prevention</span>
+            <h5 class="blog-card-title mb-2">
+              <a href="blog-details.html?post=hidden-humidity-crawlspaces" class="text-dark text-decoration-none">
+                Hidden Humidity: How Crawl Spaces Secretly Pollute Your Living Room
+              </a>
+            </h5>
+            <p class="blog-card-desc mb-3">
+              The 'Stack Effect' draws up to 50% of your first-floor air directly from damp basements and unsealed crawlspaces.
+            </p>
+            <div class="blog-card-meta">
+              <span><i class="bi bi-person me-1"></i> Elena Rostova</span>
+              <span><i class="bi bi-clock me-1"></i> 5 min read</span>
+            </div>
+            <a href="blog-details.html?post=hidden-humidity-crawlspaces" class="btn btn-sm btn-outline-primary blog-card-btn">
+              <i class="bi bi-file-earmark-text me-1"></i> Read Article <i class="bi bi-arrow-right ms-auto"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="col-md-6 col-lg-4 blog-card-item" data-category="air" data-title="VOCs and Allergy Spikes: Decoding Your Indoor Air Quality Lab Results">
+          <div class="card-custom">
+            <div class="blog-card-img-wrapper">
+              <img src="assets/images/air-quality-monitor.jpg" alt="Indoor Air Quality VOC Testing Monitor and Lab Results" class="blog-card-img rounded-3">
+            </div>
+            <span class="badge bg-info-subtle text-info fw-semibold mb-2 align-self-start">Air Quality Science</span>
+            <h5 class="blog-card-title mb-2">
+              <a href="blog-details.html?post=voc-allergy-lab-results" class="text-dark text-decoration-none">
+                VOCs and Allergy Spikes: Decoding Your Indoor Air Quality Lab Results
+              </a>
+            </h5>
+            <p class="blog-card-desc mb-3">
+              Understanding formaldehyde, benzene, and toluene thresholds so you can interpret what parts-per-billion metrics mean.
+            </p>
+            <div class="blog-card-meta">
+              <span><i class="bi bi-person me-1"></i> Sarah Jenkins</span>
+              <span><i class="bi bi-clock me-1"></i> 6 min read</span>
+            </div>
+            <a href="blog-details.html?post=voc-allergy-lab-results" class="btn btn-sm btn-outline-primary blog-card-btn">
+              <i class="bi bi-file-earmark-text me-1"></i> Read Article <i class="bi bi-arrow-right ms-auto"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="col-md-6 col-lg-4 blog-card-item" data-category="tech" data-title="Thermal Imaging in Action: Spotting Moisture Before Spores Bloom">
+          <div class="card-custom">
+            <div class="blog-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&auto=format&fit=crop&q=80" alt="Infrared Thermal Moisture Camera Inspection" class="blog-card-img rounded-3">
+            </div>
+            <span class="badge bg-warning-subtle text-warning fw-semibold mb-2 align-self-start">Thermal &amp; Equipment</span>
+            <h5 class="blog-card-title mb-2">
+              <a href="blog-details.html?post=thermal-imaging-moisture" class="text-dark text-decoration-none">
+                Thermal Imaging in Action: Spotting Moisture Before Spores Bloom
+              </a>
+            </h5>
+            <p class="blog-card-desc mb-3">
+              How infrared wavelength cameras detect temperature anomalies from hidden pipe weeping days before mold colonies form.
+            </p>
+            <div class="blog-card-meta">
+              <span><i class="bi bi-person me-1"></i> David Chen</span>
+              <span><i class="bi bi-clock me-1"></i> 4 min read</span>
+            </div>
+            <a href="blog-details.html?post=thermal-imaging-moisture" class="btn btn-sm btn-outline-primary blog-card-btn">
+              <i class="bi bi-file-earmark-text me-1"></i> Read Article <i class="bi bi-arrow-right ms-auto"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 4 -->
+        <div class="col-md-6 col-lg-4 blog-card-item" data-category="health" data-title="Chronic Mycotoxin Fatigue: Signs Your Building Is Making You Sick">
+          <div class="card-custom">
+            <div class="blog-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80" alt="Clinical Doctor Reviewing Mycotoxin Bio-marker Symptoms" class="blog-card-img rounded-3">
+            </div>
+            <span class="badge bg-danger-subtle text-danger fw-semibold mb-2 align-self-start">Health &amp; Symptoms</span>
+            <h5 class="blog-card-title mb-2">
+              <a href="blog-details.html?post=mycotoxin-fatigue-symptoms" class="text-dark text-decoration-none">
+                Chronic Mycotoxin Fatigue: Signs Your Building Is Making You Sick
+              </a>
+            </h5>
+            <p class="blog-card-desc mb-3">
+              Clinical immunologists explain Chronic Inflammatory Response Syndrome (CIRS) and environmental bio-toxins.
+            </p>
+            <div class="blog-card-meta">
+              <span><i class="bi bi-person me-1"></i> Dr. Marcus Vance</span>
+              <span><i class="bi bi-clock me-1"></i> 8 min read</span>
+            </div>
+            <a href="blog-details.html?post=mycotoxin-fatigue-symptoms" class="btn btn-sm btn-outline-primary blog-card-btn">
+              <i class="bi bi-file-earmark-text me-1"></i> Read Article <i class="bi bi-arrow-right ms-auto"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 5 -->
+        <div class="col-md-6 col-lg-4 blog-card-item" data-category="air" data-title="Hospital-Grade HEPA Filtration: Do Home Air Purifiers Really Work?">
+          <div class="card-custom">
+            <div class="blog-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1527030280862-64139fba04ca?w=800&auto=format&fit=crop&q=80" alt="Hospital-Grade HEPA Filtration in Residential Living Room" class="blog-card-img rounded-3">
+            </div>
+            <span class="badge bg-info-subtle text-info fw-semibold mb-2 align-self-start">Air Quality Science</span>
+            <h5 class="blog-card-title mb-2">
+              <a href="blog-details.html?post=hepa-filtration-truth" class="text-dark text-decoration-none">
+                Hospital-Grade HEPA Filtration: Do Home Air Purifiers Really Work?
+              </a>
+            </h5>
+            <p class="blog-card-desc mb-3">
+              True HEPA vs. 'HEPA-type' marketing filters. How air changes per hour (ACH) dictate actual particle clearance.
+            </p>
+            <div class="blog-card-meta">
+              <span><i class="bi bi-person me-1"></i> Sarah Jenkins</span>
+              <span><i class="bi bi-clock me-1"></i> 5 min read</span>
+            </div>
+            <a href="blog-details.html?post=hepa-filtration-truth" class="btn btn-sm btn-outline-primary blog-card-btn">
+              <i class="bi bi-file-earmark-text me-1"></i> Read Article <i class="bi bi-arrow-right ms-auto"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 6: Clearance Test Inspection -->
+        <div class="col-md-6 col-lg-4 blog-card-item" data-category="mold" data-title="Post-Remediation Verification: What Clearance Testing Actually Involves">
+          <div class="card-custom">
+            <div class="blog-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&auto=format&fit=crop&q=80" alt="Clearance Test Inspection" class="blog-card-img rounded-3">
+            </div>
+            <span class="badge bg-primary-subtle text-primary fw-semibold mb-2 align-self-start">Mold Prevention</span>
+            <h5 class="blog-card-title mb-2">
+              <a href="blog-details.html?post=clearance-testing-guide" class="text-dark text-decoration-none">
+                Post-Remediation Verification: What Clearance Testing Actually Involves
+              </a>
+            </h5>
+            <p class="blog-card-desc mb-3">
+              Never pay your final remediation invoice until an independent third party conducts post-clearance air cassette testing.
+            </p>
+            <div class="blog-card-meta">
+              <span><i class="bi bi-person me-1"></i> Elena Rostova</span>
+              <span><i class="bi bi-clock me-1"></i> 6 min read</span>
+            </div>
+            <a href="blog-details.html?post=clearance-testing-guide" class="btn btn-sm btn-outline-primary blog-card-btn">
+              <i class="bi bi-file-earmark-text me-1"></i> Read Article <i class="bi bi-arrow-right ms-auto"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty State for Search Filter -->
+      <div id="noBlogResults" class="text-center py-5 d-none">
+        <i class="bi bi-search text-muted display-4 mb-3 d-block"></i>
+        <h4>No matching articles found</h4>
+        <p class="text-muted">Try adjusting your search query or reset the category filters.</p>
+        <button class="btn btn-outline-primary btn-sm" onclick="resetBlogFilters()">Reset Filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 6: Documented Field Case Studies Grid
+       ========================================================================= -->
+  <section class="section-py bg-surface border-top border-bottom">
+    <div class="container">
+      <div class="text-center section-title mb-5 blog-section-heading">
+        <span class="badge-tag badge-primary-soft">Proven Outcomes</span>
+        <h2 class="mt-2 text-dark fw-bold">Environmental Case Studies &amp; Clearance Audits</h2>
+        <p class="text-muted">Explore documented indoor air remediation, laboratory particle counts, and clearance certification cases.</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Case Study 1 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="case-study-card w-100">
+            <div class="blog-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80" alt="Commercial Property Escrow Air Clearance" class="blog-card-img rounded-3">
+            </div>
+            <span class="badge bg-secondary-subtle text-secondary fw-semibold mb-2 align-self-start">Commercial Escrow Clearance</span>
+            <h5 class="case-study-title mb-2">
+              <a href="customer-dashboard.html#tab-reports" class="text-dark text-decoration-none">
+                Emergency 12-Hour Clearance for a $1.8M Commercial Property Escrow
+              </a>
+            </h5>
+            <p class="case-study-desc mb-3">
+              Rapid Air-O-Cell spore trap deployment and AIHA-LAP emergency courier logistics cleared toxic mold contingencies under tight contract deadlines.
+            </p>
+            <div class="p-2.5 rounded-3 bg-body border mb-3 small">
+              <strong class="text-success d-block"><i class="bi bi-shield-check"></i> 14,200 &rarr; &lt;150 spores/m³</strong>
+              <span class="text-muted">Cleared closing contingencies in 12 hours</span>
+            </div>
+            <a href="customer-dashboard.html#tab-reports" class="btn btn-outline-primary btn-sm w-100 fw-semibold">
+              <i class="bi bi-journal-check me-1"></i> View Case Study Scope
+            </a>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="case-study-card w-100">
+            <div class="blog-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80" alt="Outpatient Cleanroom Containment Setup" class="blog-card-img rounded-3">
+            </div>
+            <span class="badge bg-info-subtle text-info fw-semibold mb-2 align-self-start">Healthcare Facility</span>
+            <h5 class="case-study-title mb-2">
+              <a href="customer-dashboard.html#tab-reports" class="text-dark text-decoration-none">
+                Zero Spore Migration in an Operational Outpatient Surgery Center
+              </a>
+            </h5>
+            <p class="case-study-desc mb-3">
+              Executing negative pressure containment with continuous laser particle counter logging and HEPA 500 scrubbers in an active clinical clinic.
+            </p>
+            <div class="p-2.5 rounded-3 bg-body border mb-3 small">
+              <strong class="text-success d-block"><i class="bi bi-shield-check"></i> 0.00% Cross-Contamination</strong>
+              <span class="text-muted">Zero airborne particle migration logged</span>
+            </div>
+            <a href="customer-dashboard.html#tab-reports" class="btn btn-outline-primary btn-sm w-100 fw-semibold">
+              <i class="bi bi-journal-check me-1"></i> View Case Study Scope
+            </a>
+          </div>
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="case-study-card w-100">
+            <div class="blog-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=80" alt="Heritage Home Wood Beam Mold Remediation" class="blog-card-img rounded-3">
+            </div>
+            <span class="badge bg-primary-subtle text-primary fw-semibold mb-2 align-self-start">Historic Restoration</span>
+            <h5 class="case-study-title mb-2">
+              <a href="customer-dashboard.html#tab-reports" class="text-dark text-decoration-none">
+                Non-Toxic Botanical Biocide Sanitization in a 1920s Heritage Attic
+              </a>
+            </h5>
+            <p class="case-study-desc mb-3">
+              Eradicating deep-rooted Chaetomium colonies without damaging original cedar framing or off-gassing synthetic VOCs into the living space.
+            </p>
+            <div class="p-2.5 rounded-3 bg-body border mb-3 small">
+              <strong class="text-success d-block"><i class="bi bi-shield-check"></i> 100% Passing Clearance</strong>
+              <span class="text-muted">Passed certified inspection on first re-test</span>
+            </div>
+            <a href="customer-dashboard.html#tab-reports" class="btn btn-outline-primary btn-sm w-100 fw-semibold">
+              <i class="bi bi-journal-check me-1"></i> View Case Study Scope
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 7: Laboratory Diagnostic Standards & Whitepapers Grid
+       ========================================================================= -->
+  <section class="section-py bg-body border-bottom">
+    <div class="container">
+      <div class="text-center section-title mb-5 blog-section-heading">
+        <span class="badge-tag badge-primary-soft">Regulatory &amp; Technical Standards</span>
+        <h2 class="mt-2 text-dark fw-bold">Microbiology Protocols &amp; Regulatory Guides</h2>
+        <p class="text-muted">Authoritative whitepapers and standardized testing methodologies from AIHA-LAP laboratory scientists.</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Whitepaper 1 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="case-study-card w-100">
+            <div class="card-icon-box bg-danger-subtle text-danger mb-3">
+              <i class="bi bi-file-earmark-pdf-fill fs-3"></i>
+            </div>
+            <span class="badge bg-danger-subtle text-danger fw-semibold mb-2 align-self-start">EPA Regulatory Standard</span>
+            <h5 class="case-study-title mb-2">
+              <a href="contact.html" class="text-dark text-decoration-none">
+                EPA Spore Count Reference Index &amp; Clean Air Thresholds
+              </a>
+            </h5>
+            <p class="case-study-desc mb-3">
+              Comprehensive guide to interpreting indoor vs outdoor spore ratios, baseline control samples, and pathogenic fungal species classifications.
+            </p>
+            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center text-muted small mb-3">
+              <span><i class="bi bi-file-earmark-check me-1"></i> 24 Pages PDF</span>
+              <span>Updated Oct 2026</span>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-sm w-100 fw-semibold">
+              <i class="bi bi-cloud-arrow-down-fill me-1"></i> Request Technical PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- Whitepaper 2 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="case-study-card w-100">
+            <div class="card-icon-box bg-primary-subtle text-primary mb-3">
+              <i class="bi bi-camera-video-fill fs-3"></i>
+            </div>
+            <span class="badge bg-primary-subtle text-primary fw-semibold mb-2 align-self-start">ASTM Diagnostic Protocol</span>
+            <h5 class="case-study-title mb-2">
+              <a href="contact.html" class="text-dark text-decoration-none">
+                Thermal Moisture Mapping Standard Operating Procedure (ASTM D7953)
+              </a>
+            </h5>
+            <p class="case-study-desc mb-3">
+              Standard operating procedure for infrared thermal imaging inspection, capacitance meter depth logging, and dew point delta calculations.
+            </p>
+            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center text-muted small mb-3">
+              <span><i class="bi bi-file-earmark-check me-1"></i> 18 Pages PDF</span>
+              <span>Updated Sep 2026</span>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-sm w-100 fw-semibold">
+              <i class="bi bi-cloud-arrow-down-fill me-1"></i> Request Technical PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- Whitepaper 3 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="case-study-card w-100">
+            <div class="card-icon-box bg-success-subtle text-success mb-3">
+              <i class="bi bi-shield-check fs-3"></i>
+            </div>
+            <span class="badge bg-success-subtle text-success fw-semibold mb-2 align-self-start">Legal &amp; Escrow Verification</span>
+            <h5 class="case-study-title mb-2">
+              <a href="contact.html" class="text-dark text-decoration-none">
+                Post-Remediation Verification (PRV) Certificate Guide &amp; Legal Disclosures
+              </a>
+            </h5>
+            <p class="case-study-desc mb-3">
+              Detailed breakdown of the clearance certificate requirements for real estate escrows, insurance claim validation, and tenant disclosures.
+            </p>
+            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center text-muted small mb-3">
+              <span><i class="bi bi-file-earmark-check me-1"></i> 14 Pages PDF</span>
+              <span>Updated Aug 2026</span>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-sm w-100 fw-semibold">
+              <i class="bi bi-cloud-arrow-down-fill me-1"></i> Request Technical PDF
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 8: Pagination Functionality
+       ========================================================================= -->
+  <section class="pb-5 bg-body">
+    <div class="container d-flex justify-content-center">
+      <nav aria-label="Blog pagination">
+        <ul class="pagination pagination-md shadow-sm">
+          <li class="page-item disabled"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 9: Newsletter Subscription & Footer
+       ========================================================================= -->
+  <section class="section-py text-white" style="background: linear-gradient(135deg, #0F766E 0%, #0F172A 100%);">
+    <div class="container text-center py-4">
+      <div class="max-w-xl mx-auto">
+        <span class="hero-page-badge mb-3"><i class="bi bi-envelope-paper-fill text-warning"></i> Weekly Science Briefings</span>
+        <h2 class="display-5 fw-bold text-white mb-3">Stay Ahead of Indoor Air Pollutants</h2>
+        <p class="lead text-white-50 mb-4">Get seasonal humidity advisories, EPA recall warnings, and mold prevention tips directly in your inbox.</p>
+        
+        <form class="newsletter-form d-flex justify-content-center gap-2 max-w-md mx-auto" style="max-width: 480px;">
+          <input type="email" class="form-control" placeholder="Enter your email address" required>
+          <button class="btn btn-secondary px-4 fw-bold" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Standard Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="d-inline-block mb-3"><img src="assets/images/logo-dark.svg" alt="AeroPure" class="footer-logo-img" height="48"></a>
+          <p class="text-muted small pe-lg-4">
+            AeroPure is an industry-leading indoor environmental diagnostics and certified mold remediation company.
+          </p>
+          <div class="d-flex mt-3">
+            <a href="#" class="footer-social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-link" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="footer-social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Services</h5>
+          <ul class="list-unstyled">
+            <li><a href="service-details.html?service=mold-inspection">Mold Inspection</a></li>
+            <li><a href="service-details.html?service=mold-remediation">Mold Remediation</a></li>
+            <li><a href="service-details.html?service=air-quality">Air Quality Testing</a></li>
+            <li><a href="service-details.html?service=moisture-detection">Moisture Detection</a></li>
+            <li><a href="service-details.html?service=preventive-treatment">Preventive Coating</a></li>
+            <li><a href="service-details.html?service=clearance-testing">Clearance Letters</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html">About Company</a></li>
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="blog.html">Environmental Blog</a></li>
+            <li><a href="contact.html">Contact &amp; Areas</a></li>
+            <li><a href="customer-dashboard.html">Customer Portal</a></li>
+            <li><a href="user-dashboard.html">User Account</a></li>
+            <li><a href="admin-dashboard.html">Admin Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h5>Air Health Alerts</h5>
+          <p class="text-muted small">Subscribe for seasonal mold warning alerts, EPA air index changes, and indoor humidity tips.</p>
+          <form class="newsletter-form mb-3">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required>
+              <button class="btn btn-primary" type="submit">Join</button>
+            </div>
+          </form>
+          <div class="p-3 rounded-3 bg-surface-elevated border border-secondary border-opacity-10">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-telephone-inbound-fill text-danger fs-4"></i>
+              <div>
+                <strong class="d-block text-white small">24/7 Emergency Dispatch</strong>
+                <a href="tel:18005557873" class="text-info fw-bold mb-0">(800) 555-PURE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <p class="mb-0 text-muted">&copy; 2026 AeroPure Solutions, Inc. All rights reserved.</p>
+        <div class="d-flex gap-3 small text-muted">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="lab-disclaimer.html">Lab Disclaimer</a>
+          <a href="404.html">404 Page</a>
+          <a href="maintenance.html">Maintenance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Live Search and Category Filter Logic for Blog Listing
+    const searchInput = document.getElementById('blogSearchInput');
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const articles = document.querySelectorAll('.blog-card-item');
+    const noResults = document.getElementById('noBlogResults');
+
+    function filterBlog() {
+      const query = (searchInput ? searchInput.value.toLowerCase().trim() : '');
+      const activeBtn = document.querySelector('.category-btn.active');
+      const activeCat = activeBtn ? activeBtn.getAttribute('data-category') : 'all';
+
+      let visibleCount = 0;
+
+      articles.forEach(item => {
+        const title = (item.getAttribute('data-title') || '').toLowerCase();
+        const cat = item.getAttribute('data-category');
+
+        const matchesCat = (activeCat === 'all' || cat === activeCat);
+        const matchesQuery = (!query || title.includes(query));
+
+        if (matchesCat && matchesQuery) {
+          item.style.display = 'block';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.classList.remove('d-none');
+        } else {
+          noResults.classList.add('d-none');
+        }
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', filterBlog);
+    }
+
+    categoryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        categoryBtns.forEach(b => {
+          b.classList.remove('active', 'btn-primary');
+          b.classList.add('btn-light', 'border');
+        });
+        btn.classList.remove('btn-light', 'border');
+        btn.classList.add('active', 'btn-primary');
+        filterBlog();
+      });
+    });
+
+    window.resetBlogFilters = function() {
+      if (searchInput) searchInput.value = '';
+      const allBtn = document.querySelector('.category-btn[data-category="all"]');
+      if (allBtn) allBtn.click();
+    };
+  </script>
+</body>
+</html>

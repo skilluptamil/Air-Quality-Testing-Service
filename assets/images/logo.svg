@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 56" width="250" height="56" fill="none">
+  <!-- Shield & Leaf Logo Icon -->
+  <g transform="translate(2, 3)">
+    <defs>
+      <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0F766E"/>
+        <stop offset="100%" stop-color="#10B981"/>
+      </linearGradient>
+      <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#38BDF8"/>
+        <stop offset="100%" stop-color="#0F766E"/>
+      </linearGradient>
+    </defs>
+    <!-- Modern Hex-Shield Badge -->
+    <path d="M24 2L44 10V26C44 38 34 47 24 50C14 47 4 38 4 26V10L24 2Z" fill="url(#shieldGrad)" />
+    <!-- Air Wave & Clean Droplet Shape -->
+    <path d="M24 11C24 11 33 20 33 26.5C33 31.5 29 35.5 24 35.5C19 35.5 15 31.5 15 26.5C15 20 24 11 24 11Z" fill="#FFFFFF" fill-opacity="0.95"/>
+    <path d="M24 17C24 17 30 23.5 30 27.5C30 30.8 27.3 33.5 24 33.5C20.7 33.5 18 30.8 18 27.5C18 23.5 24 17 24 17Z" fill="url(#accentGrad)" opacity="0.85"/>
+    <circle cx="36" cy="13" r="2.5" fill="#38BDF8"/>
+    <circle cx="12" cy="35" r="1.5" fill="#A7F3D0"/>
+  </g>
+  <!-- Text Brand - Larger & Clearer -->
+  <g transform="translate(62, 3)">
+    <text x="0" y="28" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="29" fill="#0F172A" letter-spacing="-0.5">Aero<tspan fill="#0F766E">Pure</tspan></text>
+    <text x="1" y="45" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="700" font-size="10.5" fill="#475569" letter-spacing="2.2">AIR QUALITY &amp; MOLD</text>
+  </g>
+</svg>

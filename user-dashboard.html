@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard - AeroPure Account Portal</title>
+  <meta name="description" content="General registered user account dashboard for managing personal details, saved services, account security, and notification preferences.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Demo Notice Banner -->
+  <div class="bg-info text-dark px-3 py-1 text-center small fw-semibold">
+    <i class="bi bi-person-check-fill me-1"></i> Registered User Dashboard: Managing personal account, saved services, security settings, and notifications.
+  </div>
+
+  <div class="dashboard-layout">
+    <!-- =========================================================================
+         USER DASHBOARD SIDEBAR (7 Menu Items)
+         ========================================================================= -->
+    <aside class="dashboard-sidebar">
+      <div class="dashboard-sidebar-header">
+        <a href="index.html" class="d-flex align-items-center">
+          <img src="assets/images/logo.svg" alt="AeroPure" class="site-logo-img" style="height:36px;">
+        </a>
+        <button type="button" class="btn-close d-lg-none" id="sidebarCloseBtn" aria-label="Close sidebar"></button>
+      </div>
+
+      <div class="dashboard-sidebar-menu">
+        <div class="dashboard-menu-heading">User Account</div>
+        
+        <!-- 1. Overview -->
+        <a href="#tab-overview" class="dashboard-nav-link active" data-target-tab="tab-overview">
+          <i class="bi bi-grid-1x2"></i> Overview
+        </a>
+
+        <!-- 2. My Profile -->
+        <a href="#tab-profile" class="dashboard-nav-link" data-target-tab="tab-profile">
+          <i class="bi bi-person"></i> My Profile
+        </a>
+
+        <!-- 3. Saved Services -->
+        <a href="#tab-saved-services" class="dashboard-nav-link" data-target-tab="tab-saved-services">
+          <i class="bi bi-bookmark-heart"></i> Saved Services
+        </a>
+
+        <!-- 4. Notifications -->
+        <a href="#tab-notifications" class="dashboard-nav-link" data-target-tab="tab-notifications">
+          <i class="bi bi-bell"></i> Notifications
+          <span class="badge bg-primary ms-auto" style="font-size:0.7rem;">3</span>
+        </a>
+
+        <!-- 5. Messages -->
+        <a href="#tab-messages" class="dashboard-nav-link" data-target-tab="tab-messages">
+          <i class="bi bi-chat-dots"></i> Messages
+        </a>
+
+        <!-- 6. Account Settings -->
+        <a href="#tab-settings" class="dashboard-nav-link" data-target-tab="tab-settings">
+          <i class="bi bi-gear"></i> Account Settings
+        </a>
+
+        <div class="dashboard-menu-heading mt-3">Session</div>
+        <!-- 7. Logout -->
+        <a href="login.html" class="dashboard-nav-link text-danger">
+          <i class="bi bi-box-arrow-left"></i> Logout
+        </a>
+      </div>
+
+      <div class="dashboard-sidebar-footer">
+        <div class="d-flex align-items-center gap-2">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Michael Torres" class="rounded-circle" style="width:38px;height:38px;object-fit:cover;">
+          <div class="overflow-hidden">
+            <strong class="d-block text-primary small text-truncate">Michael Torres</strong>
+            <small class="text-muted d-block text-truncate">User Member since 2025</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- =========================================================================
+         USER DASHBOARD MAIN CONTENT
+         ========================================================================= -->
+    <main class="dashboard-main">
+      <!-- Topbar with Theme, RTL, and Switch Controls -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-sm btn-light border d-lg-none" id="sidebarToggleBtn" aria-label="Toggle Navigation">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <div>
+            <h5 class="mb-0 text-primary fw-bold">User Account Dashboard</h5>
+            <small class="text-muted d-none d-sm-block">Account preferences, bookmarking, and security settings</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <a href="index.html" class="btn btn-sm btn-outline-primary d-none d-md-inline-flex">
+            <i class="bi bi-house-door"></i> Back to Main Site
+          </a>
+          <!-- RTL Toggle -->
+          <button class="nav-control-btn rtl-toggle-btn" aria-label="Toggle RTL/LTR" title="Toggle RTL/LTR">
+            <span class="rtl-badge-text nav-rtl-badge">RTL</span>
+          </button>
+          <!-- Theme Toggle -->
+          <button class="nav-control-btn theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Theme">
+            <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+          </button>
+          <!-- Switch to Customer / Admin Portals -->
+          <div class="dropdown">
+            <button class="btn btn-sm btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              <i class="bi bi-arrow-left-right"></i> Portals
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="customer-dashboard.html"><i class="bi bi-person-badge text-primary"></i> Customer Dashboard</a></li>
+              <li><a class="dropdown-item active" href="user-dashboard.html"><i class="bi bi-person text-info"></i> User Account Dashboard</a></li>
+              <li><a class="dropdown-item" href="admin-dashboard.html"><i class="bi bi-gear-wide-connected text-warning"></i> Admin Portal</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Body -->
+      <div class="dashboard-content-body">
+        
+        <!-- =====================================================================
+             USER TAB 1: OVERVIEW
+             ===================================================================== -->
+        <section id="tab-overview" class="dashboard-tab-content">
+          <!-- Overview Summary Cards (All Clickable to Direct Tabs) -->
+          <div class="row g-4 mb-4">
+            <div class="col-sm-6 col-xl-3">
+              <div class="metric-card card-clickable" data-target-tab="tab-saved-services" role="button" tabindex="0" title="View Saved Services">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Saved Services</span>
+                    <div class="metric-val">3</div>
+                  </div>
+                  <div class="metric-card-icon bg-primary-subtle text-primary">
+                    <i class="bi bi-bookmark-heart"></i>
+                  </div>
+                </div>
+                <small class="text-primary fw-semibold"><i class="bi bi-pin-angle"></i> Ready to book</small>
+                <i class="bi bi-chevron-right metric-card-chevron"></i>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="metric-card card-clickable" data-target-tab="tab-profile" role="button" tabindex="0" title="View Saved Properties & Profile">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Saved Properties</span>
+                    <div class="metric-val">2</div>
+                  </div>
+                  <div class="metric-card-icon bg-info-subtle text-info">
+                    <i class="bi bi-building"></i>
+                  </div>
+                </div>
+                <small class="text-muted">Primary &amp; Rental Unit</small>
+                <i class="bi bi-chevron-right metric-card-chevron"></i>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="metric-card card-clickable" data-target-tab="tab-notifications" role="button" tabindex="0" title="View Unread Environmental Alerts">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Unread Alerts</span>
+                    <div class="metric-val" id="userUnreadAlertsCount">3</div>
+                  </div>
+                  <div class="metric-card-icon bg-warning-subtle text-warning">
+                    <i class="bi bi-bell"></i>
+                  </div>
+                </div>
+                <small class="text-warning fw-semibold"><i class="bi bi-exclamation-circle"></i> Seasonal humidity notice</small>
+                <i class="bi bi-chevron-right metric-card-chevron"></i>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="metric-card card-clickable" data-target-tab="tab-settings" role="button" tabindex="0" title="Manage Account & Security Settings">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Account Security</span>
+                    <div class="metric-val text-success">Good</div>
+                  </div>
+                  <div class="metric-card-icon bg-success-subtle text-success">
+                    <i class="bi bi-shield-check"></i>
+                  </div>
+                </div>
+                <small class="text-success fw-semibold"><i class="bi bi-check-circle-fill"></i> 2FA Verified</small>
+                <i class="bi bi-chevron-right metric-card-chevron"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Account Activity Overview & Quick Actions -->
+          <div class="row g-4">
+            <div class="col-lg-8">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm h-100">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h6 class="text-primary fw-bold mb-0"><i class="bi bi-activity text-primary me-2"></i> Recent Account Activity</h6>
+                  <span class="badge bg-primary-subtle text-primary">Live Log</span>
+                </div>
+                <div class="list-group list-group-flush small">
+                  <div class="activity-item-clickable list-group-item px-2 py-2 d-flex justify-content-between align-items-center" data-target-tab="tab-saved-services" role="button" title="Go to Saved Services">
+                    <div>
+                      <i class="bi bi-bookmark-plus text-primary me-2"></i> Bookmarked <strong>Comprehensive Mold Inspection</strong>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="text-muted">2 hours ago</span>
+                      <i class="bi bi-chevron-right text-muted small"></i>
+                    </div>
+                  </div>
+                  <div class="activity-item-clickable list-group-item px-2 py-2 d-flex justify-content-between align-items-center" onclick="downloadDemoReport('EPA_Indoor_Air_Checklist.pdf')" role="button" title="Download EPA Checklist PDF">
+                    <div>
+                      <i class="bi bi-download text-success me-2"></i> Downloaded <strong>EPA Indoor Air Checklist (PDF)</strong>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="text-muted">Yesterday</span>
+                      <i class="bi bi-download text-muted small"></i>
+                    </div>
+                  </div>
+                  <div class="activity-item-clickable list-group-item px-2 py-2 d-flex justify-content-between align-items-center" data-target-tab="tab-settings" role="button" title="Manage Password in Settings">
+                    <div>
+                      <i class="bi bi-shield-lock text-info me-2"></i> Changed password from Chrome on Windows
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="text-muted">3 days ago</span>
+                      <i class="bi bi-chevron-right text-muted small"></i>
+                    </div>
+                  </div>
+                  <div class="activity-item-clickable list-group-item px-2 py-2 d-flex justify-content-between align-items-center" data-target-tab="tab-settings" role="button" title="Review Active Sessions">
+                    <div>
+                      <i class="bi bi-box-arrow-in-right text-muted me-2"></i> Successful login from IP 192.168.1.45
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="text-muted">5 days ago</span>
+                      <i class="bi bi-chevron-right text-muted small"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm h-100 d-flex flex-column justify-content-between">
+                <div>
+                  <h6 class="text-primary fw-bold mb-3"><i class="bi bi-lightning-charge text-warning me-2"></i> Quick Actions</h6>
+                  <div class="d-grid gap-2">
+                    <a href="services.html" class="btn btn-outline-primary btn-sm text-start">
+                      <i class="bi bi-search me-2"></i> Browse Environmental Services
+                    </a>
+                    <button class="btn btn-outline-primary btn-sm text-start" data-target-tab="tab-profile">
+                      <i class="bi bi-person-gear me-2"></i> Edit Personal Details
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm text-start" data-target-tab="tab-settings">
+                      <i class="bi bi-lock me-2"></i> Change Security Password
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm text-start" data-target-tab="tab-notifications">
+                      <i class="bi bi-bell me-2"></i> View Environmental Alerts
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-4 pt-3 border-top">
+                  <small class="text-muted d-block mb-2">Need to book an inspection right now?</small>
+                  <a href="customer-dashboard.html#tab-schedule" class="btn btn-primary btn-sm w-100">
+                    <i class="bi bi-calendar-check me-2"></i> Switch to Customer Booking
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             USER TAB 2: MY PROFILE
+             ===================================================================== -->
+        <section id="tab-profile" class="dashboard-tab-content" style="display:none;">
+          <div class="row g-4">
+            <div class="col-lg-7">
+              <div class="p-4 p-md-5 rounded-4 bg-surface border shadow-sm">
+                <h5 class="text-primary mb-4 fw-bold"><i class="bi bi-person text-primary me-2"></i> Personal Profile &amp; Contact Information</h5>
+
+                <form onsubmit="event.preventDefault(); showNotification('Profile Saved', 'Your user personal profile details have been saved.', 'success');">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label">Full Name</label>
+                      <input type="text" class="form-control" data-type="name" value="Michael Torres" required pattern="[a-zA-Z\s'.\-]+">
+                      <div class="invalid-feedback">Name only: Letters and spaces allowed.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Email Address</label>
+                      <input type="email" class="form-control" data-type="email" value="michael.torres@example.com" required>
+                      <div class="invalid-feedback">Please enter a valid Email ID (e.g. name@domain.com).</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Phone Number</label>
+                      <input type="tel" class="form-control" data-type="phone" inputmode="tel" value="(555) 342-9981">
+                      <div class="invalid-feedback">Numbers only: Letters are not allowed.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Account Role</label>
+                      <input type="text" class="form-control bg-muted" value="Registered Member" readonly>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Bio / Notes</label>
+                      <textarea class="form-control" rows="3">Residential property owner managing 2 family rentals in North Dallas area.</textarea>
+                    </div>
+                    <div class="col-12 mt-3 d-flex flex-wrap gap-2">
+                      <button type="submit" class="btn btn-primary btn-pill">
+                        <i class="bi bi-check2-circle me-1"></i> Save Profile Changes
+                      </button>
+                      <button type="button" class="btn btn-outline-primary btn-pill" data-target-tab="tab-saved-services">
+                        <i class="bi bi-bookmark-heart me-1"></i> Saved Services
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary btn-pill" data-target-tab="tab-settings">
+                        <i class="bi bi-gear me-1"></i> Security Settings
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Saved Properties Section -->
+            <div class="col-lg-5">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm h-100 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="text-primary fw-bold mb-0"><i class="bi bi-building text-info me-2"></i> Saved Properties</h5>
+                    <span class="badge bg-info-subtle text-info">2 Units</span>
+                  </div>
+                  
+                  <div class="card-custom p-3 mb-3 border">
+                    <div class="d-flex justify-content-between align-items-start mb-1">
+                      <strong class="text-primary">Primary Residence</strong>
+                      <span class="badge bg-success-subtle text-success">Active</span>
+                    </div>
+                    <p class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> 742 Evergreen Terrace, Springfield, OR</p>
+                    <a href="customer-dashboard.html#tab-schedule" class="btn btn-sm btn-outline-primary w-100">
+                      <i class="bi bi-calendar-plus me-1"></i> Book Inspection for this Unit
+                    </a>
+                  </div>
+
+                  <div class="card-custom p-3 mb-3 border">
+                    <div class="d-flex justify-content-between align-items-start mb-1">
+                      <strong class="text-primary">Rental Property #2</strong>
+                      <span class="badge bg-secondary-subtle text-secondary">Tenant Occupied</span>
+                    </div>
+                    <p class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> 1840 Oakridge Blvd #4B, Springfield, OR</p>
+                    <a href="customer-dashboard.html#tab-schedule" class="btn btn-sm btn-outline-primary w-100">
+                      <i class="bi bi-calendar-plus me-1"></i> Book Inspection for this Unit
+                    </a>
+                  </div>
+                </div>
+
+                <button type="button" class="btn btn-outline-secondary btn-sm w-100 mt-2" onclick="showNotification('Property Added', 'Simulated demo: New property profile added.', 'success')">
+                  <i class="bi bi-plus-lg me-1"></i> Add Another Property
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             USER TAB 3: SAVED SERVICES
+             ===================================================================== -->
+        <section id="tab-saved-services" class="dashboard-tab-content" style="display:none;">
+          <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+            <div>
+              <h5 class="text-primary mb-1 fw-bold"><i class="bi bi-bookmark-heart text-primary me-2"></i> Saved Services &amp; Packages</h5>
+              <p class="text-muted small mb-0">Services you have bookmarked for quick quotes or future scheduling.</p>
+            </div>
+            <a href="services.html" class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-search me-1"></i> Browse More Services
+            </a>
+          </div>
+
+          <div class="row g-4" id="savedServicesList">
+            <!-- Saved Service 1 -->
+            <div class="col-md-6 col-xl-4" id="saved-card-1">
+              <div class="card-custom p-4 h-100 d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <span class="badge bg-primary-subtle text-primary">Inspection</span>
+                  <button class="btn btn-sm btn-link text-danger p-0" onclick="document.getElementById('saved-card-1').remove(); showNotification('Removed', 'Service removed from saved bookmarks.', 'info');" title="Remove bookmark">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+                <h5 class="text-primary mb-2">Comprehensive Mold Inspection</h5>
+                <p class="text-muted small mb-3">3 Spore trap air cassettes, infrared moisture mapping, and AIHA lab report.</p>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="service-details.html?service=mold-inspection" class="btn btn-sm btn-outline-primary flex-grow-1">
+                    <i class="bi bi-info-circle me-1"></i> View Details
+                  </a>
+                  <a href="customer-dashboard.html#tab-schedule" class="btn btn-sm btn-primary">
+                    <i class="bi bi-calendar-check me-1"></i> Book Now
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Saved Service 2 -->
+            <div class="col-md-6 col-xl-4" id="saved-card-2">
+              <div class="card-custom p-4 h-100 d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <span class="badge bg-info-subtle text-info">IAQ Diagnostics</span>
+                  <button class="btn btn-sm btn-link text-danger p-0" onclick="document.getElementById('saved-card-2').remove(); showNotification('Removed', 'Service removed from saved bookmarks.', 'info');" title="Remove bookmark">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+                <h5 class="text-primary mb-2">Whole-Home TVOC &amp; Formaldehyde Scan</h5>
+                <p class="text-muted small mb-3">Laser particle counting, off-gassing chemical screening for new remodels.</p>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="service-details.html?service=air-quality" class="btn btn-sm btn-outline-primary flex-grow-1">
+                    <i class="bi bi-info-circle me-1"></i> View Details
+                  </a>
+                  <a href="customer-dashboard.html#tab-schedule" class="btn btn-sm btn-primary">
+                    <i class="bi bi-calendar-check me-1"></i> Book Now
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Saved Service 3 -->
+            <div class="col-md-6 col-xl-4" id="saved-card-3">
+              <div class="card-custom p-4 h-100 d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <span class="badge bg-warning-subtle text-warning">Moisture</span>
+                  <button class="btn btn-sm btn-link text-danger p-0" onclick="document.getElementById('saved-card-3').remove(); showNotification('Removed', 'Service removed from saved bookmarks.', 'info');" title="Remove bookmark">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+                <h5 class="text-primary mb-2">Crawl Space Moisture Encapsulation</h5>
+                <p class="text-muted small mb-3">Heavy 20-mil vapor barriers and dehumidification system design.</p>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="service-details.html?service=preventive-treatment" class="btn btn-sm btn-outline-primary flex-grow-1">
+                    <i class="bi bi-info-circle me-1"></i> View Details
+                  </a>
+                  <a href="customer-dashboard.html#tab-schedule" class="btn btn-sm btn-primary">
+                    <i class="bi bi-calendar-check me-1"></i> Book Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             USER TAB 4: NOTIFICATIONS
+             ===================================================================== -->
+        <section id="tab-notifications" class="dashboard-tab-content" style="display:none;">
+          <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+            <div>
+              <h5 class="text-primary mb-1 fw-bold"><i class="bi bi-bell text-primary me-2"></i> Notifications &amp; Alerts</h5>
+              <p class="text-muted small mb-0">Environmental health alerts, newsletter digests, and system notices.</p>
+            </div>
+            <button class="btn btn-sm btn-primary" onclick="markAllNotificationsRead()">
+              <i class="bi bi-check2-all me-1"></i> Mark All as Read
+            </button>
+          </div>
+
+          <div class="p-4 rounded-4 bg-surface border shadow-sm">
+            <div class="list-group list-group-flush">
+              <div class="list-group-item px-0 py-3 d-flex gap-3 align-items-start">
+                <div class="card-icon-box bg-warning-subtle text-warning mb-0" style="width:40px;height:40px;font-size:1.1rem;"><i class="bi bi-exclamation-triangle-fill"></i></div>
+                <div class="flex-grow-1">
+                  <strong class="text-primary d-block">Seasonal High Humidity Warning (Dallas Metro)</strong>
+                  <p class="text-muted small mb-2">Outdoor relative humidity forecasted to exceed 75% for 4 consecutive days. Keep basement dehumidifiers set below 50% to prevent fungal blooms.</p>
+                  <div class="d-flex gap-2 flex-wrap">
+                    <button class="btn btn-sm btn-outline-warning" data-target-tab="tab-messages">
+                      <i class="bi bi-chat-left-dots me-1"></i> Ask Moisture Specialist
+                    </button>
+                    <a href="blog-details.html" class="btn btn-sm btn-outline-secondary">
+                      <i class="bi bi-book me-1"></i> View Prevention Guide
+                    </a>
+                  </div>
+                  <small class="text-muted d-block mt-2">Today at 08:30 AM</small>
+                </div>
+              </div>
+
+              <div class="list-group-item px-0 py-3 d-flex gap-3 align-items-start">
+                <div class="card-icon-box bg-primary-subtle text-primary mb-0" style="width:40px;height:40px;font-size:1.1rem;"><i class="bi bi-journal-richtext"></i></div>
+                <div class="flex-grow-1">
+                  <strong class="text-primary d-block">New Research Published: Black Mold vs. Mildew Guide</strong>
+                  <p class="text-muted small mb-2">Our chief mycologist Dr. Marcus Vance published 5 life-saving diagnostic differences for property owners.</p>
+                  <a href="blog-details.html" class="btn btn-sm btn-outline-primary">
+                    <i class="bi bi-journal-text me-1"></i> Read Mycologist Article
+                  </a>
+                  <small class="text-muted d-block mt-2">2 days ago</small>
+                </div>
+              </div>
+
+              <div class="list-group-item px-0 py-3 d-flex gap-3 align-items-start">
+                <div class="card-icon-box bg-success-subtle text-success mb-0" style="width:40px;height:40px;font-size:1.1rem;"><i class="bi bi-shield-check"></i></div>
+                <div class="flex-grow-1">
+                  <strong class="text-primary d-block">Account Security Verified</strong>
+                  <p class="text-muted small mb-2">Your registered user email and secondary recovery methods were successfully verified.</p>
+                  <button class="btn btn-sm btn-outline-success" data-target-tab="tab-settings">
+                    <i class="bi bi-shield-lock me-1"></i> Review Security Settings
+                  </button>
+                  <small class="text-muted d-block mt-2">Oct 10, 2026</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             USER TAB 5: MESSAGES
+             ===================================================================== -->
+        <section id="tab-messages" class="dashboard-tab-content" style="display:none;">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="text-primary mb-0 fw-bold"><i class="bi bi-chat-dots text-primary me-2"></i> User Support Inquiries</h5>
+                  <span class="badge bg-success-subtle text-success"><i class="bi bi-circle-fill me-1" style="font-size:0.5rem;"></i> Support Online</span>
+                </div>
+                <p class="text-muted small mb-4">Have questions regarding service estimates, lab methodology, or report interpretation?</p>
+
+                <!-- Support conversation feed -->
+                <div class="p-3 bg-body rounded-3 border mb-3 overflow-y-auto" style="max-height:260px;">
+                  <div class="mb-2 text-start">
+                    <span class="badge bg-primary-subtle text-primary mb-1">AeroPure Care Team (Yesterday)</span>
+                    <p class="bg-surface p-3 rounded-3 border text-start small mb-0 shadow-sm">
+                      Welcome to your AeroPure member portal! How can our certified indoor air specialists assist your residential property today?
+                    </p>
+                  </div>
+                </div>
+
+                <form onsubmit="event.preventDefault(); sendDashboardMessage(this);">
+                  <div class="mb-3">
+                    <label class="form-label">Subject</label>
+                    <input type="text" class="form-control" placeholder="e.g. Question about air sampling for rental property" required>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" rows="3" placeholder="How can our environmental team assist you?" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-pill">
+                    <i class="bi bi-send-fill me-1"></i> Send Inquiry
+                  </button>
+                </form>
+              </div>
+            </div>
+            
+            <div class="col-lg-4 mt-4 mt-lg-0">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm">
+                <h6 class="text-primary fw-bold mb-3"><i class="bi bi-telephone text-primary me-2"></i> Client Support Desk</h6>
+                <div class="mb-3">
+                  <small class="text-muted d-block">Phone Support:</small>
+                  <strong>(555) 728-1900</strong><br>
+                  <small class="text-muted">Monday – Saturday: 8am – 7pm</small>
+                </div>
+                <div class="mb-3">
+                  <small class="text-muted d-block">Direct Email:</small>
+                  <strong>support@aeropure-iaq.com</strong>
+                </div>
+                <hr>
+                <a href="customer-dashboard.html#tab-schedule" class="btn btn-outline-primary btn-sm w-100">
+                  <i class="bi bi-calendar-plus me-1"></i> Book Diagnostic Scan
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             USER TAB 6: ACCOUNT SETTINGS & THEME PREFERENCES & PASSWORD CHANGE
+             ===================================================================== -->
+        <section id="tab-settings" class="dashboard-tab-content" style="display:none;">
+          <div class="row g-4">
+            <!-- Theme & Display Preferences -->
+            <div class="col-lg-6">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm h-100">
+                <h5 class="text-primary mb-3 fw-bold"><i class="bi bi-palette text-primary me-2"></i> Theme &amp; Display Preferences</h5>
+                <p class="text-muted small mb-3">Customize how AeroPure looks on your devices. Preferences persist in your browser.</p>
+
+                <div class="mb-4">
+                  <label class="form-label fw-bold small">Color Mode</label>
+                  <div class="d-flex gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="themeRadio" id="themeLightRadio" onclick="applyTheme('light'); localStorage.setItem('aeropure_theme', 'light');">
+                      <label class="form-check-label" for="themeLightRadio"><i class="bi bi-sun-fill text-warning me-1"></i> Light Mode</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="themeRadio" id="themeDarkRadio" onclick="applyTheme('dark'); localStorage.setItem('aeropure_theme', 'dark');">
+                      <label class="form-check-label" for="themeDarkRadio"><i class="bi bi-moon-stars-fill text-primary me-1"></i> Dark Mode</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label class="form-label fw-bold small">Text Layout Direction</label>
+                  <div class="d-flex gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="dirRadio" id="dirLtrRadio" onclick="applyRTL('ltr'); localStorage.setItem('aeropure_dir', 'ltr');">
+                      <label class="form-check-label" for="dirLtrRadio">LTR (Left to Right)</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="dirRadio" id="dirRtlRadio" onclick="applyRTL('rtl'); localStorage.setItem('aeropure_dir', 'rtl');">
+                      <label class="form-check-label" for="dirRtlRadio">RTL (Right to Left)</label>
+                    </div>
+                  </div>
+                </div>
+
+                <hr>
+                <div>
+                  <h6 class="text-primary fw-bold mb-2"><i class="bi bi-shield-check text-success me-1"></i> Two-Factor Authentication</h6>
+                  <p class="text-muted small mb-2">Two-Factor Authentication is currently active via SMS.</p>
+                  <button type="button" class="btn btn-sm btn-outline-primary" onclick="showNotification('2FA Security', 'Two-Factor Authentication settings are managed via SMS verification.', 'info')">
+                    <i class="bi bi-gear me-1"></i> Manage 2FA Settings
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Password Change Interface for the Demo -->
+            <div class="col-lg-6">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm h-100 d-flex flex-column justify-content-between">
+                <div>
+                  <h5 class="text-primary mb-3 fw-bold"><i class="bi bi-lock text-primary me-2"></i> Change Account Password</h5>
+                  <p class="text-muted small mb-3">Update your password to keep your environmental records secure.</p>
+
+                  <form onsubmit="event.preventDefault(); showNotification('Password Changed', 'Your simulated demo password has been updated.', 'success'); this.reset();">
+                    <div class="mb-3">
+                      <label class="form-label small">Current Password</label>
+                      <input type="password" class="form-control" placeholder="••••••••" required>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label small">New Password</label>
+                      <input type="password" class="form-control" placeholder="At least 8 characters" required>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label small">Confirm New Password</label>
+                      <input type="password" class="form-control" placeholder="Re-enter new password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm btn-pill">
+                      <i class="bi bi-lock-fill me-1"></i> Update Password
+                    </button>
+                  </form>
+                </div>
+
+                <div class="mt-4 pt-3 border-top">
+                  <h6 class="text-primary fw-bold mb-1"><i class="bi bi-laptop text-info me-1"></i> Active Device Sessions</h6>
+                  <small class="text-muted d-block mb-2">Windows 11 (Chrome) • Springfield, OR • Current Session</small>
+                  <button type="button" class="btn btn-sm btn-outline-danger" onclick="showNotification('Sessions Cleared', 'All other active browser sessions have been logged out.', 'success')">
+                    <i class="bi bi-box-arrow-right me-1"></i> Sign Out Other Devices
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script>
+    // Initialize radio buttons according to current theme & dir
+    document.addEventListener('DOMContentLoaded', () => {
+      const curTheme = document.documentElement.getAttribute('data-bs-theme') || 'light';
+      const curDir = document.documentElement.getAttribute('dir') || 'ltr';
+
+      if (curTheme === 'dark') {
+        const dRadio = document.getElementById('themeDarkRadio');
+        if (dRadio) dRadio.checked = true;
+      } else {
+        const lRadio = document.getElementById('themeLightRadio');
+        if (lRadio) lRadio.checked = true;
+      }
+
+      if (curDir === 'rtl') {
+        const rRadio = document.getElementById('dirRtlRadio');
+        if (rRadio) rRadio.checked = true;
+      } else {
+        const ltrRadio = document.getElementById('dirLtrRadio');
+        if (ltrRadio) ltrRadio.checked = true;
+      }
+    });
+  </script>
+</body>
+</html>

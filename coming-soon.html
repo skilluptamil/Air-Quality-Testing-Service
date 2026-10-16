@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon - Next-Gen IAQ Telemetry | AeroPure</title>
+  <meta name="description" content="AeroPure's automated continuous IoT indoor air quality monitoring network is launching soon.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    .countdown-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1rem;
+      min-width: 95px;
+      box-shadow: var(--shadow-md);
+    }
+    .countdown-val {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      font-family: var(--font-heading);
+      line-height: 1;
+    }
+    .countdown-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body class="d-flex flex-column min-vh-100 bg-body">
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg site-navbar">
+      <div class="container justify-content-between">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="assets/images/logo.svg" alt="AeroPure Solutions" class="site-logo-img">
+        </a>
+        <div class="d-flex align-items-center gap-2">
+          <button class="nav-control-btn rtl-toggle-btn" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
+          <button class="nav-control-btn theme-toggle-btn" aria-label="Toggle Theme" title="Switch Dark/Light Theme"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
+          <a href="index.html" class="btn btn-sm btn-outline-primary"><i class="bi bi-house me-1"></i> Main Site</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="my-auto py-5 text-center position-relative">
+    <div class="container">
+      <div class="max-w-xl mx-auto" style="max-width: 680px;">
+        <span class="badge bg-primary-subtle text-primary fw-semibold px-3 py-1 rounded-pill mb-3">Under Active Engineering</span>
+        <h1 class="display-4 fw-bold text-primary mb-3">Next-Gen Real-Time IAQ Telemetry Platform</h1>
+        <p class="lead text-secondary mb-4">
+          We are deploying hospital-grade IoT continuous particulate sensors and predictive mycotoxin risk algorithms directly to your smartphone. Launching in early 2027.
+        </p>
+
+        <!-- Live Countdown Timer -->
+        <div class="d-flex justify-content-center gap-2 gap-sm-3 mb-5">
+          <div class="countdown-box">
+            <div class="countdown-val" id="cdDays">48</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-val" id="cdHours">14</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-val" id="cdMinutes">32</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-val" id="cdSeconds">18</div>
+            <div class="countdown-label">Seconds</div>
+          </div>
+        </div>
+
+        <!-- Notification Signup -->
+        <div class="p-4 rounded-4 bg-surface border shadow-sm">
+          <h5 class="text-primary mb-2">Be the First to Access Beta Telemetry</h5>
+          <p class="text-muted small mb-3">Get exclusive early-bird access to our smart indoor sensor network.</p>
+
+          <form class="newsletter-form d-flex justify-content-center gap-2 max-w-md mx-auto" style="max-width: 440px;">
+            <input type="email" class="form-control" placeholder="Enter your email" required>
+            <button class="btn btn-primary px-4 fw-semibold" type="submit">Notify Me</button>
+          </form>
+        </div>
+
+        <div class="mt-4">
+          <a href="index.html" class="small text-muted text-decoration-none">
+            <i class="bi bi-arrow-left me-1"></i> Return to Current Environmental Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-3 border-top small text-muted bg-surface mt-auto">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <p class="mb-0">&copy; 2026 AeroPure Environmental Solutions. All rights reserved.</p>
+      <div class="d-flex gap-3 small text-muted">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="lab-disclaimer.html">Lab Disclaimer</a>
+        <a href="404.html">404 Page</a>
+        <a href="maintenance.html">Maintenance</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Live Countdown Timer Simulation
+    let totalSeconds = 48 * 86400 + 14 * 3600 + 32 * 60 + 18;
+    function updateCountdown() {
+      totalSeconds--;
+      if (totalSeconds < 0) totalSeconds = 0;
+
+      const d = Math.floor(totalSeconds / 86400);
+      const h = Math.floor((totalSeconds % 86400) / 3600);
+      const m = Math.floor((totalSeconds % 3600) / 60);
+      const s = totalSeconds % 60;
+
+      const elD = document.getElementById('cdDays');
+      const elH = document.getElementById('cdHours');
+      const elM = document.getElementById('cdMinutes');
+      const elS = document.getElementById('cdSeconds');
+
+      if (elD) elD.textContent = String(d).padStart(2, '0');
+      if (elH) elH.textContent = String(h).padStart(2, '0');
+      if (elM) elM.textContent = String(m).padStart(2, '0');
+      if (elS) elS.textContent = String(s).padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>

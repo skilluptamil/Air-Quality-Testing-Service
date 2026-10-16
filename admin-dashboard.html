@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - AeroPure Enterprise Operations</title>
+  <meta name="description" content="Administrative management interface for inspection booking dispatch, remediation oversight, lab report approvals, and customer accounts.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Demo Notice Banner -->
+  <div class="bg-danger text-white px-3 py-1 text-center small fw-semibold">
+    <i class="bi bi-shield-lock-fill me-1"></i> Administrative Portal: Internal Operations, Dispatch Management, and Laboratory Approvals.
+  </div>
+
+  <div class="dashboard-layout">
+    <!-- Admin Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="dashboard-sidebar-header">
+        <a href="index.html" class="d-flex align-items-center">
+          <img src="assets/images/logo.svg" alt="AeroPure" class="site-logo-img" style="height:36px;">
+        </a>
+        <button type="button" class="btn-close d-lg-none" id="sidebarCloseBtn" aria-label="Close sidebar"></button>
+      </div>
+
+      <div class="dashboard-sidebar-menu">
+        <div class="dashboard-menu-heading">Administrative Ops</div>
+        
+        <a href="#admin-analytics" class="dashboard-nav-link active" data-target-tab="admin-analytics">
+          <i class="bi bi-pie-chart"></i> Analytics &amp; KPI
+        </a>
+
+        <a href="#admin-bookings" class="dashboard-nav-link" data-target-tab="admin-bookings">
+          <i class="bi bi-calendar-check"></i> Inspection Bookings
+        </a>
+
+        <a href="#admin-remediations" class="dashboard-nav-link" data-target-tab="admin-remediations">
+          <i class="bi bi-shield-shaded"></i> Remediation Jobs
+        </a>
+
+        <a href="#admin-customers" class="dashboard-nav-link" data-target-tab="admin-customers">
+          <i class="bi bi-people"></i> Customer Management
+        </a>
+
+        <a href="#admin-reports" class="dashboard-nav-link" data-target-tab="admin-reports">
+          <i class="bi bi-file-earmark-medical"></i> Lab Report Approvals
+        </a>
+
+        <a href="#admin-inquiries" class="dashboard-nav-link" data-target-tab="admin-inquiries">
+          <i class="bi bi-inbox"></i> Inquiries &amp; Messages
+        </a>
+
+        <a href="#admin-settings" class="dashboard-nav-link" data-target-tab="admin-settings">
+          <i class="bi bi-sliders"></i> System Settings
+        </a>
+
+        <div class="dashboard-menu-heading mt-3">Exit Admin</div>
+        <a href="login.html" class="dashboard-nav-link text-danger">
+          <i class="bi bi-box-arrow-left"></i> Logout
+        </a>
+      </div>
+
+      <div class="dashboard-sidebar-footer">
+        <div class="d-flex align-items-center gap-2">
+          <div class="card-icon-box mb-0 bg-danger-subtle text-danger" style="width:36px;height:36px;font-size:1rem;">
+            <i class="bi bi-person-fill-gear"></i>
+          </div>
+          <div class="overflow-hidden">
+            <strong class="d-block text-primary small text-truncate">Operations Admin</strong>
+            <small class="text-danger fw-semibold d-block text-truncate">Root Access</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Admin Main Body -->
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-sm btn-light border d-lg-none" id="sidebarToggleBtn" aria-label="Toggle Navigation">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <div>
+            <h5 class="mb-0 text-primary fw-bold">Enterprise Operations Command</h5>
+            <small class="text-muted d-none d-sm-block">Real-Time Field Dispatch &amp; Environmental Analytics</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <a href="index.html" class="btn btn-sm btn-outline-primary d-none d-md-inline-flex">
+            <i class="bi bi-house-door"></i> Website
+          </a>
+          <button class="nav-control-btn rtl-toggle-btn" aria-label="Toggle RTL/LTR" title="Toggle RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
+          <button class="nav-control-btn theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Theme"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
+          
+          <div class="dropdown">
+            <button class="btn btn-sm btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              <i class="bi bi-arrow-left-right"></i> Portals
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="customer-dashboard.html"><i class="bi bi-person-badge text-primary"></i> Customer Dashboard</a></li>
+              <li><a class="dropdown-item" href="user-dashboard.html"><i class="bi bi-person text-info"></i> User Account Dashboard</a></li>
+              <li><a class="dropdown-item active" href="admin-dashboard.html"><i class="bi bi-gear-wide-connected text-warning"></i> Admin Portal</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content-body">
+        
+        <!-- =====================================================================
+             ADMIN TAB 1: ANALYTICS & OVERVIEW
+             ===================================================================== -->
+        <section id="admin-analytics" class="dashboard-tab-content">
+          <div class="row g-4 mb-4">
+            <div class="col-sm-6 col-xl-3">
+              <div class="metric-card card-clickable" data-target-tab="admin-bookings" role="button" tabindex="0" title="Manage Inspection Bookings">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Total Bookings</span>
+                    <div class="metric-val">1,248</div>
+                  </div>
+                  <div class="metric-card-icon bg-primary-subtle text-primary"><i class="bi bi-calendar-check"></i></div>
+                </div>
+                <small class="text-success fw-semibold"><i class="bi bi-graph-up-arrow"></i> +14.2% this month</small>
+                <i class="bi bi-chevron-right metric-card-chevron"></i>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="metric-card card-clickable" data-target-tab="admin-remediations" role="button" tabindex="0" title="Monitor Active Remediation Jobs">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Active Remediations</span>
+                    <div class="metric-val">18</div>
+                  </div>
+                  <div class="metric-card-icon bg-warning-subtle text-warning"><i class="bi bi-shield-shaded"></i></div>
+                </div>
+                <small class="text-warning fw-semibold"><i class="bi bi-activity"></i> 12 Negative air chambers</small>
+                <i class="bi bi-chevron-right metric-card-chevron"></i>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="metric-card card-clickable" data-target-tab="admin-customers" role="button" tabindex="0" title="View Customer Invoices & Directory">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Monthly Invoiced</span>
+                    <div class="metric-val">$184.2K</div>
+                  </div>
+                  <div class="metric-card-icon bg-success-subtle text-success"><i class="bi bi-currency-dollar"></i></div>
+                </div>
+                <small class="text-success fw-semibold"><i class="bi bi-arrow-up"></i> 98% Collection rate</small>
+                <i class="bi bi-chevron-right metric-card-chevron"></i>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="metric-card card-clickable" data-target-tab="admin-reports" role="button" tabindex="0" title="Approve Pending Lab Reports">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Pending Lab Approvals</span>
+                    <div class="metric-val">5</div>
+                  </div>
+                  <div class="metric-card-icon bg-info-subtle text-info"><i class="bi bi-file-earmark-medical"></i></div>
+                </div>
+                <small class="text-primary fw-semibold"><i class="bi bi-clock-history"></i> Spore counts ready</small>
+                <i class="bi bi-chevron-right metric-card-chevron"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Admin Bar Chart for Inspections & Projects -->
+          <div class="p-4 rounded-4 bg-surface border shadow-sm mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h6 class="text-primary mb-0 fw-bold"><i class="bi bi-bar-chart-fill text-primary me-2"></i> Inspections vs. Remediation Projects (Year to Date)</h6>
+              <span class="badge bg-primary-subtle text-primary">2026 Monthly Volume</span>
+            </div>
+            <div style="height: 300px;">
+              <canvas id="adminOverviewChart"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             ADMIN TAB 2: INSPECTION BOOKINGS (Status Changer & Filter)
+             ===================================================================== -->
+        <section id="admin-bookings" class="dashboard-tab-content" style="display:none;">
+          <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+            <div>
+              <h5 class="text-primary mb-0 fw-bold"><i class="bi bi-calendar-check text-primary me-2"></i> Inspection Bookings Management</h5>
+              <small class="text-muted">Review incoming requests and dispatch certified technicians.</small>
+            </div>
+            <div class="d-flex gap-2">
+              <input type="text" class="form-control form-control-sm" placeholder="Search by customer/ID..." style="width:200px;">
+              <button class="btn btn-sm btn-primary" onclick="showNotification('Filter Applied', 'Inspection bookings filtered.', 'info')">
+                <i class="bi bi-funnel me-1"></i> Filter
+              </button>
+            </div>
+          </div>
+
+          <div class="table-custom-wrapper">
+            <div class="table-responsive">
+              <table class="table table-custom">
+                <thead>
+                  <tr>
+                    <th>Booking ID</th>
+                    <th>Customer Name</th>
+                    <th>Property Address</th>
+                    <th>Date / Time</th>
+                    <th>Assigned Tech</th>
+                    <th>Status Control</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>AP-49201</strong></td>
+                    <td>Rachel Keller</td>
+                    <td>742 Evergreen Terrace</td>
+                    <td>2026-10-18 (09:30 AM)</td>
+                    <td>Dr. Marcus Vance</td>
+                    <td>
+                      <select class="form-select form-select-sm" onchange="showNotification('Status Updated', 'Booking status changed to: ' + this.value, 'success')">
+                        <option value="Confirmed" selected>Confirmed</option>
+                        <option value="In Progress">Technician Dispatched</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Cancelled">Cancelled</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>AP-38192</strong></td>
+                    <td>David Miller</td>
+                    <td>840 Oakridge Blvd</td>
+                    <td>2026-10-24 (02:00 PM)</td>
+                    <td>Sarah Jenkins</td>
+                    <td>
+                      <select class="form-select form-select-sm" onchange="showNotification('Status Updated', 'Booking status changed to: ' + this.value, 'success')">
+                        <option value="Pending">Pending Approval</option>
+                        <option value="Confirmed" selected>Confirmed</option>
+                        <option value="Completed">Completed</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>AP-91048</strong></td>
+                    <td>Dr. Amanda Hayes</td>
+                    <td>142 Medical Center Way</td>
+                    <td>2026-10-15 (Today)</td>
+                    <td>Elena Rostova</td>
+                    <td>
+                      <select class="form-select form-select-sm" onchange="showNotification('Status Updated', 'Booking status changed to: ' + this.value, 'success')">
+                        <option value="In Progress" selected>In Progress</option>
+                        <option value="Completed">Completed</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             ADMIN TAB 3: REMEDIATION JOBS
+             ===================================================================== -->
+        <section id="admin-remediations" class="dashboard-tab-content" style="display:none;">
+          <h5 class="text-primary mb-1 fw-bold"><i class="bi bi-shield-shaded text-primary me-2"></i> Active Remediation Project Oversight</h5>
+          <p class="text-muted small mb-4">Live monitoring of negative air containment, scrubber hours, and biowash clearance.</p>
+
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge bg-warning text-dark"><i class="bi bi-broadcast me-1"></i> Job #JOB-9402</span>
+                  <span class="badge bg-primary">Negative Air: Active</span>
+                </div>
+                <h5 class="text-primary mb-1">Master Suite &amp; HVAC Plenums</h5>
+                <p class="text-muted small mb-3">Customer: Rachel Keller • Springfield, OR</p>
+                <div class="progress mb-3" style="height: 8px;">
+                  <div class="progress-bar bg-success" style="width: 60%;"></div>
+                </div>
+                <div class="d-flex justify-content-between text-muted small">
+                  <span>Current: HEPA Air Scrubbing (Hour 36/48)</span>
+                  <span>Lead: Elena Rostova</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> Job #JOB-9388</span>
+                  <span class="badge bg-success-subtle text-success">Clearance Passed</span>
+                </div>
+                <h5 class="text-primary mb-1">Commercial Office Floor 3 Subflooring</h5>
+                <p class="text-muted small mb-3">Customer: Metro Properties • Dallas, TX</p>
+                <div class="progress mb-3" style="height: 8px;">
+                  <div class="progress-bar bg-success" style="width: 100%;"></div>
+                </div>
+                <div class="d-flex justify-content-between text-muted small">
+                  <span>Certificate #ENV-2026-8802 Generated</span>
+                  <span>Lead: David Chen</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             ADMIN TAB 4: CUSTOMERS MANAGEMENT
+             ===================================================================== -->
+        <section id="admin-customers" class="dashboard-tab-content" style="display:none;">
+          <h5 class="text-primary mb-1 fw-bold"><i class="bi bi-people text-primary me-2"></i> Customer Directory</h5>
+          <p class="text-muted small mb-4">View client contact profiles, inspection counts, and properties on file.</p>
+
+          <div class="table-custom-wrapper">
+            <div class="table-responsive">
+              <table class="table table-custom">
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Properties</th>
+                    <th>Total Spend</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Rachel Keller</strong></td>
+                    <td>rachel.keller@example.com</td>
+                    <td>(555) 728-1920</td>
+                    <td>1 Property</td>
+                    <td>$1,348.00</td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-primary" onclick="showNotification('Customer Profile', 'Viewing Rachel Keller details', 'info')">
+                        <i class="bi bi-eye me-1"></i> View
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Michael Torres</strong></td>
+                    <td>michael.torres@example.com</td>
+                    <td>(555) 342-9981</td>
+                    <td>2 Properties</td>
+                    <td>$898.00</td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-primary" onclick="showNotification('Customer Profile', 'Viewing Michael Torres details', 'info')">
+                        <i class="bi bi-eye me-1"></i> View
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Dr. Amanda Hayes</strong></td>
+                    <td>a.hayes@pediatrics.org</td>
+                    <td>(555) 901-4421</td>
+                    <td>1 Clinic Suite</td>
+                    <td>$2,450.00</td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-primary" onclick="showNotification('Customer Profile', 'Viewing Amanda Hayes details', 'info')">
+                        <i class="bi bi-eye me-1"></i> View
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             ADMIN TAB 5: LAB REPORT APPROVALS
+             ===================================================================== -->
+        <section id="admin-reports" class="dashboard-tab-content" style="display:none;">
+          <h5 class="text-primary mb-1 fw-bold"><i class="bi bi-file-earmark-medical text-primary me-2"></i> Independent Microbiology Lab Approvals</h5>
+          <p class="text-muted small mb-4">Review incoming chain-of-custody test cassettes and release official clearance letters.</p>
+
+          <div class="table-custom-wrapper">
+            <div class="table-responsive">
+              <table class="table table-custom">
+                <thead>
+                  <tr>
+                    <th>Sample Batch</th>
+                    <th>Customer / Site</th>
+                    <th>Spore Traps</th>
+                    <th>Lab Status</th>
+                    <th>Approval Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>LAB-9042</strong></td>
+                    <td>Rachel Keller (Springfield, OR)</td>
+                    <td>3 Cassettes (Air-O-Cell)</td>
+                    <td><span class="badge bg-success">Passed Clearance</span></td>
+                    <td>
+                      <button class="btn btn-sm btn-success" onclick="showNotification('Approved', 'Report released to customer portal.', 'success')">
+                        <i class="bi bi-check2-circle me-1"></i> Publish Report
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>LAB-9043</strong></td>
+                    <td>Highland Park Remodel</td>
+                    <td>2 Spore Traps + 1 TVOC</td>
+                    <td><span class="badge bg-warning text-dark">Under Analysis</span></td>
+                    <td>
+                      <button class="btn btn-sm btn-light border" disabled>
+                        <i class="bi bi-hourglass-split me-1"></i> Pending Data
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             ADMIN TAB 6: INQUIRIES & MESSAGES
+             ===================================================================== -->
+        <section id="admin-inquiries" class="dashboard-tab-content" style="display:none;">
+          <h5 class="text-primary mb-1 fw-bold"><i class="bi bi-inbox text-primary me-2"></i> Client Inquiries &amp; Emergency Leads</h5>
+          <p class="text-muted small mb-4">Inbound web requests from public contact forms and hotlines.</p>
+
+          <div class="table-custom-wrapper">
+            <div class="table-responsive">
+              <table class="table table-custom">
+                <thead>
+                  <tr>
+                    <th>Lead Name</th>
+                    <th>Contact</th>
+                    <th>Service Needed</th>
+                    <th>Urgency</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Thomas Anderson</strong></td>
+                    <td>thomas@matrixrealty.com • (555) 234-8891</td>
+                    <td>Commercial Escrow Mold Clearance</td>
+                    <td><span class="badge bg-danger">Emergency (&lt;24h)</span></td>
+                    <td>
+                      <button class="btn btn-sm btn-primary" onclick="showNotification('Assigned', 'Lead dispatched to David Chen', 'success')">
+                        <i class="bi bi-person-check me-1"></i> Assign Tech
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sarah Miller</strong></td>
+                    <td>smiller@gmail.com • (555) 678-1122</td>
+                    <td>Attic Moisture &amp; Roof Leak Assessment</td>
+                    <td><span class="badge bg-primary">High</span></td>
+                    <td>
+                      <button class="btn btn-sm btn-primary" onclick="showNotification('Assigned', 'Lead dispatched to Elena Rostova', 'success')">
+                        <i class="bi bi-person-check me-1"></i> Assign Tech
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             ADMIN TAB 7: SYSTEM SETTINGS
+             ===================================================================== -->
+        <section id="admin-settings" class="dashboard-tab-content" style="display:none;">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm">
+                <h5 class="text-primary mb-3 fw-bold"><i class="bi bi-sliders text-primary me-2"></i> System Operations Settings</h5>
+                
+                <form onsubmit="event.preventDefault(); showNotification('Settings Saved', 'System configurations updated.', 'success');">
+                  <div class="mb-3">
+                    <label class="form-label">Dispatch SLA Target (Minutes)</label>
+                    <input type="number" class="form-control" value="45">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Default Accredited Lab Partner</label>
+                    <input type="text" class="form-control" value="National Environmental Microbiology Lab (AIHA-LAP #10294)">
+                  </div>
+                  <div class="mb-3 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="autoDispatchSwitch" checked>
+                    <label class="form-check-label" for="autoDispatchSwitch">Automatically notify nearest on-call supervisor for emergency requests</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-pill">
+                    <i class="bi bi-check2-circle me-1"></i> Save Settings
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

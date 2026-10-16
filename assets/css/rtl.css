@@ -1,0 +1,91 @@
+/* ==========================================================================
+   AeroPure - Mold Remediation & Air Quality Testing Service
+   RTL Stylesheet (rtl.css)
+   Applied automatically when dir="rtl" is active
+   ========================================================================== */
+
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] body {
+  font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Navbar & Menus */
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+  left: auto !important;
+  right: 0 !important;
+}
+
+[dir="rtl"] .dropdown-menu-end {
+  right: auto !important;
+  left: 0 !important;
+}
+
+[dir="rtl"] .dropdown-item {
+  text-align: right;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .site-footer a:hover,
+[dir="rtl"] .site-footer ul li a:hover {
+  padding-left: 0 !important;
+  padding-right: 4px !important;
+}
+
+/* Icons & Chevrons */
+[dir="rtl"] .bi-chevron-right::before {
+  content: "\f284"; /* chevron-left */
+}
+
+[dir="rtl"] .bi-chevron-left::before {
+  content: "\f285"; /* chevron-right */
+}
+
+[dir="rtl"] .bi-arrow-right::before {
+  content: "\f12f"; /* arrow-left */
+}
+
+[dir="rtl"] .bi-arrow-left::before {
+  content: "\f138"; /* arrow-right */
+}
+
+/* Form inputs & Password toggle */
+[dir="rtl"] .password-toggle-btn {
+  right: auto;
+  left: 12px;
+}
+
+/* Dashboard Sidebar RTL */
+[dir="rtl"] .dashboard-sidebar {
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .dashboard-nav-link {
+  text-align: right;
+}
+
+/* Hero Floating cards & Badges */
+[dir="rtl"] .hero-floating-card {
+  right: auto;
+  left: 1.5rem;
+}
+
+[dir="rtl"] .hero-trust-text {
+  text-align: right;
+}
+
+[dir="rtl"] #scrollTopBtn {
+  right: auto;
+  left: 24px;
+}
+
+[dir="rtl"] .footer-social-link {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}

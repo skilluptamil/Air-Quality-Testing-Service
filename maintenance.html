@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Status &amp; Maintenance | AeroPure Environmental Solutions</title>
+  <meta name="description" content="AeroPure's live operational system status, scheduled maintenance windows, diagnostic equipment calibrations, and 24/7 emergency dispatch availability.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    .status-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+      height: 100%;
+    }
+    .status-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+      border-color: var(--color-primary);
+    }
+    .status-card h4, .status-card h5, .status-card h3 {
+      color: #000000 !important;
+      font-weight: 700;
+    }
+    .pulse-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #10B981;
+      position: relative;
+    }
+    .pulse-dot::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.4);
+      animation: pulseAnim 2s infinite;
+    }
+    @keyframes pulseAnim {
+      0% { transform: scale(0.9); opacity: 0.8; }
+      50% { transform: scale(1.5); opacity: 0; }
+      100% { transform: scale(0.9); opacity: 0; }
+    }
+    .uptime-bar {
+      height: 6px;
+      border-radius: 3px;
+      background: #10B981;
+    }
+    .calib-icon-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background: var(--color-primary-subtle);
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="bg-body">
+
+  <!-- Primary Header & Navbar -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg site-navbar">
+      <div class="container-fluid px-xl-5 px-lg-4 px-3">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="assets/images/logo.svg" alt="AeroPure Solutions" class="site-logo-img">
+        </a>
+
+        <!-- Mobile Controls -->
+        <div class="d-flex align-items-center gap-2 d-lg-none">
+          <button class="nav-control-btn theme-toggle-btn" aria-label="Toggle Dark/Light Mode"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
+          <button class="nav-control-btn rtl-toggle-btn" aria-label="Toggle RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
+          <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavCollapse" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="primaryNavCollapse">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Home
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door"></i> Home 1 – General Services</a></li>
+                <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-wind"></i> Home 2 – Air Quality Niche</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link text-nowrap" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link text-nowrap" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link text-nowrap" href="contact.html">Contact Us</a></li>
+          </ul>
+
+          <div class="nav-actions d-flex align-items-center gap-2 flex-nowrap">
+            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
+            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
+            <a href="login.html" class="btn btn-outline-primary btn-sm px-2 px-xl-3 text-nowrap"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+
+            <div class="dropdown">
+              <button class="btn btn-primary btn-sm btn-pill dropdown-toggle shadow-sm text-nowrap" type="button" data-bs-toggle="dropdown">
+                <i class="bi bi-speedometer2"></i> Dashboard
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow-lg">
+                <li><h6 class="dropdown-header text-uppercase text-muted" style="font-size:0.75rem;">Portal Selection</h6></li>
+                <li><a class="dropdown-item" href="customer-dashboard.html"><i class="bi bi-person-badge text-primary"></i> Customer Dashboard</a></li>
+                <li><a class="dropdown-item" href="user-dashboard.html"><i class="bi bi-person text-info"></i> User Account Dashboard</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="admin-dashboard.html"><i class="bi bi-gear-wide-connected text-warning"></i> Admin Management Portal</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-wrapper" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&auto=format&fit=crop&q=80');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content py-lg-4 text-center">
+      <div class="max-w-xl mx-auto">
+        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-success bg-opacity-25 border border-success border-opacity-50 text-white mb-3">
+          <span class="pulse-dot"></span>
+          <span class="small fw-bold">All Systems &amp; Field Fleets Operational</span>
+        </div>
+        <h1 class="display-4 fw-bold text-white mb-3">System Status &amp; Infrastructure Maintenance</h1>
+        <p class="lead text-light mb-4">
+          Live operational status of our 24/7 emergency hazardous containment dispatch, AIHA laboratory telemetry pipelines, client booking portals, and equipment calibrations.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#live-services" class="btn btn-secondary btn-pill"><i class="bi bi-speedometer me-1"></i> Live Status Grid</a>
+          <a href="#equipment-calibration" class="btn btn-outline-light btn-pill"><i class="bi bi-tools me-1"></i> Calibration Standards</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Live Status Grid -->
+  <section class="section-py bg-body" id="live-services">
+    <div class="container">
+      <div class="text-center max-w-lg mx-auto mb-5">
+        <span class="badge-tag badge-primary-soft mb-2">Live Infrastructure Telemetry</span>
+        <h2 class="mb-2" style="color: #000000;">Operational Service Health</h2>
+        <p class="text-muted">Real-time status metrics updated continuously across all regional environmental diagnostic facilities.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Service 1 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="status-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge bg-success-subtle text-success fw-bold px-3 py-1 rounded-pill">
+                <i class="bi bi-check-circle-fill me-1"></i> Operational
+              </span>
+              <span class="small text-muted">99.98% Uptime</span>
+            </div>
+            <h5 class="mb-2">Client Portal &amp; Booking</h5>
+            <p class="small text-secondary mb-3">Online inspection scheduling, customer self-service dashboard, and digital report retrieval.</p>
+            <div class="d-flex align-items-center justify-content-between small text-muted pt-2 border-top">
+              <span>Latency: <strong class="text-success">38ms</strong></span>
+              <span class="pulse-dot"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="status-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge bg-success-subtle text-success fw-bold px-3 py-1 rounded-pill">
+                <i class="bi bi-check-circle-fill me-1"></i> Operational
+              </span>
+              <span class="small text-muted">100% Sync</span>
+            </div>
+            <h5 class="mb-2">AIHA Lab API Pipeline</h5>
+            <p class="small text-secondary mb-3">Direct encrypted synchronization of microbiology sample data and chain-of-custody certificates.</p>
+            <div class="d-flex align-items-center justify-content-between small text-muted pt-2 border-top">
+              <span>Turnaround: <strong class="text-primary">24h Express</strong></span>
+              <span class="pulse-dot"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="status-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge bg-success-subtle text-success fw-bold px-3 py-1 rounded-pill">
+                <i class="bi bi-check-circle-fill me-1"></i> Live 24/7
+              </span>
+              <span class="small text-muted">Active Fleet</span>
+            </div>
+            <h5 class="mb-2">24/7 Emergency Dispatch</h5>
+            <p class="small text-secondary mb-3">Immediate hotline dispatch for active water leaks, sewer backups, and toxic mold plume containment.</p>
+            <div class="d-flex align-items-center justify-content-between small text-muted pt-2 border-top">
+              <span>Hotline: <strong class="text-danger">(800) 555-PURE</strong></span>
+              <span class="pulse-dot"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="status-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge bg-success-subtle text-success fw-bold px-3 py-1 rounded-pill">
+                <i class="bi bi-check-circle-fill me-1"></i> Operational
+              </span>
+              <span class="small text-muted">IoT Active</span>
+            </div>
+            <h5 class="mb-2">Continuous IAQ Telemetry</h5>
+            <p class="small text-secondary mb-3">Commercial IoT air monitor streams tracking PM2.5, VOC levels, relative humidity, and air turnover rates.</p>
+            <div class="d-flex align-items-center justify-content-between small text-muted pt-2 border-top">
+              <span>Packet Loss: <strong class="text-success">0.00%</strong></span>
+              <span class="pulse-dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Scheduled Maintenance Windows -->
+  <section class="section-py bg-surface border-top border-bottom">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="badge-tag badge-primary-soft mb-2">Scheduled Maintenance Routine</span>
+          <h2 class="mb-3" style="color: #000000;">Routine Diagnostic System Calibration</h2>
+          <p class="text-secondary leading-relaxed mb-4">
+            To guarantee 100% scientific accuracy and zero data loss, AeroPure performs weekly automated database optimization and laboratory API synchronizations during low-volume hours.
+          </p>
+          <div class="p-3 rounded-4 bg-body border mb-3">
+            <div class="d-flex align-items-start gap-3">
+              <div class="calib-icon-badge bg-primary-subtle text-primary">
+                <i class="bi bi-clock-history"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1" style="color: #000000;">Upcoming Maintenance Window</h6>
+                <p class="small text-muted mb-0">Every Sunday from <strong>02:00 AM – 04:00 AM EST</strong>. During this brief 2-hour window, the customer portal remains accessible for viewing existing reports; new test order submissions are queued automatically.</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-3 rounded-4 bg-body border">
+            <div class="d-flex align-items-start gap-3">
+              <div class="calib-icon-badge bg-danger-subtle text-danger">
+                <i class="bi bi-telephone-inbound-fill"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1" style="color: #000000;">Zero Interruption for Emergency Dispatch</h6>
+                <p class="small text-muted mb-0">Our 24/7 live telephone emergency hotline at <a href="tel:18005557873" class="text-danger fw-bold">(800) 555-PURE</a> and mobile containment vehicles operate independently of cloud servers and are never interrupted.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 bg-body border shadow-sm">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <h5 class="fw-bold mb-0" style="color: #000000;"><i class="bi bi-calendar2-range text-primary me-2"></i>90-Day System Uptime History</h5>
+              <span class="badge bg-success-subtle text-success">99.98% Overall</span>
+            </div>
+            
+            <div class="mb-3">
+              <div class="d-flex justify-content-between small text-muted mb-1">
+                <span>October 2026</span>
+                <span class="text-success fw-bold">100.0% Operational</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-success" style="width: 100%;"></div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="d-flex justify-content-between small text-muted mb-1">
+                <span>September 2026</span>
+                <span class="text-success fw-bold">99.97% Operational (Scheduled DB patch)</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-success" style="width: 99.97%;"></div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="d-flex justify-content-between small text-muted mb-1">
+                <span>August 2026</span>
+                <span class="text-success fw-bold">100.0% Operational</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-success" style="width: 100%;"></div>
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <span class="pulse-dot"></span>
+                <span class="small text-muted">All regional API endpoints active</span>
+              </div>
+              <a href="contact.html" class="btn btn-sm btn-outline-primary btn-pill">Report An Issue</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Field Equipment Calibration & Standards -->
+  <section class="section-py bg-body" id="equipment-calibration">
+    <div class="container">
+      <div class="text-center max-w-lg mx-auto mb-5">
+        <span class="badge-tag badge-primary-soft mb-2">Scientific Quality Assurance</span>
+        <h2 class="mb-2" style="color: #000000;">Field Equipment Maintenance &amp; Calibration</h2>
+        <p class="text-muted">Certified indoor environmental diagnostics require rigorously calibrated diagnostic instrumentation.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="p-4 rounded-4 bg-surface border h-100">
+            <div class="calib-icon-badge mb-3">
+              <i class="bi bi-wind"></i>
+            </div>
+            <h5 class="mb-2">Zefon Bio-Pump Plus</h5>
+            <p class="small text-muted mb-3">Spore trap air sampling pumps calibrated every 30 days using NIST-traceable TSI 4146 Primary Flow Calibrators to guarantee exact 15.0 L/min flow volume.</p>
+            <span class="badge bg-secondary-subtle text-secondary small">NIST Calibrated: Oct 2026</span>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="p-4 rounded-4 bg-surface border h-100">
+            <div class="calib-icon-badge mb-3">
+              <i class="bi bi-camera-fill"></i>
+            </div>
+            <h5 class="mb-2">FLIR E8-XT Thermal Cameras</h5>
+            <p class="small text-muted mb-3">Infrared thermographic sensor arrays calibrated against black-body reference emitters to detect cold water intrusion hidden behind walls within &plusmn;0.05&deg;C.</p>
+            <span class="badge bg-secondary-subtle text-secondary small">Factory Validated: Sep 2026</span>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="p-4 rounded-4 bg-surface border h-100">
+            <div class="calib-icon-badge mb-3">
+              <i class="bi bi-moisture"></i>
+            </div>
+            <h5 class="mb-2">Extech Moisture Meters</h5>
+            <p class="small text-muted mb-3">Dual-depth pinless dielectric moisture meters verified daily using standardized resistance check blocks prior to on-site drywall and subfloor moisture mapping.</p>
+            <span class="badge bg-secondary-subtle text-secondary small">Daily Pre-Flight Check</span>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="p-4 rounded-4 bg-surface border h-100">
+            <div class="calib-icon-badge mb-3">
+              <i class="bi bi-activity"></i>
+            </div>
+            <h5 class="mb-2">Kanomax Laser Counters</h5>
+            <p class="small text-muted mb-3">Optical laser particle counters measuring 6 channels from 0.3&mu;m to 10.0&mu;m, calibrated annually against ISO 21501-4 certified mono-disperse polystyrene spheres.</p>
+            <span class="badge bg-secondary-subtle text-secondary small">ISO 21501-4 Certified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Home & Building Maintenance Recommendations -->
+  <section class="section-py bg-surface border-top">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-5">
+          <span class="badge-tag badge-primary-soft mb-2">Preventive Guidelines</span>
+          <h2 class="mb-3" style="color: #000000;">IAQ &amp; HVAC Facility Maintenance Checklist</h2>
+          <p class="text-secondary leading-relaxed mb-4">
+            Routine preventive property maintenance is the single most effective defense against toxic mold amplification, high humidity, and airborne dust mite allergens.
+          </p>
+          <a href="services.html" class="btn btn-primary btn-pill">
+            <i class="bi bi-shield-check me-1"></i> Explore Preventive Coating Services
+          </a>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 bg-body border">
+                <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-filter-circle text-primary me-2"></i>Filter Replacements</h6>
+                <p class="small text-muted mb-0">Replace HVAC filters with MERV 11 to 13 pleated media every 60-90 days (or 30 days in homes with shedding pets or recent remodeling).</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 bg-body border">
+                <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-droplet-half text-primary me-2"></i>Relative Humidity Control</h6>
+                <p class="small text-muted mb-0">Maintain indoor relative humidity between 30% and 50%. Relative humidity exceeding 60% triggers rapid fungal germination within 48 hours.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 bg-body border">
+                <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-sun text-primary me-2"></i>UV-C Germicidal Sanitation</h6>
+                <p class="small text-muted mb-0">Service in-duct UV-C germicidal air lamps every 12 months to neutralize bacterial biofilms on indoor AC evaporator coils.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 bg-body border">
+                <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-water text-primary me-2"></i>Sump Pump &amp; Crawlspace</h6>
+                <p class="small text-muted mb-0">Test sump pump float switches and inspect crawlspace 20-mil vapor barriers twice annually before rainy seasonal cycles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer bg-dark text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4 pb-4 border-bottom border-secondary border-opacity-25">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand mb-3">
+            <img src="assets/images/logo.svg" alt="AeroPure Solutions" class="footer-logo mb-2" style="filter: brightness(0) invert(1);">
+          </div>
+          <p class="text-muted small">AeroPure is an industry-leading indoor environmental diagnostics and certified mold remediation company.</p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" style="width:36px;height:36px;padding:0;line-height:34px;text-align:center;"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" style="width:36px;height:36px;padding:0;line-height:34px;text-align:center;"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" style="width:36px;height:36px;padding:0;line-height:34px;text-align:center;"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" style="width:36px;height:36px;padding:0;line-height:34px;text-align:center;"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Services</h5>
+          <ul class="list-unstyled">
+            <li><a href="services.html">Mold Inspection</a></li>
+            <li><a href="services.html">Mold Remediation</a></li>
+            <li><a href="services.html">Air Quality Testing</a></li>
+            <li><a href="services.html">Moisture Detection</a></li>
+            <li><a href="services.html">Preventive Coating</a></li>
+            <li><a href="services.html">Clearance Letters</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html">About Company</a></li>
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="blog.html">Environmental Blog</a></li>
+            <li><a href="contact.html">Contact &amp; Areas</a></li>
+            <li><a href="customer-dashboard.html">Customer Portal</a></li>
+            <li><a href="user-dashboard.html">User Account</a></li>
+            <li><a href="admin-dashboard.html">Admin Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h5>Air Health Alerts</h5>
+          <p class="text-muted small">Subscribe for seasonal mold warning alerts, EPA air index changes, and indoor humidity tips.</p>
+          <form class="newsletter-form mb-3">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required>
+              <button class="btn btn-primary" type="submit">Join</button>
+            </div>
+          </form>
+          <div class="p-3 rounded-3 bg-surface-elevated border border-secondary border-opacity-10">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-telephone-inbound-fill text-danger fs-4"></i>
+              <div>
+                <strong class="d-block text-white small">24/7 Emergency Dispatch</strong>
+                <a href="tel:18005557873" class="text-info fw-bold mb-0">(800) 555-PURE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 pt-3">
+        <p class="mb-0 text-muted">&copy; 2026 AeroPure Solutions, Inc. All rights reserved.</p>
+        <div class="d-flex gap-3 small text-muted">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="lab-disclaimer.html">Lab Disclaimer</a>
+          <a href="404.html">404 Page</a>
+          <a href="maintenance.html" class="text-primary fw-bold">Maintenance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

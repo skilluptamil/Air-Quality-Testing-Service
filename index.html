@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AeroPure - Certified Mold Remediation &amp; Air Quality Testing Services</title>
+  <meta name="description" content="Certified indoor environmental specialists providing expert mold inspection, mold remediation, air quality testing, and thermal moisture detection for homes and businesses.">
+  <meta name="keywords" content="mold remediation, mold inspection, indoor air quality testing, moisture detection, black mold removal, air purification, certified environmental testing">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Primary Header & Navbar -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg site-navbar">
+      <div class="container-fluid px-xl-5 px-lg-4 px-3">
+        <!-- Brand Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="assets/images/logo.svg" alt="AeroPure Solutions" class="site-logo-img">
+        </a>
+
+        <!-- Mobile Controls (Theme, RTL, Hamburger) -->
+        <div class="d-flex align-items-center gap-2 d-lg-none">
+          <button class="nav-control-btn theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+            <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+          </button>
+          <button class="nav-control-btn rtl-toggle-btn" aria-label="Toggle RTL/LTR" title="Toggle Text Direction">
+            <span class="rtl-badge-text nav-rtl-badge">RTL</span>
+          </button>
+          <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavCollapse" aria-controls="primaryNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <!-- Collapsible Navigation Menu -->
+        <div class="collapse navbar-collapse" id="primaryNavCollapse">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+            <!-- 1. Home Dropdown (Home 1 & Home 2) -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Home
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="index.html"><i class="bi bi-house-door"></i> Home 1 – General Services</a></li>
+                <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-wind"></i> Home 2 – Air Quality Niche</a></li>
+              </ul>
+            </li>
+
+            <!-- 2. About Us -->
+            <li class="nav-item">
+              <a class="nav-link text-nowrap" href="about.html">About Us</a>
+            </li>
+
+            <!-- 3. Services Link -->
+            <li class="nav-item">
+              <a class="nav-link text-nowrap" href="services.html">Services</a>
+            </li>
+
+            <!-- 4. Pricing -->
+            <li class="nav-item">
+              <a class="nav-link" href="pricing.html">Pricing</a>
+            </li>
+
+            <!-- 5. Blog -->
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+
+            <!-- 6. Contact Us -->
+            <li class="nav-item">
+              <a class="nav-link text-nowrap" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+
+          <!-- Right Action Items: Dashboard, Auth, Controls -->
+          <div class="nav-actions d-flex align-items-center gap-2 flex-nowrap">
+            <!-- 8. RTL Toggle (Desktop) -->
+            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR">
+              <span class="rtl-badge-text nav-rtl-badge">RTL</span>
+            </button>
+
+            <!-- 9. Dark/Light Mode Toggle (Desktop) -->
+            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme">
+              <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+            </button>
+
+            <!-- 10. Login -->
+            <a href="login.html" class="btn btn-outline-primary btn-sm px-2 px-xl-3 text-nowrap">
+              <i class="bi bi-box-arrow-in-right"></i> Login
+            </a>
+
+            <!-- 7. Dashboard Highlighted Button with Dropdown -->
+            <div class="dropdown">
+              <button class="btn btn-primary btn-sm btn-pill dropdown-toggle shadow-sm text-nowrap" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-speedometer2"></i> Dashboard
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow-lg">
+                <li><h6 class="dropdown-header text-uppercase text-muted" style="font-size:0.75rem;">Portal Selection</h6></li>
+                <li><a class="dropdown-item" href="customer-dashboard.html"><i class="bi bi-person-badge text-primary"></i> Customer Dashboard</a></li>
+                <li><a class="dropdown-item" href="user-dashboard.html"><i class="bi bi-person text-info"></i> User Account Dashboard</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="admin-dashboard.html"><i class="bi bi-gear-wide-connected text-warning"></i> Admin Management Portal</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================================
+       PAGE 1: HOME PAGE 1 – GENERAL SERVICES LANDING
+       Section 1: Hero Section with Unique Background Image & Strong Headline
+       ========================================================================= -->
+  <section class="hero-wrapper" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&auto=format&fit=crop&q=80');">
+    <div class="hero-overlay"></div>
+    <div class="container-fluid px-xl-5 px-lg-4 px-3 hero-content py-lg-5">
+      <div class="row align-items-center g-4 g-xl-5">
+        <div class="col-lg-7">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-white bg-opacity-10 text-white mb-3 border border-white border-opacity-20">
+            <i class="bi bi-patch-check-fill text-warning"></i>
+            <span class="small fw-semibold">Certified Indoor Environmental Professionals • IICRC S520 Standard</span>
+          </div>
+          <h1 class="display-4 fw-bold text-white mb-3">
+            Breathe Cleaner Air. Live in a <span class="text-info">Mold-Free</span> Sanctuary.
+          </h1>
+          <p class="lead text-light mb-4">
+            Protect your family and building occupants with scientific mold inspection, third-party AIHA-accredited lab testing, and safe, non-toxic remediation guaranteed to pass post-clearance testing.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="customer-dashboard.html#tab-schedule" class="btn btn-secondary btn-lg btn-pill shadow">
+              <i class="bi bi-calendar-check-fill"></i> Book an Inspection
+            </a>
+            <a href="services.html" class="btn btn-outline-light btn-lg btn-pill">
+              <i class="bi bi-arrow-right-circle"></i> Explore Services
+            </a>
+          </div>
+
+          <!-- Trust Badges Under Hero (Proper Alignment & Baseline) -->
+          <div class="hero-trust-row mt-5 pt-3 border-top border-white border-opacity-20 text-white">
+            <div class="hero-trust-item">
+              <div class="hero-trust-icon">
+                <i class="bi bi-shield-check text-warning"></i>
+              </div>
+              <div class="hero-trust-text">
+                <strong class="hero-trust-title">100% Clearance</strong>
+                <span class="hero-trust-desc">Guaranteed pass rate</span>
+              </div>
+            </div>
+
+            <div class="hero-trust-item">
+              <div class="hero-trust-icon">
+                <i class="bi bi-lightning-charge-fill text-info"></i>
+              </div>
+              <div class="hero-trust-text">
+                <strong class="hero-trust-title">24-Hour Dispatch</strong>
+                <span class="hero-trust-desc">Immediate emergency team</span>
+              </div>
+            </div>
+
+            <div class="hero-trust-item">
+              <div class="hero-trust-icon">
+                <i class="bi bi-droplet-half text-success"></i>
+              </div>
+              <div class="hero-trust-text">
+                <strong class="hero-trust-title">Eco Botanicals</strong>
+                <span class="hero-trust-desc">Pet &amp; child safe formula</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Booking Form Card on Hero -->
+        <div class="col-lg-5">
+          <div class="card border-0 shadow-2xl rounded-4 p-4 bg-surface text-secondary">
+            <div class="card-body p-1">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge bg-primary-subtle text-primary fw-bold text-uppercase px-3 py-2 rounded-pill">Fast Scheduling</span>
+                <span class="text-success small fw-semibold"><i class="bi bi-dot fs-5"></i> Active Dispatchers</span>
+              </div>
+              <h4 class="card-title text-primary mb-2">Request an Inspection</h4>
+              <p class="text-muted small mb-4">Book your certified diagnostic mold and air test in under 60 seconds.</p>
+
+              <form action="customer-dashboard.html" method="GET">
+                <div class="mb-3">
+                  <label class="form-label small fw-bold">Service Needed</label>
+                  <select class="form-select" required>
+                    <option value="inspection" selected>Comprehensive Mold Inspection</option>
+                    <option value="air-test">Indoor Air Quality (VOC &amp; Spore Count)</option>
+                    <option value="remediation">Emergency Mold Removal &amp; Sanitization</option>
+                    <option value="moisture">Thermal Moisture Intrusion Scan</option>
+                  </select>
+                </div>
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <label class="form-label small fw-bold">Property Type</label>
+                    <select class="form-select">
+                      <option>Residential Home</option>
+                      <option>Apartment / Condo</option>
+                      <option>Commercial Office</option>
+                      <option>School / Healthcare</option>
+                    </select>
+                  </div>
+                  <div class="col-6">
+                    <label class="form-label small fw-bold">Zip Code</label>
+                    <input type="text" class="form-control" data-type="zip" inputmode="numeric" placeholder="e.g. 90210" pattern="[0-9]{5}" maxlength="5" required>
+                    <div class="invalid-feedback">Numbers only (5-digit ZIP).</div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label small fw-bold">Preferred Inspection Date</label>
+                  <input type="date" class="form-control" id="heroQuickDate" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">
+                  <i class="bi bi-search me-1"></i> Check Available Time Slots
+                </button>
+              </form>
+              <div class="text-center mt-3">
+                <small class="text-muted"><i class="bi bi-lock-fill"></i> Free estimates for remediation • No obligation</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 2: Trusted Service Highlights and Company Statistics
+       ========================================================================= -->
+  <section class="py-5 bg-surface border-bottom">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-lg-3">
+          <div class="p-3">
+            <h3 class="display-5 fw-bold text-primary mb-1">14,200+</h3>
+            <p class="fw-semibold text-primary mb-0">Inspections Completed</p>
+            <small class="text-muted">Homes, clinics, &amp; offices tested</small>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="p-3">
+            <h3 class="display-5 fw-bold text-success mb-1">99.8%</h3>
+            <p class="fw-semibold text-primary mb-0">Clearance Pass Rate</p>
+            <small class="text-muted">Certified third-party lab approved</small>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="p-3">
+            <h3 class="display-5 fw-bold text-info mb-1">18+</h3>
+            <p class="fw-semibold text-primary mb-0">Years Field Experience</p>
+            <small class="text-muted">Licensed IICRC Master Restorers</small>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="p-3">
+            <h3 class="display-5 fw-bold text-warning mb-1">45 Min</h3>
+            <p class="fw-semibold text-primary mb-0">Emergency Response</p>
+            <small class="text-muted">Rapid containment deployment</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 3: Core Services Grid
+       ========================================================================= -->
+  <section class="section-py bg-body">
+    <div class="container">
+      <div class="text-center max-w-xl mx-auto section-title mb-5">
+        <span class="badge-tag badge-primary-soft">Certified Environmental Solutions</span>
+        <h2 class="mt-2">Our Core Health &amp; Restoration Services</h2>
+        <p class="text-muted">We diagnose the microscopic causes of contaminated air, eliminate toxic spores at the root, and restore safe breathing conditions.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Service 1: Mold Inspection -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-icon-box">
+              <i class="bi bi-search"></i>
+            </div>
+            <h4>Mold Inspection</h4>
+            <p class="text-muted">Comprehensive visual assessments, cavity wall checks, and microscopic spore sampling to locate visible and hidden mold colonies.</p>
+            <ul class="list-unstyled mb-4 small text-secondary">
+              <li><i class="bi bi-check2 text-success me-2"></i> Thermal imaging moisture scan</li>
+              <li><i class="bi bi-check2 text-success me-2"></i> Air cassette spore-trap sampling</li>
+              <li><i class="bi bi-check2 text-success me-2"></i> Certified lab clearance report</li>
+            </ul>
+            <div class="mt-auto d-flex gap-2">
+              <a href="service-details.html?service=mold-inspection" class="btn btn-outline-primary btn-sm flex-grow-1">View Details</a>
+              <a href="customer-dashboard.html#tab-schedule" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2: Mold Remediation -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-icon-box">
+              <i class="bi bi-shield-x"></i>
+            </div>
+            <h4>Mold Remediation</h4>
+            <p class="text-muted">Hospital-grade containment, negative air pressure scrubbing, and antimicrobial sterilization following strict IICRC S520 guidelines.</p>
+            <ul class="list-unstyled mb-4 small text-secondary">
+              <li><i class="bi bi-check2 text-success me-2"></i> HEPA 500 air scrubbers</li>
+              <li><i class="bi bi-check2 text-success me-2"></i> Botanical antimicrobial fogging</li>
+              <li><i class="bi bi-check2 text-success me-2"></i> 100% pass guarantee warranty</li>
+            </ul>
+            <div class="mt-auto d-flex gap-2">
+              <a href="service-details.html?service=mold-remediation" class="btn btn-outline-primary btn-sm flex-grow-1">View Details</a>
+              <a href="customer-dashboard.html#tab-schedule" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3: Air Quality Testing -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-icon-box">
+              <i class="bi bi-wind"></i>
+            </div>
+            <h4>Air Quality Testing</h4>
+            <p class="text-muted">Quantitative analysis of airborne allergens, volatile organic compounds (VOCs), formaldehyde, carbon monoxide, and PM2.5 particulates.</p>
+            <ul class="list-unstyled mb-4 small text-secondary">
+              <li><i class="bi bi-check2 text-success me-2"></i> Laser particle counting</li>
+              <li><i class="bi bi-check2 text-success me-2"></i> Toxic chemical &amp; VOC screening</li>
+              <li><i class="bi bi-check2 text-success me-2"></i> Actionable indoor health scorecard</li>
+            </ul>
+            <div class="mt-auto d-flex gap-2">
+              <a href="service-details.html?service=air-quality" class="btn btn-outline-primary btn-sm flex-grow-1">View Details</a>
+              <a href="customer-dashboard.html#tab-schedule" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4: Moisture Detection -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-icon-box">
+              <i class="bi bi-moisture"></i>
+            </div>
+            <h4>Moisture Detection</h4>
+            <p class="text-muted">Pinpoint hidden pipe leaks, roof seepage, foundation dampness, and condensation behind walls before mold begins spreading.</p>
+            <ul class="list-unstyled mb-4 small text-secondary">
+              <li><i class="bi bi-check2 text-success me-2"></i> Non-destructive FLIR thermal imaging</li>
+              <li><i class="bi bi-check2 text-success me-2"></i> Penetrating &amp; surface moisture meters</li>
+              <li><i class="bi bi-check2 text-success me-2"></i> Structural drying plans</li>
+            </ul>
+            <div class="mt-auto d-flex gap-2">
+              <a href="service-details.html?service=moisture-detection" class="btn btn-outline-primary btn-sm flex-grow-1">View Details</a>
+              <a href="customer-dashboard.html#tab-schedule" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5: Preventive Treatment -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-icon-box">
+              <i class="bi bi-shield-plus"></i>
+            </div>
+            <h4>Preventive Treatment</h4>
+            <p class="text-muted">Long-lasting antimicrobial surface sealants, crawl space encapsulation, and dehumidification engineering to prevent regrowth.</p>
+            <ul class="list-unstyled mb-4 small text-secondary">
+              <li><i class="bi bi-check2 text-success me-2"></i> 10-Year mold-resistant barrier seal</li>
+              <li><i class="bi bi-check2 text-success me-2"></i> Crawlspace vapor encapsulation</li>
+              <li><i class="bi bi-check2 text-success me-2"></i> HVAC ultraviolet air purification</li>
+            </ul>
+            <div class="mt-auto d-flex gap-2">
+              <a href="service-details.html?service=preventive-treatment" class="btn btn-outline-primary btn-sm flex-grow-1">View Details</a>
+              <a href="customer-dashboard.html#tab-schedule" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 6: Post-Remediation Clearance -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-icon-box">
+              <i class="bi bi-file-earmark-medical"></i>
+            </div>
+            <h4>Clearance Testing</h4>
+            <p class="text-muted">Independent third-party verification confirming that spore levels have dropped to safe outdoor baselines prior to reconstruction.</p>
+            <ul class="list-unstyled mb-4 small text-secondary">
+              <li><i class="bi bi-check2 text-success me-2"></i> Unbiased third-party laboratory</li>
+              <li><i class="bi bi-check2 text-success me-2"></i> Real estate certified documentation</li>
+              <li><i class="bi bi-check2 text-success me-2"></i> Official Certificate of Sanitization</li>
+            </ul>
+            <div class="mt-auto d-flex gap-2">
+              <a href="service-details.html?service=clearance-testing" class="btn btn-outline-primary btn-sm flex-grow-1">View Details</a>
+              <a href="customer-dashboard.html#tab-schedule" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 4: Why Choose Us Section with Relevant Images & Service Benefits
+       ========================================================================= -->
+  <section class="section-py bg-surface border-top border-bottom">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="hero-image-frame position-relative">
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1000&auto=format&fit=crop&q=80" alt="Certified Technician Conducting Mold Inspection" class="rounded-4 img-fluid">
+            <div class="hero-floating-card">
+              <div class="card-icon-box mb-0" style="width:46px;height:46px;font-size:1.25rem;">
+                <i class="bi bi-award-fill"></i>
+              </div>
+              <div>
+                <strong class="d-block text-primary">IICRC Master Restorers</strong>
+                <small class="text-muted">License #88219 • Bonded &amp; Insured</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="badge-tag badge-primary-soft mb-2">The AeroPure Difference</span>
+          <h2 class="mb-4">Why Homeowners &amp; Property Managers Trust Us</h2>
+          <p class="text-muted mb-4">Unlike general cleaning crews or contractors, we approach mold as an environmental biohazard using laboratory science, advanced diagnostic meters, and hospital-grade containment.</p>
+
+          <div class="d-flex gap-3 mb-4">
+            <div class="card-icon-box flex-shrink-0" style="width:48px;height:48px;font-size:1.35rem;">
+              <i class="bi bi-camera-fill"></i>
+            </div>
+            <div>
+              <h5 class="mb-1">Non-Invasive Infrared Moisture Mapping</h5>
+              <p class="text-muted small mb-0">We locate the hidden moisture source behind drywall and subfloors without needlessly knocking down your walls.</p>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 mb-4">
+            <div class="card-icon-box flex-shrink-0" style="width:48px;height:48px;font-size:1.35rem;">
+              <i class="bi bi-funnel-fill"></i>
+            </div>
+            <div>
+              <h5 class="mb-1">HEPA Negative Pressure Containment</h5>
+              <p class="text-muted small mb-0">We erect sealed zippered containment chambers so disturbed spores never migrate to unaffected rooms during remediation.</p>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 mb-4">
+            <div class="card-icon-box flex-shrink-0" style="width:48px;height:48px;font-size:1.35rem;">
+              <i class="bi bi-file-earmark-medical-fill"></i>
+            </div>
+            <div>
+              <h5 class="mb-1">Accredited Third-Party Lab Reports</h5>
+              <p class="text-muted small mb-0">Every air and surface sample is analyzed by independent AIHA-LAP certified laboratories for unbiased, legally binding results.</p>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3">
+            <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+            <a href="contact.html" class="btn btn-outline-primary">Speak With a Specialist</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 5: Our Inspection & Remediation Process
+       ========================================================================= -->
+  <section class="section-py bg-body">
+    <div class="container">
+      <div class="text-center section-title mb-5">
+        <span class="badge-tag badge-primary-soft">Transparent &amp; Methodical</span>
+        <h2 class="mt-2">Our 4-Step Scientific Process</h2>
+        <p class="text-muted">From initial thermal scan to final clearance verification, here is how we restore your indoor sanctuary.</p>
+      </div>
+
+      <div class="row g-4 position-relative">
+        <!-- Step 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="step-item card-custom text-center p-4">
+            <div class="step-number">1</div>
+            <h5>Thermal &amp; Moisture Scan</h5>
+            <p class="text-muted small mb-0">We inspect all suspect zones with FLIR infrared cameras and radio-frequency hygrometers to pinpoint hidden moisture intruding into drywall or insulation.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="step-item card-custom text-center p-4">
+            <div class="step-number">2</div>
+            <h5>Air &amp; Surface Sampling</h5>
+            <p class="text-muted small mb-0">Calibrated air pumps capture spore volumes inside vs. outdoor baseline air. Tape lifts and swabs analyze active fungal species like Stachybotrys.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="step-item card-custom text-center p-4">
+            <div class="step-number">3</div>
+            <h5>Containment &amp; Scrubbing</h5>
+            <p class="text-muted small mb-0">We construct 6-mil poly containment barriers, deploy commercial HEPA air scrubbers to capture 99.97% of particulates, and apply safe botanical biocides.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="step-item card-custom text-center p-4">
+            <div class="step-number">4</div>
+            <h5>Post-Clearance Guarantee</h5>
+            <p class="text-muted small mb-0">Independent testing verifies that spore counts are well within safe, healthy guidelines before providing an official Certificate of Clearance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 6: Customer Testimonials and Trust Indicators
+       ========================================================================= -->
+  <section class="section-py bg-surface border-top border-bottom">
+    <div class="container">
+      <div class="text-center section-title mb-5">
+        <span class="badge-tag badge-primary-soft">Real Client Experiences</span>
+        <h2 class="mt-2">What Our Clients Say About Their Air</h2>
+        <p class="text-muted">Over 14,000 homes, schools, and commercial offices have trusted AeroPure for safe breathing environments.</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Testimonial 1 -->
+        <div class="col-lg-4 d-flex">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="testimonial-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-text fst-italic">
+                "Our 4-year-old son had chronic coughing and morning allergy attacks that puzzled his doctor. AeroPure's air test found elevated Aspergillus spores inside the HVAC duct. After their remediation, his symptoms disappeared completely within a week!"
+              </p>
+            </div>
+            <div class="testimonial-user">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80" alt="Dr. Amanda Hayes" class="testimonial-avatar">
+              <div class="testimonial-user-info">
+                <strong class="d-block text-primary">Dr. Amanda Hayes</strong>
+                <small class="text-muted">Pediatrician &amp; Homeowner • Dallas, TX</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="col-lg-4 d-flex">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="testimonial-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-text fst-italic">
+                "As a commercial property manager handling a 40,000 sq ft office building, a burst water pipe on the 3rd floor was an emergency. AeroPure deployed negative air scrubbers in under 45 minutes and saved us over $80,000 in tenant displacement claims."
+              </p>
+            </div>
+            <div class="testimonial-user">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80" alt="Michael Torres" class="testimonial-avatar">
+              <div class="testimonial-user-info">
+                <strong class="d-block text-primary">Michael Torres</strong>
+                <small class="text-muted">Senior Asset Manager • Metro Properties</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="col-lg-4 d-flex">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="testimonial-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-text fst-italic">
+                "During our home purchase escrow, the general home inspector flagged a musty smell in the crawlspace. AeroPure did an emergency inspection, gave us a detailed lab report in 24 hours, and completed remediation so our closing was never delayed!"
+              </p>
+            </div>
+            <div class="testimonial-user">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80" alt="Rachel &amp; Thomas K." class="testimonial-avatar">
+              <div class="testimonial-user-info">
+                <strong class="d-block text-primary">Rachel &amp; Thomas K.</strong>
+                <small class="text-muted">Homeowners • Seattle, WA</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Badges Bar -->
+      <div class="mt-5 pt-4 text-center">
+        <p class="text-uppercase text-muted fw-bold small mb-4" style="letter-spacing:1.5px;">Accredited By Leading Environmental Authorities</p>
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 gap-md-5 opacity-75">
+          <div class="fw-bold fs-5 text-secondary"><i class="bi bi-award text-success me-2"></i>IICRC S520 Certified</div>
+          <div class="fw-bold fs-5 text-secondary"><i class="bi bi-shield-check text-primary me-2"></i>EPA Lead-Safe Certified</div>
+          <div class="fw-bold fs-5 text-secondary"><i class="bi bi-check-circle text-info me-2"></i>ACAC Council-certified</div>
+          <div class="fw-bold fs-5 text-secondary"><i class="bi bi-building-check text-warning me-2"></i>AIHA-LAP Laboratory Partner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 7: Final Call-To-Action and Complete Footer
+       ========================================================================= -->
+  <section class="section-py text-white position-relative" style="background: linear-gradient(135deg, #0F172A 0%, #0F766E 100%);">
+    <div class="container text-center py-4">
+      <div class="max-w-xl mx-auto">
+        <span class="hero-page-badge mb-3"><i class="bi bi-shield-check text-warning"></i> 24/7 Immediate Help Available</span>
+        <h2 class="display-5 fw-bold text-white mb-3">Suspect Mold or Poor Air Quality in Your Building?</h2>
+        <p class="lead text-white-50 mb-4">Don't wait until mold spores spread into your air conditioning and cause irreversible structural damage or health complications.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="customer-dashboard.html#tab-schedule" class="btn btn-secondary btn-lg btn-pill shadow">
+            <i class="bi bi-calendar-check-fill me-1"></i> Schedule Inspection Now
+          </a>
+          <a href="tel:18005557873" class="btn btn-outline-light btn-lg btn-pill">
+            <i class="bi bi-telephone-fill me-1"></i> Call (800) 555-PURE
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Standard Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Col 1: About & Info -->
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="d-inline-block mb-3">
+            <img src="assets/images/logo-dark.svg" alt="AeroPure" class="footer-logo-img" height="48">
+          </a>
+          <p class="text-muted small pe-lg-4">
+            AeroPure is an industry-leading indoor environmental diagnostics and certified mold remediation company. We utilize hospital-grade HEPA filtration, FLIR thermal imaging, and AIHA-accredited lab analysis.
+          </p>
+          <div class="d-flex mt-3">
+            <a href="#" class="footer-social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-link" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="footer-social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Services -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Services</h5>
+          <ul class="list-unstyled">
+            <li><a href="service-details.html?service=mold-inspection">Mold Inspection</a></li>
+            <li><a href="service-details.html?service=mold-remediation">Mold Remediation</a></li>
+            <li><a href="service-details.html?service=air-quality">Air Quality Testing</a></li>
+            <li><a href="service-details.html?service=moisture-detection">Moisture Detection</a></li>
+            <li><a href="service-details.html?service=preventive-treatment">Preventive Coating</a></li>
+            <li><a href="service-details.html?service=clearance-testing">Clearance Letters</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Links & Dashboards -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html">About Company</a></li>
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="blog.html">Environmental Blog</a></li>
+            <li><a href="contact.html">Contact &amp; Areas</a></li>
+            <li><a href="customer-dashboard.html">Customer Portal</a></li>
+            <li><a href="user-dashboard.html">User Account</a></li>
+            <li><a href="admin-dashboard.html">Admin Portal</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & 24/7 Dispatch -->
+        <div class="col-lg-4 col-md-6">
+          <h5>Air Health Alerts</h5>
+          <p class="text-muted small">Subscribe for seasonal mold warning alerts, EPA air index changes, and indoor humidity tips.</p>
+          <form class="newsletter-form mb-3">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required>
+              <button class="btn btn-primary" type="submit">Join</button>
+            </div>
+          </form>
+          <div class="p-3 rounded-3 bg-surface-elevated border border-secondary border-opacity-10">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-telephone-inbound-fill text-danger fs-4"></i>
+              <div>
+                <strong class="d-block text-white small">24/7 Emergency Dispatch</strong>
+                <a href="tel:18005557873" class="text-info fw-bold mb-0">(800) 555-PURE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <p class="mb-0 text-muted">&copy; 2026 AeroPure Solutions, Inc. All rights reserved. Multipurpose Environmental Template.</p>
+        <div class="d-flex gap-3 small text-muted">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="lab-disclaimer.html">Lab Disclaimer</a>
+          <a href="404.html">404 Page</a>
+          <a href="maintenance.html">Maintenance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Set default min date for quick hero date
+    const heroDate = document.getElementById('heroQuickDate');
+    if (heroDate) {
+      heroDate.min = new Date().toISOString().split('T')[0];
+    }
+  </script>
+</body>
+</html>

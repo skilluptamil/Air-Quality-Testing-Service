@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard - AeroPure Environmental Services</title>
+  <meta name="description" content="Customer portal for managing mold inspection appointments, live remediation job tracking, and AIHA-accredited air quality lab reports.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Demo Notice Banner -->
+  <div class="bg-warning text-dark px-3 py-1 text-center small fw-semibold">
+    <i class="bi bi-info-circle-fill me-1"></i> Demo Customer Portal: All scheduling, job tracking, and lab reports are simulated demo data.
+  </div>
+
+  <div class="dashboard-layout">
+    <!-- =========================================================================
+         CUSTOMER DASHBOARD SIDEBAR (10 Menu Items)
+         ========================================================================= -->
+    <aside class="dashboard-sidebar">
+      <div class="dashboard-sidebar-header">
+        <a href="index.html" class="d-flex align-items-center">
+          <img src="assets/images/logo.svg" alt="AeroPure" class="site-logo-img" style="height:36px;">
+        </a>
+        <button type="button" class="btn-close d-lg-none" id="sidebarCloseBtn" aria-label="Close sidebar"></button>
+      </div>
+
+      <div class="dashboard-sidebar-menu">
+        <div class="dashboard-menu-heading">Customer Portal</div>
+        
+        <!-- 1. Overview -->
+        <a href="#tab-overview" class="dashboard-nav-link active" data-target-tab="tab-overview">
+          <i class="bi bi-speedometer2"></i> Overview
+        </a>
+
+        <!-- 2. My Appointments -->
+        <a href="#tab-appointments" class="dashboard-nav-link" data-target-tab="tab-appointments">
+          <i class="bi bi-calendar2-week"></i> My Appointments
+        </a>
+
+        <!-- 3. Schedule Inspection -->
+        <a href="#tab-schedule" class="dashboard-nav-link" data-target-tab="tab-schedule">
+          <i class="bi bi-calendar-plus"></i> Schedule Inspection
+        </a>
+
+        <!-- 4. Remediation Job Status -->
+        <a href="#tab-remediation" class="dashboard-nav-link" data-target-tab="tab-remediation">
+          <i class="bi bi-shield-check"></i> Remediation Job Status
+        </a>
+
+        <!-- 5. Air Quality Reports -->
+        <a href="#tab-reports" class="dashboard-nav-link" data-target-tab="tab-reports">
+          <i class="bi bi-file-earmark-medical"></i> Air Quality Reports
+        </a>
+
+        <!-- 6. Service History -->
+        <a href="#tab-history" class="dashboard-nav-link" data-target-tab="tab-history">
+          <i class="bi bi-clock-history"></i> Service History
+        </a>
+
+        <!-- 7. Payments and Invoices -->
+        <a href="#tab-payments" class="dashboard-nav-link" data-target-tab="tab-payments">
+          <i class="bi bi-receipt"></i> Payments &amp; Invoices
+        </a>
+
+        <!-- 8. Messages and Support -->
+        <a href="#tab-messages" class="dashboard-nav-link" data-target-tab="tab-messages">
+          <i class="bi bi-chat-left-dots"></i> Messages &amp; Support
+        </a>
+
+        <!-- 9. Customer Profile -->
+        <a href="#tab-profile" class="dashboard-nav-link" data-target-tab="tab-profile">
+          <i class="bi bi-person-gear"></i> Customer Profile
+        </a>
+
+        <div class="dashboard-menu-heading mt-3">Account Session</div>
+        <!-- 10. Logout -->
+        <a href="login.html" class="dashboard-nav-link text-danger">
+          <i class="bi bi-box-arrow-left"></i> Logout
+        </a>
+      </div>
+
+      <div class="dashboard-sidebar-footer">
+        <div class="d-flex align-items-center gap-2">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Sarah Jenkins" class="rounded-circle" style="width:38px;height:38px;object-fit:cover;">
+          <div class="overflow-hidden">
+            <strong class="d-block text-primary small text-truncate">Rachel Keller</strong>
+            <small class="text-muted d-block text-truncate">Customer ID: #AP-8821</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- =========================================================================
+         CUSTOMER DASHBOARD MAIN CONTENT
+         ========================================================================= -->
+    <main class="dashboard-main">
+      <!-- Topbar with Theme, RTL, and User Controls -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-sm btn-light border d-lg-none" id="sidebarToggleBtn" aria-label="Toggle Navigation">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <div>
+            <h5 class="mb-0 text-primary fw-bold" id="dashboardHeading">Customer Control Center</h5>
+            <small class="text-muted d-none d-sm-block">Environmental Service Tracking &amp; Lab Certificates</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <a href="index.html" class="btn btn-sm btn-outline-primary d-none d-md-inline-flex">
+            <i class="bi bi-house-door"></i> Back to Main Site
+          </a>
+          <!-- RTL Toggle -->
+          <button class="nav-control-btn rtl-toggle-btn" aria-label="Toggle RTL/LTR" title="Toggle RTL/LTR">
+            <span class="rtl-badge-text nav-rtl-badge">RTL</span>
+          </button>
+          <!-- Theme Toggle -->
+          <button class="nav-control-btn theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Theme">
+            <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+          </button>
+          <!-- Switch to User / Admin Portals -->
+          <div class="dropdown">
+            <button class="btn btn-sm btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              <i class="bi bi-arrow-left-right"></i> Portals
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item active" href="customer-dashboard.html"><i class="bi bi-person-badge text-primary"></i> Customer Dashboard</a></li>
+              <li><a class="dropdown-item" href="user-dashboard.html"><i class="bi bi-person text-info"></i> User Account Dashboard</a></li>
+              <li><a class="dropdown-item" href="admin-dashboard.html"><i class="bi bi-gear-wide-connected text-warning"></i> Admin Portal</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Container -->
+      <div class="dashboard-content-body">
+        
+        <!-- =====================================================================
+             TAB 1: OVERVIEW (4 Specific KPI Cards + Chart + Active Alert)
+             ===================================================================== -->
+        <section id="tab-overview" class="dashboard-tab-content">
+          <!-- 4 Required Overview Cards -->
+          <!-- 4 Required Overview Cards (Clickable to Direct Tab) -->
+          <div class="row g-4 mb-4">
+            <!-- Card 1: Upcoming Inspections -->
+            <div class="col-sm-6 col-xl-3">
+              <div class="metric-card card-clickable" data-target-tab="tab-appointments" role="button" tabindex="0" title="View Upcoming & Past Appointments">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Upcoming Inspections</span>
+                    <div class="metric-val" id="kpiUpcomingCount">2</div>
+                  </div>
+                  <div class="metric-card-icon bg-primary-subtle text-primary">
+                    <i class="bi bi-calendar2-check"></i>
+                  </div>
+                </div>
+                <small class="text-success fw-semibold"><i class="bi bi-clock-fill"></i> Next: Tomorrow, 09:30 AM</small>
+                <i class="bi bi-chevron-right metric-card-chevron"></i>
+              </div>
+            </div>
+
+            <!-- Card 2: Completed Inspections -->
+            <div class="col-sm-6 col-xl-3">
+              <div class="metric-card card-clickable" data-target-tab="tab-history" role="button" tabindex="0" title="View Diagnostic & Remediation History">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Completed Inspections</span>
+                    <div class="metric-val">4</div>
+                  </div>
+                  <div class="metric-card-icon bg-success-subtle text-success">
+                    <i class="bi bi-check-circle"></i>
+                  </div>
+                </div>
+                <small class="text-muted">All signed with chain of custody</small>
+                <i class="bi bi-chevron-right metric-card-chevron"></i>
+              </div>
+            </div>
+
+            <!-- Card 3: Active Remediation Jobs -->
+            <div class="col-sm-6 col-xl-3">
+              <div class="metric-card card-clickable" data-target-tab="tab-remediation" role="button" tabindex="0" title="View Live Job Tracker">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Active Jobs</span>
+                    <div class="metric-val">1</div>
+                  </div>
+                  <div class="metric-card-icon bg-warning-subtle text-warning">
+                    <i class="bi bi-shield-shaded"></i>
+                  </div>
+                </div>
+                <small class="text-warning fw-semibold"><i class="bi bi-activity"></i> In Progress: Step 3 (HEPA Scrub)</small>
+                <i class="bi bi-chevron-right metric-card-chevron"></i>
+              </div>
+            </div>
+
+            <!-- Card 4: Available Air Quality Reports -->
+            <div class="col-sm-6 col-xl-3">
+              <div class="metric-card card-clickable" data-target-tab="tab-reports" role="button" tabindex="0" title="View Official Lab Certificates">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Lab Reports</span>
+                    <div class="metric-val">3</div>
+                  </div>
+                  <div class="metric-card-icon bg-info-subtle text-info">
+                    <i class="bi bi-file-earmark-medical"></i>
+                  </div>
+                </div>
+                <small class="text-primary fw-semibold"><i class="bi bi-download"></i> Latest: Clearance Passed</small>
+                <i class="bi bi-chevron-right metric-card-chevron"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Remediation Live Banner -->
+          <div class="p-4 rounded-4 bg-surface border mb-4 shadow-sm">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+              <div>
+                <span class="badge bg-warning text-dark mb-1"><i class="bi bi-broadcast me-1"></i> Live Job: #JOB-9402</span>
+                <h5 class="mb-0 text-primary">Master Bathroom &amp; HVAC Plenums Remediation</h5>
+                <small class="text-muted"><i class="bi bi-geo-alt"></i> 742 Evergreen Terrace, Springfield • Lead Tech: Elena Rostova (IICRC #88219)</small>
+              </div>
+              <button type="button" class="btn btn-sm btn-outline-primary" data-target-tab="tab-remediation">
+                <i class="bi bi-shield-check me-1"></i> View Full Live Tracker <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Mini Job Status Stepper (All steps link directly to Remediation Tracker) -->
+            <div class="job-stepper">
+              <div class="stepper-step completed" data-target-tab="tab-remediation" role="button" title="Step 1: Thermal Mapping (Click to view full tracker)">
+                <div class="stepper-icon"><i class="bi bi-check-lg"></i></div>
+                <div class="stepper-label">1. Thermal Mapping</div>
+              </div>
+              <div class="stepper-step completed" data-target-tab="tab-remediation" role="button" title="Step 2: Poly Containment (Click to view full tracker)">
+                <div class="stepper-icon"><i class="bi bi-check-lg"></i></div>
+                <div class="stepper-label">2. Poly Containment</div>
+              </div>
+              <div class="stepper-step active" data-target-tab="tab-remediation" role="button" title="Step 3: HEPA Scrubbing (In Progress)">
+                <div class="stepper-icon"><i class="bi bi-fan"></i></div>
+                <div class="stepper-label">3. HEPA Scrubbing</div>
+              </div>
+              <div class="stepper-step" data-target-tab="tab-remediation" role="button" title="Step 4: Botanical Fogging">
+                <div class="stepper-icon">4</div>
+                <div class="stepper-label">4. Botanical Fogging</div>
+              </div>
+              <div class="stepper-step" data-target-tab="tab-remediation" role="button" title="Step 5: Final Clearance">
+                <div class="stepper-icon">5</div>
+                <div class="stepper-label">5. Final Clearance</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Air Quality Trends Chart -->
+          <div class="row g-4 mb-4">
+            <div class="col-lg-8">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm h-100">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h6 class="text-primary mb-0 fw-bold"><i class="bi bi-graph-up text-primary me-2"></i> 6-Month Indoor Mold &amp; VOC Reduction Trend</h6>
+                  <span class="badge bg-success-subtle text-success">Optimal Safe Range Achieved</span>
+                </div>
+                <div style="height: 280px;">
+                  <canvas id="customerAirChart"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm h-100 d-flex flex-column justify-content-between">
+                <div>
+                  <h6 class="text-primary mb-3 fw-bold"><i class="bi bi-speedometer text-info me-2"></i> Current Indoor Air Baseline</h6>
+                  
+                  <div class="mb-3">
+                    <div class="d-flex justify-content-between small mb-1">
+                      <span>Air Spore Count:</span>
+                      <strong class="text-success">195 spores/m³ (Safe)</strong>
+                    </div>
+                    <div class="progress" style="height: 6px;">
+                      <div class="progress-bar bg-success" style="width: 18%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="d-flex justify-content-between small mb-1">
+                      <span>Relative Humidity:</span>
+                      <strong class="text-primary">42% (Optimal)</strong>
+                    </div>
+                    <div class="progress" style="height: 6px;">
+                      <div class="progress-bar bg-primary" style="width: 42%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="d-flex justify-content-between small mb-1">
+                      <span>Total VOC Level:</span>
+                      <strong class="text-success">0.12 ppm (Pristine)</strong>
+                    </div>
+                    <div class="progress" style="height: 6px;">
+                      <div class="progress-bar bg-info" style="width: 12%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-3 border-top d-flex flex-column gap-2">
+                  <button class="btn btn-sm btn-primary w-100" onclick="previewLabReport('ENV-2026-9042')">
+                    <i class="bi bi-file-earmark-medical me-1"></i> View Latest Lab Certificate
+                  </button>
+                  <button class="btn btn-sm btn-outline-primary w-100" data-target-tab="tab-schedule">
+                    <i class="bi bi-calendar-plus me-1"></i> Schedule Follow-Up Scan
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             TAB 2: MY APPOINTMENTS (Upcoming, Completed, Reschedule, Cancel)
+             ===================================================================== -->
+        <section id="tab-appointments" class="dashboard-tab-content" style="display:none;">
+          <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+            <div>
+              <h5 class="text-primary mb-0 fw-bold"><i class="bi bi-calendar2-week text-primary me-2"></i> Inspection Appointments</h5>
+              <small class="text-muted">Manage upcoming diagnostic visits and past inspections.</small>
+            </div>
+            <button class="btn btn-primary btn-sm" data-target-tab="tab-schedule">
+              <i class="bi bi-plus-lg me-1"></i> Schedule New Inspection
+            </button>
+          </div>
+
+          <div class="table-custom-wrapper">
+            <div class="table-responsive">
+              <table class="table table-custom">
+                <thead>
+                  <tr>
+                    <th>Booking ID</th>
+                    <th>Service &amp; Location</th>
+                    <th>Scheduled Date</th>
+                    <th>Status</th>
+                    <th>Assigned Specialist</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="appointmentsTableBody">
+                  <!-- Row 1 -->
+                  <tr id="row-AP-49201">
+                    <td><strong>AP-49201</strong></td>
+                    <td>
+                      <span class="fw-semibold text-primary">Post-Remediation Verification</span><br>
+                      <small class="text-muted"><i class="bi bi-geo-alt"></i> 742 Evergreen Terrace, Springfield</small>
+                    </td>
+                    <td>2026-10-18<br><small class="text-muted">09:30 AM - 11:30 AM</small></td>
+                    <td><span class="badge bg-primary-subtle text-primary border border-primary-subtle">Confirmed</span></td>
+                    <td><small class="text-secondary">Dr. Marcus Vance (CIEC)</small></td>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-sm btn-outline-primary" data-target-tab="tab-remediation" title="Track Remediation Progress">
+                          <i class="bi bi-shield-check me-1"></i> Tracker
+                        </button>
+                        <div class="dropdown">
+                          <button class="btn btn-sm btn-light border" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical"></i></button>
+                          <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                            <li><a class="dropdown-item" href="javascript:void(0)" onclick="rescheduleDemo('AP-49201', '2026-10-18')"><i class="bi bi-calendar2-range me-2 text-primary"></i> Reschedule</a></li>
+                            <li><a class="dropdown-item text-danger" href="javascript:void(0)" onclick="cancelDemo('AP-49201')"><i class="bi bi-x-circle me-2"></i> Cancel Appointment</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2 -->
+                  <tr id="row-AP-38192">
+                    <td><strong>AP-38192</strong></td>
+                    <td>
+                      <span class="fw-semibold text-primary">Whole-Home VOC &amp; Spore Cassette Scan</span><br>
+                      <small class="text-muted"><i class="bi bi-geo-alt"></i> 742 Evergreen Terrace, Springfield</small>
+                    </td>
+                    <td>2026-10-24<br><small class="text-muted">02:00 PM - 04:00 PM</small></td>
+                    <td><span class="badge bg-warning-subtle text-warning border border-warning-subtle">Pending Dispatch</span></td>
+                    <td><small class="text-secondary">Sarah Jenkins (CIAQP)</small></td>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-sm btn-outline-secondary" data-target-tab="tab-messages" title="Message Dispatch">
+                          <i class="bi bi-chat-dots me-1"></i> Contact
+                        </button>
+                        <div class="dropdown">
+                          <button class="btn btn-sm btn-light border" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical"></i></button>
+                          <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                            <li><a class="dropdown-item" href="javascript:void(0)" onclick="rescheduleDemo('AP-38192', '2026-10-24')"><i class="bi bi-calendar2-range me-2 text-primary"></i> Reschedule</a></li>
+                            <li><a class="dropdown-item text-danger" href="javascript:void(0)" onclick="cancelDemo('AP-38192')"><i class="bi bi-x-circle me-2"></i> Cancel Appointment</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3 (Past Completed) -->
+                  <tr id="row-AP-10821">
+                    <td><strong>AP-10821</strong></td>
+                    <td>
+                      <span class="fw-semibold text-primary">Initial FLIR Thermal Inspection</span><br>
+                      <small class="text-muted"><i class="bi bi-geo-alt"></i> 742 Evergreen Terrace, Springfield</small>
+                    </td>
+                    <td>2026-09-14<br><small class="text-muted">10:00 AM</small></td>
+                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Completed</span></td>
+                    <td><small class="text-secondary">David Chen (FLIR Level III)</small></td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-primary" onclick="previewLabReport('ENV-2026-1082')">
+                        <i class="bi bi-file-earmark-medical me-1"></i> View Report
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="mt-3 p-3 bg-body rounded-3 border d-flex flex-wrap justify-content-between align-items-center gap-2">
+            <small class="text-muted"><i class="bi bi-info-circle text-primary me-1"></i> Need emergency moisture or mold inspection within 24 hours?</small>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-outline-primary" data-target-tab="tab-messages"><i class="bi bi-chat-left-dots me-1"></i> Message Field Supervisor</button>
+              <button class="btn btn-sm btn-primary" data-target-tab="tab-schedule"><i class="bi bi-calendar-plus me-1"></i> Book New Slot</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             TAB 3: SCHEDULE INSPECTION (Past Date Prevention & Time Slot Selector)
+             ===================================================================== -->
+        <section id="tab-schedule" class="dashboard-tab-content" style="display:none;">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="p-4 p-md-5 rounded-4 bg-surface border shadow-sm">
+                <div class="mb-4">
+                  <span class="badge bg-primary-subtle text-primary fw-semibold px-3 py-1 rounded-pill mb-2"><i class="bi bi-clock-history me-1"></i> Real-Time Booking Engine</span>
+                  <h4 class="text-primary mb-1">Schedule an Environmental Inspection</h4>
+                  <p class="text-muted small">Choose your service type, inspection property address, and select an available future date.</p>
+                </div>
+
+                <form id="customerBookingForm">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label">Service Package <span class="text-danger">*</span></label>
+                      <select class="form-select" id="bookingServiceSelect" required>
+                        <option value="Comprehensive Mold Inspection ($449)" selected>Comprehensive Mold Inspection ($449 - 3 Spore Traps)</option>
+                        <option value="Basic Moisture &amp; Visual Scan ($249)">Basic Moisture &amp; Visual Scan ($249)</option>
+                        <option value="Whole-Home IAQ &amp; TVOC Testing ($549)">Whole-Home IAQ &amp; TVOC Testing ($549)</option>
+                        <option value="Post-Remediation Clearance Verification ($399)">Post-Remediation Clearance Verification ($399)</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label">Property Type</label>
+                      <select class="form-select">
+                        <option>Single Family Residence</option>
+                        <option>Townhouse / Condo</option>
+                        <option>Commercial Office Space</option>
+                        <option>Medical or Healthcare Suite</option>
+                      </select>
+                    </div>
+
+                    <div class="col-12">
+                      <label class="form-label">Inspection Property Address <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="bookingAddress" value="742 Evergreen Terrace, Springfield, OR" required>
+                    </div>
+
+                    <div class="col-md-6">
+                      <!-- Date Input with strict past-date check in JS -->
+                      <label class="form-label">Inspection Date <span class="text-danger">*</span></label>
+                      <input type="date" class="form-control" id="bookingDateInput" required>
+                      <small class="text-muted">Past dates are automatically disabled.</small>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label">Preferred Time Window <span class="text-danger">*</span></label>
+                      <select class="form-select" id="bookingTimeSlot" required>
+                        <option value="08:30 AM - 10:30 AM">Morning: 08:30 AM - 10:30 AM</option>
+                        <option value="11:00 AM - 01:00 PM" selected>Mid-Day: 11:00 AM - 01:00 PM</option>
+                        <option value="02:00 PM - 04:00 PM">Afternoon: 02:00 PM - 04:00 PM</option>
+                        <option value="04:30 PM - 06:30 PM">Late Afternoon: 04:30 PM - 06:30 PM</option>
+                      </select>
+                    </div>
+
+                    <div class="col-12">
+                      <label class="form-label">Special Access Instructions or Suspected Areas</label>
+                      <textarea class="form-control" rows="3" placeholder="e.g. Master bath plumbing wall, crawl space hatch in hallway, lockbox code..."></textarea>
+                    </div>
+
+                    <div class="col-12 mt-4 d-flex gap-2 flex-wrap">
+                      <button type="submit" class="btn btn-primary btn-pill px-4 py-2 fw-bold">
+                        <i class="bi bi-calendar-check me-1"></i> Confirm &amp; Schedule Inspection
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary btn-pill px-3 py-2" data-target-tab="tab-appointments">
+                        <i class="bi bi-arrow-left me-1"></i> Back to Appointments
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             TAB 4: REMEDIATION JOB STATUS (Live Stepper & Photos Demo)
+             ===================================================================== -->
+        <section id="tab-remediation" class="dashboard-tab-content" style="display:none;">
+          <div class="p-4 rounded-4 bg-surface border shadow-sm mb-4">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+              <div>
+                <span class="badge bg-warning text-dark fw-bold"><i class="bi bi-shield-shaded me-1"></i> Active Project #JOB-9402</span>
+                <h4 class="text-primary mb-1 mt-1">Master Suite &amp; HVAC Containment Protocol</h4>
+                <small class="text-muted"><i class="bi bi-person-badge"></i> Lead Supervisor: Elena Rostova (IICRC Master Restorer)</small>
+              </div>
+              <span class="badge bg-success-subtle text-success fs-6 border border-success-subtle px-3 py-2"><i class="bi bi-hourglass-split me-1"></i> Estimated Completion: Tomorrow</span>
+            </div>
+
+            <!-- Quick Project Actions Toolbar -->
+            <div class="d-flex flex-wrap gap-2 my-3 pb-3 border-bottom">
+              <button class="btn btn-sm btn-primary" onclick="previewLabReport('ENV-2026-9042')">
+                <i class="bi bi-patch-check-fill me-1"></i> View Lab Clearance Certificate
+              </button>
+              <button class="btn btn-sm btn-outline-primary" data-target-tab="tab-messages">
+                <i class="bi bi-chat-left-dots me-1"></i> Message Field Supervisor
+              </button>
+              <button class="btn btn-sm btn-outline-secondary" data-target-tab="tab-schedule">
+                <i class="bi bi-calendar-plus me-1"></i> Book Follow-Up Inspection
+              </button>
+              <button class="btn btn-sm btn-outline-secondary" data-target-tab="tab-history">
+                <i class="bi bi-clock-history me-1"></i> View Service History
+              </button>
+            </div>
+
+            <!-- Stepper Progress Tracker -->
+            <div class="job-stepper my-4">
+              <div class="stepper-step completed">
+                <div class="stepper-icon"><i class="bi bi-check-lg"></i></div>
+                <div class="stepper-label">1. Moisture Mapping</div>
+                <small class="text-muted d-block">Completed Oct 13</small>
+              </div>
+              <div class="stepper-step completed">
+                <div class="stepper-icon"><i class="bi bi-check-lg"></i></div>
+                <div class="stepper-label">2. 6-Mil Containment</div>
+                <small class="text-muted d-block">Completed Oct 14</small>
+              </div>
+              <div class="stepper-step active">
+                <div class="stepper-icon"><i class="bi bi-fan"></i></div>
+                <div class="stepper-label">3. HEPA Air Scrubbing</div>
+                <small class="text-primary fw-bold d-block">Active (Run Cycle 36/48h)</small>
+              </div>
+              <div class="stepper-step">
+                <div class="stepper-icon">4</div>
+                <div class="stepper-label">4. Botanical Biowash</div>
+                <small class="text-muted d-block">Pending Step 3</small>
+              </div>
+              <div class="stepper-step">
+                <div class="stepper-icon">5</div>
+                <div class="stepper-label">5. Clearance Certificate</div>
+                <small class="text-muted d-block">Final Lab Signoff</small>
+              </div>
+            </div>
+
+            <!-- Job Notes & Technician Photos -->
+            <div class="row g-4 mt-2">
+              <div class="col-md-6">
+                <h6 class="text-primary fw-bold mb-2"><i class="bi bi-camera-fill text-info me-1"></i> Field Containment Photo Log</h6>
+                <div class="row g-2">
+                  <div class="col-6">
+                    <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=600&auto=format&fit=crop&q=80" alt="Before Remediation Drywall" class="img-fluid rounded-3 border" style="height:140px;width:100%;object-fit:cover;">
+                    <small class="text-danger fw-semibold d-block text-center mt-1">Before: Active Drywall Colony</small>
+                  </div>
+                  <div class="col-6">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80" alt="Clean Sanitized Studs" class="img-fluid rounded-3 border" style="height:140px;width:100%;object-fit:cover;">
+                    <small class="text-success fw-semibold d-block text-center mt-1">Current: HEPA Negative Pressure</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <h6 class="text-primary fw-bold mb-2"><i class="bi bi-journal-check text-primary me-1"></i> Supervisor Daily Field Notes</h6>
+                <div class="p-3 bg-body rounded-3 border small">
+                  <div class="mb-2">
+                    <strong class="text-primary">Oct 14, 04:30 PM - Elena Rostova:</strong>
+                    <p class="text-muted mb-0">Zippered airlock verified at 0.03 inWC negative pressure differential. HEPA scrubbers running continuously. Zero particle leakage into living room.</p>
+                  </div>
+                  <hr class="my-2">
+                  <div>
+                    <strong class="text-primary">Oct 13, 11:15 AM - David Chen:</strong>
+                    <p class="text-muted mb-0">Thermal scan confirmed water pipe source isolated and repaired by licensed plumber. Drying fans active.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             TAB 5: AIR QUALITY REPORTS (Interactive Lab PDF Preview & Downloads)
+             ===================================================================== -->
+        <section id="tab-reports" class="dashboard-tab-content" style="display:none;">
+          <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+            <div>
+              <h5 class="text-primary mb-0 fw-bold"><i class="bi bi-file-earmark-medical text-primary me-2"></i> Official Environmental Lab Reports</h5>
+              <small class="text-muted">AIHA-LAP certified spore analysis &amp; clearance certificates.</small>
+            </div>
+            <button class="btn btn-sm btn-primary" data-target-tab="tab-schedule">
+              <i class="bi bi-plus-lg me-1"></i> Order New Lab Testing
+            </button>
+          </div>
+
+          <div class="table-custom-wrapper">
+            <div class="table-responsive">
+              <table class="table table-custom">
+                <thead>
+                  <tr>
+                    <th>Report ID</th>
+                    <th>Assessment Type</th>
+                    <th>Sample Date</th>
+                    <th>Lab Result / Spore Status</th>
+                    <th>Certificate</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>ENV-2026-9042</strong></td>
+                    <td>HVAC &amp; Living Room Air Cassette Traps</td>
+                    <td>2026-10-10</td>
+                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Pass (195 Spores/m³)</span></td>
+                    <td><span class="text-success"><i class="bi bi-patch-check-fill me-1"></i> Certified</span></td>
+                    <td>
+                      <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-primary" onclick="previewLabReport('ENV-2026-9042')">
+                          <i class="bi bi-eye me-1"></i> View Certificate
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="downloadDemoReport('AeroPure_Lab_Report_9042.pdf')">
+                          <i class="bi bi-download me-1"></i> PDF
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>ENV-2026-1082</strong></td>
+                    <td>Baseline Initial Diagnostic Assessment</td>
+                    <td>2026-09-14</td>
+                    <td><span class="badge bg-danger-subtle text-danger border border-danger-subtle">Elevated (3,150 Spores/m³)</span></td>
+                    <td><span class="text-muted">Pre-Remediation</span></td>
+                    <td>
+                      <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-primary" onclick="previewLabReport('ENV-2026-1082')">
+                          <i class="bi bi-eye me-1"></i> View Report
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="downloadDemoReport('AeroPure_Initial_Scan_1082.pdf')">
+                          <i class="bi bi-download me-1"></i> PDF
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>ENV-2026-0811</strong></td>
+                    <td>Attic &amp; Crawl Space Air Cassette Baseline</td>
+                    <td>2026-08-11</td>
+                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Pass (280 Spores/m³)</span></td>
+                    <td><span class="text-success"><i class="bi bi-patch-check-fill me-1"></i> Certified</span></td>
+                    <td>
+                      <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-primary" onclick="previewLabReport('ENV-2026-0811')">
+                          <i class="bi bi-eye me-1"></i> View Report
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="downloadDemoReport('AeroPure_Attic_Scan_0811.pdf')">
+                          <i class="bi bi-download me-1"></i> PDF
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             TAB 6: SERVICE HISTORY
+             ===================================================================== -->
+        <section id="tab-history" class="dashboard-tab-content" style="display:none;">
+          <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+            <div>
+              <h5 class="text-primary mb-1 fw-bold"><i class="bi bi-clock-history text-primary me-2"></i> Service &amp; Diagnostic History</h5>
+              <p class="text-muted small mb-0">Complete chronological record of all testing and remediations at your property.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" data-target-tab="tab-schedule">
+              <i class="bi bi-calendar-plus me-1"></i> Book New Inspection
+            </button>
+          </div>
+
+          <div class="p-4 rounded-4 bg-surface border shadow-sm">
+            <div class="border-start border-3 border-primary ps-4 mb-4">
+              <span class="badge bg-primary mb-1">October 14, 2026</span>
+              <h6 class="text-primary mb-1">Remediation Containment &amp; HEPA Negative Air Deployed</h6>
+              <p class="text-muted small mb-2">Project #JOB-9402 • Master bathroom and HVAC plenum isolated. Two HEPA 500 air scrubbers engaged.</p>
+              <button class="btn btn-sm btn-outline-primary" data-target-tab="tab-remediation">
+                <i class="bi bi-shield-check me-1"></i> View Live Remediation Tracker
+              </button>
+            </div>
+
+            <div class="border-start border-3 border-success ps-4 mb-4">
+              <span class="badge bg-success mb-1">October 10, 2026</span>
+              <h6 class="text-primary mb-1">Air Cassette Spore Testing Completed</h6>
+              <p class="text-muted small mb-2">Report #ENV-2026-9042 • 3 air samples analyzed by AIHA accredited laboratory.</p>
+              <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-sm btn-outline-success" onclick="previewLabReport('ENV-2026-9042')">
+                  <i class="bi bi-file-earmark-medical me-1"></i> View Lab Certificate
+                </button>
+                <button class="btn btn-sm btn-outline-secondary" data-target-tab="tab-payments">
+                  <i class="bi bi-receipt me-1"></i> View Invoice #INV-8491
+                </button>
+              </div>
+            </div>
+
+            <div class="border-start border-3 border-secondary ps-4">
+              <span class="badge bg-secondary mb-1">September 14, 2026</span>
+              <h6 class="text-primary mb-1">FLIR Infrared Thermal Mapping Inspection</h6>
+              <p class="text-muted small mb-2">Visual &amp; moisture meter audit performed by David Chen. Hidden bathroom pipe leak identified.</p>
+              <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-sm btn-outline-primary" onclick="previewLabReport('ENV-2026-1082')">
+                  <i class="bi bi-file-text me-1"></i> View Thermal Report
+                </button>
+                <button class="btn btn-sm btn-outline-secondary" data-target-tab="tab-payments">
+                  <i class="bi bi-receipt me-1"></i> View Invoice #INV-7822
+                </button>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-top d-flex flex-wrap gap-2 justify-content-between align-items-center">
+              <small class="text-muted"><i class="bi bi-shield-check text-success me-1"></i> Certified environmental history statement for home sale or insurance.</small>
+              <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-outline-primary" data-target-tab="tab-messages"><i class="bi bi-chat-dots me-1"></i> Request Certified Records</button>
+                <button class="btn btn-sm btn-primary" data-target-tab="tab-schedule"><i class="bi bi-calendar-plus me-1"></i> Schedule Next Inspection</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             TAB 7: PAYMENTS & INVOICES (Clearly Labeled Demo Content)
+             ===================================================================== -->
+        <section id="tab-payments" class="dashboard-tab-content" style="display:none;">
+          <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+            <div>
+              <h5 class="text-primary mb-0 fw-bold"><i class="bi bi-receipt text-primary me-2"></i> Billing &amp; Payment History</h5>
+              <small class="text-muted">Itemized invoices, insurance claim copies, and receipts. <span class="badge bg-warning text-dark">Demo Data</span></small>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-primary" data-target-tab="tab-schedule">
+                <i class="bi bi-plus-circle me-1"></i> Book New Inspection
+              </button>
+              <button class="btn btn-sm btn-outline-primary" data-target-tab="tab-messages">
+                <i class="bi bi-question-circle me-1"></i> Billing Inquiry
+              </button>
+            </div>
+          </div>
+
+          <div class="table-custom-wrapper">
+            <div class="table-responsive">
+              <table class="table table-custom">
+                <thead>
+                  <tr>
+                    <th>Invoice #</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>INV-8491</strong></td>
+                    <td>Comprehensive Air Quality &amp; Spore Testing (3 Cassettes)</td>
+                    <td>2026-10-10</td>
+                    <td>$449.00</td>
+                    <td><span class="badge bg-success-subtle text-success">Paid via Visa ****4129</span></td>
+                    <td>
+                      <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-secondary" onclick="downloadDemoReport('AeroPure_Invoice_INV_8491.pdf')">
+                          <i class="bi bi-download me-1"></i> Receipt
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary" onclick="previewLabReport('ENV-2026-9042')">
+                          <i class="bi bi-file-earmark-medical me-1"></i> Report
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>INV-7822</strong></td>
+                    <td>FLIR Thermal Moisture Intrusion Inspection</td>
+                    <td>2026-09-14</td>
+                    <td>$249.00</td>
+                    <td><span class="badge bg-success-subtle text-success">Paid via Visa ****4129</span></td>
+                    <td>
+                      <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-secondary" onclick="downloadDemoReport('AeroPure_Invoice_INV_7822.pdf')">
+                          <i class="bi bi-download me-1"></i> Receipt
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary" onclick="previewLabReport('ENV-2026-1082')">
+                          <i class="bi bi-file-earmark-medical me-1"></i> Report
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             TAB 8: MESSAGES AND SUPPORT
+             ===================================================================== -->
+        <section id="tab-messages" class="dashboard-tab-content" style="display:none;">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="text-primary mb-0 fw-bold"><i class="bi bi-chat-left-dots text-primary me-2"></i> Dedicated Environmental Support Desk</h5>
+                  <span class="badge bg-success-subtle text-success"><i class="bi bi-circle-fill me-1" style="font-size:0.5rem;"></i> Specialist Online</span>
+                </div>
+                
+                <!-- Chat conversation thread demo -->
+                <div class="p-3 bg-body rounded-3 border mb-3 overflow-y-auto" style="max-height:300px;">
+                  <div class="mb-3">
+                    <span class="badge bg-primary-subtle text-primary mb-1">AeroPure Dispatch (Oct 14, 02:15 PM)</span>
+                    <p class="bg-surface p-3 rounded-3 border small mb-0">
+                      Hello Rachel, our containment technician Elena Rostova has successfully set up the negative air scrubber in your master suite. Please keep the zippered barrier closed during testing.
+                    </p>
+                  </div>
+
+                  <div class="mb-2 text-end">
+                    <span class="badge bg-secondary mb-1">You (Oct 14, 02:40 PM)</span>
+                    <p class="bg-primary text-white p-3 rounded-3 text-start small mb-0 d-inline-block shadow-sm">
+                      Thank you! Can we still use the guest bathroom on the other side of the house?
+                    </p>
+                  </div>
+
+                  <div class="mb-0">
+                    <span class="badge bg-primary-subtle text-primary mb-1">AeroPure Dispatch (Oct 14, 02:45 PM)</span>
+                    <p class="bg-surface p-3 rounded-3 border small mb-0">
+                      Yes! The guest bathroom and kitchen are completely isolated outside the containment envelope and safe for normal use.
+                    </p>
+                  </div>
+                </div>
+
+                <form onsubmit="event.preventDefault(); sendDashboardMessage(this);">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Type a message to your lead technician..." required>
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-send-fill me-1"></i> Send</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+            <div class="col-lg-4 mt-4 mt-lg-0">
+              <div class="p-4 rounded-4 bg-surface border shadow-sm">
+                <h6 class="text-primary fw-bold mb-3"><i class="bi bi-telephone text-primary me-2"></i> Direct Emergency Contacts</h6>
+                <div class="mb-3">
+                  <small class="text-muted d-block">Lead Restorer on Duty:</small>
+                  <strong>Elena Rostova (IICRC #88219)</strong><br>
+                  <a href="tel:5557281900" class="text-primary small"><i class="bi bi-telephone-fill me-1"></i> (555) 728-1900 ext 4</a>
+                </div>
+                <div class="mb-3">
+                  <small class="text-muted d-block">AIHA Microbiology Laboratory:</small>
+                  <strong>National Environmental Micro Lab</strong><br>
+                  <small class="text-muted">Accreditation #102941</small>
+                </div>
+                <hr>
+                <button class="btn btn-outline-primary btn-sm w-100" data-target-tab="tab-schedule">
+                  <i class="bi bi-calendar-plus me-1"></i> Book Follow-up Visit
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             TAB 9: CUSTOMER PROFILE
+             ===================================================================== -->
+        <section id="tab-profile" class="dashboard-tab-content" style="display:none;">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="p-4 p-md-5 rounded-4 bg-surface border shadow-sm">
+                <h5 class="text-primary mb-4 fw-bold"><i class="bi bi-person-gear text-primary me-2"></i> Customer Contact &amp; Property Profile</h5>
+                
+                <form onsubmit="event.preventDefault(); showNotification('Profile Updated', 'Customer contact profile saved successfully.', 'success');">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label">First Name</label>
+                      <input type="text" class="form-control" data-type="name" value="Rachel" required pattern="[a-zA-Z\s'.\-]+">
+                      <div class="invalid-feedback">Name only: Letters and spaces allowed.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Last Name</label>
+                      <input type="text" class="form-control" data-type="name" value="Keller" required pattern="[a-zA-Z\s'.\-]+">
+                      <div class="invalid-feedback">Name only: Letters and spaces allowed.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Primary Email</label>
+                      <input type="email" class="form-control" data-type="email" value="rachel.keller@example.com" required>
+                      <div class="invalid-feedback">Please enter a valid Email ID (e.g. name@domain.com).</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Phone Number</label>
+                      <input type="tel" class="form-control" data-type="phone" inputmode="tel" value="(555) 728-1920" required>
+                      <div class="invalid-feedback">Numbers only: Letters are not allowed.</div>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Primary Service Address</label>
+                      <input type="text" class="form-control" value="742 Evergreen Terrace, Springfield, OR 97477" required>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Emergency Access Code / Gate Code</label>
+                      <input type="text" class="form-control" value="#9042">
+                    </div>
+                    <div class="col-12 mt-3 d-flex flex-wrap gap-2">
+                      <button type="submit" class="btn btn-primary btn-pill">
+                        <i class="bi bi-check2-circle me-1"></i> Save Profile Changes
+                      </button>
+                      <button type="button" class="btn btn-outline-primary btn-pill" data-target-tab="tab-appointments">
+                        <i class="bi bi-calendar2-week me-1"></i> View Appointments
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary btn-pill" data-target-tab="tab-reports">
+                        <i class="bi bi-file-earmark-medical me-1"></i> View Lab Reports
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       LAB REPORT PREVIEW MODAL (Interactive Demo Certificate)
+       ========================================================================= -->
+  <div class="modal fade" id="labReportModal" tabindex="-1" aria-labelledby="labReportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow-2xl rounded-4">
+        <div class="modal-header bg-primary text-white">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-patch-check-fill fs-4 text-warning"></i>
+            <div>
+              <h5 class="modal-title text-white fw-bold" id="labReportModalLabel">AIHA-LAP Accredited Certificate of Analysis</h5>
+              <small class="text-white-50">Chain of Custody ID: #ENV-2026-9042 • Method: ASTM D7391-20</small>
+            </div>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body p-4 bg-surface text-secondary">
+          <div class="d-flex justify-content-between align-items-center pb-3 border-bottom mb-3 flex-wrap gap-2">
+            <div>
+              <strong>Sample Site:</strong> 742 Evergreen Terrace, Springfield<br>
+              <strong>Collection Officer:</strong> Dr. Marcus Vance (CIEC #1402)<br>
+              <strong>Analyzed By:</strong> National Environmental Microbiology Lab
+            </div>
+            <div class="text-md-end">
+              <span class="badge bg-success fs-6 px-3 py-2">STATUS: PASSED (CLEARANCE VERIFIED)</span><br>
+              <small class="text-muted">Outdoor Baseline: 640 spores/m³</small>
+            </div>
+          </div>
+
+          <!-- Quantitative Table -->
+          <h6 class="text-primary fw-bold mb-2">Microscopic Spore Counts per Cubic Meter:</h6>
+          <div class="table-responsive mb-3">
+            <table class="table table-bordered table-sm text-center">
+              <thead class="table-light">
+                <tr>
+                  <th>Fungal Genus / Strain</th>
+                  <th>Indoor Concentration</th>
+                  <th>Outdoor Baseline</th>
+                  <th>Health Category</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-start"><strong>Stachybotrys chartarum</strong></td>
+                  <td>0 spores/m³</td>
+                  <td>0 spores/m³</td>
+                  <td>Toxigenic Biohazard</td>
+                  <td><span class="badge bg-success">Undetected (Clear)</span></td>
+                </tr>
+                <tr>
+                  <td class="text-start"><strong>Aspergillus / Penicillium</strong></td>
+                  <td>110 spores/m³</td>
+                  <td>380 spores/m³</td>
+                  <td>Allergenic / Respiratory</td>
+                  <td><span class="badge bg-success">Normal Range</span></td>
+                </tr>
+                <tr>
+                  <td class="text-start"><strong>Cladosporium</strong></td>
+                  <td>85 spores/m³</td>
+                  <td>260 spores/m³</td>
+                  <td>Common Environmental</td>
+                  <td><span class="badge bg-success">Normal Range</span></td>
+                </tr>
+                <tr class="table-light fw-bold">
+                  <td class="text-start">Total Fungal Spores:</td>
+                  <td>195 spores/m³</td>
+                  <td>640 spores/m³</td>
+                  <td>Overall Indoor Air Quality</td>
+                  <td><span class="badge bg-success">PASS (&lt; Outdoor)</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="p-3 bg-body rounded-3 border small mb-3">
+            <strong class="text-primary d-block mb-1"><i class="bi bi-file-earmark-check text-success me-1"></i> Official Environmental Clearance Statement:</strong>
+            Indoor air sampling within the designated containment area indicates fungal spore concentrations significantly below outdoor ambient levels with zero toxigenic indicator strains detected. The structure meets all criteria for post-remediation clearance under IICRC S520 guidelines.
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 pt-2 border-top">
+            <small class="text-muted"><i class="bi bi-lock-fill"></i> Cryptographically signed SHA-256 by Senior Lab Analyst.</small>
+            <button class="btn btn-primary btn-sm" onclick="downloadDemoReport('Certificate_of_Clearance_ENV_9042.pdf')">
+              <i class="bi bi-download me-1"></i> Download Official PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

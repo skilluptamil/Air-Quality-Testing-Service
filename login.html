@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - AeroPure Environmental Account</title>
+  <meta name="description" content="Sign in to your AeroPure customer or user dashboard to manage inspection schedules, job tracking, and lab reports.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    .auth-page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.05) 0%, rgba(15, 23, 42, 0.08) 100%), var(--bg-body);
+    }
+    .auth-header {
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--bg-surface);
+    }
+    .auth-card {
+      max-width: 480px;
+      width: 100%;
+      margin: auto;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      padding: 2.5rem;
+    }
+  </style>
+</head>
+<body class="auth-page-wrapper">
+
+  <!-- Compact Auth-Only Header -->
+  <header class="auth-header">
+    <a href="index.html" class="d-flex align-items-center">
+      <img src="assets/images/logo.svg" alt="AeroPure" class="site-logo-img" style="height:38px;">
+    </a>
+    <div class="d-flex align-items-center gap-2">
+      <button class="nav-control-btn rtl-toggle-btn" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
+      <button class="nav-control-btn theme-toggle-btn" aria-label="Toggle Theme" title="Switch Theme"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
+      <a href="index.html" class="btn btn-sm btn-outline-primary ms-1">
+        <i class="bi bi-arrow-left me-1"></i> Back to Site
+      </a>
+    </div>
+  </header>
+
+  <!-- Auth Main Form -->
+  <main class="container py-5 my-auto">
+    <div class="auth-card">
+      <div class="text-center mb-4">
+        <span class="badge bg-primary-subtle text-primary fw-semibold px-3 py-1 rounded-pill mb-2">Simulated Authentication</span>
+        <h3 class="fw-bold text-dark mb-1" style="color: #000000 !important;">Welcome Back</h3>
+        <p class="text-muted small">Sign in to access your inspection dashboard and lab reports.</p>
+      </div>
+
+      <!-- Quick Fill Demo Role Buttons -->
+      <div class="p-3 bg-body rounded-3 border mb-4 text-center">
+        <small class="text-muted fw-bold d-block mb-2 text-uppercase" style="font-size:0.75rem;">Quick Demo Fill Buttons:</small>
+        <div class="btn-group btn-group-sm w-100" role="group">
+          <button type="button" class="btn btn-outline-primary" id="fillCustomerBtn">
+            <i class="bi bi-person-badge me-1"></i> Customer
+          </button>
+          <button type="button" class="btn btn-outline-info" id="fillUserBtn">
+            <i class="bi bi-person me-1"></i> User Account
+          </button>
+          <button type="button" class="btn btn-outline-warning" id="fillAdminBtn">
+            <i class="bi bi-shield-lock me-1"></i> Admin
+          </button>
+        </div>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+        <div class="mb-3">
+          <label class="form-label" for="loginEmail">Email Address</label>
+          <div class="input-group">
+            <span class="input-group-text bg-surface border-end-0"><i class="bi bi-envelope text-muted"></i></span>
+            <input type="email" class="form-control border-start-0" id="loginEmail" data-type="email" autocomplete="email" placeholder="name@example.com" value="customer@aeropure.com" required>
+          </div>
+          <div class="invalid-feedback">Please enter a valid email address format (e.g. name@domain.com).</div>
+        </div>
+
+        <div class="mb-3">
+          <div class="d-flex justify-content-between">
+            <label class="form-label" for="loginPassword">Password</label>
+            <a href="forgot-password.html" class="small text-primary">Forgot Password?</a>
+          </div>
+          <div class="password-toggle-wrap">
+            <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" value="CustomerPass@2026" required>
+            <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+            <label class="form-check-label small" for="rememberMe">Remember my device</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold shadow-sm mb-3">
+          <i class="bi bi-box-arrow-in-right me-1"></i> Sign In to Dashboard
+        </button>
+      </form>
+
+      <!-- Social Logins Demo -->
+      <div class="position-relative text-center my-4">
+        <hr class="text-muted">
+        <span class="position-absolute top-50 start-50 translate-middle bg-surface px-3 small text-muted">or continue with (demo)</span>
+      </div>
+
+      <div class="row g-2 mb-4">
+        <div class="col-6">
+          <button class="btn btn-light border w-100 btn-social-google btn-sm d-flex align-items-center justify-content-center gap-2">
+            <i class="bi bi-google text-danger"></i> Google
+          </button>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-light border w-100 btn-social-fb btn-sm d-flex align-items-center justify-content-center gap-2">
+            <i class="bi bi-facebook text-primary"></i> Facebook
+          </button>
+        </div>
+      </div>
+
+      <div class="text-center text-muted small">
+        Don't have an account yet? <a href="register.html" class="fw-bold text-primary">Sign Up</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-3 border-top small text-muted">
+    &copy; 2026 AeroPure Environmental Solutions. Demo Authentication Flow.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>
