@@ -17,6 +17,12 @@
   --color-primary-light: #CCFBF1;
   --color-primary-subtle: rgba(15, 118, 110, 0.08);
 
+  /* Bootstrap 5 Framework Variable Overrides */
+  --bs-primary: #0F766E;
+  --bs-primary-rgb: 15, 118, 110;
+  --bs-link-color: #0F766E;
+  --bs-link-hover-color: #0D5D56;
+
   --color-secondary: #10B981;
   --color-secondary-hover: #059669;
   --color-secondary-light: #D1FAE5;
@@ -85,6 +91,11 @@
   --color-primary-light: rgba(20, 184, 166, 0.15);
   --color-primary-subtle: rgba(20, 184, 166, 0.12);
 
+  --bs-primary: #14B8A6;
+  --bs-primary-rgb: 20, 184, 166;
+  --bs-link-color: #14B8A6;
+  --bs-link-hover-color: #2DD4BF;
+
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.45);
@@ -151,18 +162,55 @@ a:hover {
   border-width: 1.5px;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-cta {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
-  color: #FFFFFF;
+  color: #FFFFFF !important;
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-color: #FFFFFF;
+  --bs-btn-hover-bg: var(--color-primary-hover);
+  --bs-btn-hover-border-color: var(--color-primary-hover);
+  --bs-btn-hover-color: #FFFFFF;
+  --bs-btn-active-bg: var(--color-primary-hover);
+  --bs-btn-active-border-color: var(--color-primary-hover);
+  --bs-btn-active-color: #FFFFFF;
+  --bs-btn-disabled-bg: var(--color-primary);
+  --bs-btn-disabled-border-color: var(--color-primary);
+  --bs-btn-disabled-color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.25);
 }
 
-.btn-primary:hover, .btn-primary:focus {
+.btn-primary:hover, .btn-primary:focus,
+.btn-cta:hover, .btn-cta:focus {
   background-color: var(--color-primary-hover);
   border-color: var(--color-primary-hover);
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(15, 118, 110, 0.3);
+  box-shadow: 0 8px 18px rgba(15, 118, 110, 0.35);
+}
+
+.btn-primary:active,
+.btn-cta:active {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: #FFFFFF !important;
+  transform: translateY(0);
+}
+
+.btn-primary:disabled,
+.btn-primary.disabled,
+.btn-cta:disabled,
+.btn-cta.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  box-shadow: none;
+  transform: none;
 }
 
 .btn-secondary {
@@ -368,12 +416,86 @@ a:hover {
   flex-shrink: 0;
 }
 
-@media (max-width: 991.98px) {
+/* --- Optimized Desktop Navbar for 1024px Screens (992px to 1199px) --- */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .site-navbar .container-fluid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .navbar-brand {
+    margin-right: 0.75rem !important;
+  }
+  .navbar-brand img {
+    height: 38px !important;
+  }
+  .navbar-nav {
+    gap: 0 !important;
+  }
+  .navbar-nav .nav-link {
+    font-size: 0.86rem !important;
+    padding: 0.4rem 0.45rem !important;
+  }
   .nav-actions {
-    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+  }
+  .nav-actions .btn {
+    padding: 0.4rem 0.65rem !important;
+    font-size: 0.84rem !important;
+  }
+  .nav-control-btn {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  /* Dropdown at 1024px: Stays fully in view and unclipped */
+  .dropdown-menu {
+    z-index: 1060 !important;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+  .dropdown-menu-end {
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+
+/* --- Mobile / Tablet View (Below 992px, including 768px) --- */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    max-height: calc(100vh - 75px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1.5rem;
+  }
+  .nav-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
     margin-top: 1rem;
     padding-top: 1rem;
     border-top: 1px solid var(--border-color);
+    width: 100%;
+  }
+  .nav-actions > a,
+  .nav-actions > button,
+  .nav-actions .dropdown,
+  .nav-actions .dropdown > button {
+    width: 100% !important;
+    justify-content: center;
+  }
+  .nav-actions .dropdown {
+    position: static !important;
+  }
+  /* Dropdown at 768px: Expands inline accordion-style so Admin & User Portals are 100% accessible */
+  .nav-actions .dropdown .dropdown-menu {
+    position: static !important;
+    float: none !important;
+    width: 100% !important;
+    margin-top: 0.5rem !important;
+    transform: none !important;
+    box-shadow: var(--shadow-md) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-md) !important;
   }
   .navbar-nav .nav-link {
     padding: 0.6rem 0.5rem !important;
@@ -387,6 +509,7 @@ a:hover {
   box-shadow: var(--shadow-xl);
   padding: 0.5rem;
   min-width: 220px;
+  z-index: 1060;
   animation: dropdownFade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1688,4 +1811,80 @@ a:hover {
   margin-top: 0.2rem;
   display: block;
 }
+
+/* ==========================================================================
+   Scientific Leadership Portrait Standards (About Us)
+   ========================================================================== */
+.leadership-img-box {
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-muted);
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.leadership-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Third leadership image specific facial alignment & fit */
+.leadership-img-third {
+  object-position: center 15% !important;
+}
+
+.card-custom:hover .leadership-img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Login & Auth Page Narrow Viewport Alignments (360px & 320px)
+   ========================================================================== */
+@media (max-width: 576px) {
+  .auth-card {
+    padding: 1.5rem 1.25rem !important;
+    border-radius: var(--radius-lg) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .auth-card {
+    padding: 1.25rem 0.85rem !important;
+  }
+  .auth-header {
+    padding: 0.75rem 0.85rem !important;
+  }
+  .auth-card h3 {
+    font-size: 1.35rem !important;
+  }
+  /* Stacks or aligns Quick Demo Buttons cleanly on 360px and 320px screens */
+  .demo-role-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+  .demo-role-group .btn,
+  .demo-role-group > .btn:not(:first-child),
+  .demo-role-group > .btn:not(:last-child) {
+    width: 100% !important;
+    border-radius: var(--radius-md) !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    display: inline-flex !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.85rem !important;
+    margin: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
 

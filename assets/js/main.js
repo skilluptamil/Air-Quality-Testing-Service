@@ -87,7 +87,7 @@ function applyRTL(dir) {
     badge.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
   });
 
-  // Load or adjust Bootstrap RTL if needed
+  // Load or adjust Bootstrap RTL if needed (inserted before custom stylesheets to ensure custom branding takes priority)
   let rtlLink = document.getElementById('bootstrap-rtl-css');
   if (dir === 'rtl') {
     if (!rtlLink) {
@@ -95,7 +95,12 @@ function applyRTL(dir) {
       rtlLink.id = 'bootstrap-rtl-css';
       rtlLink.rel = 'stylesheet';
       rtlLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css';
-      document.head.appendChild(rtlLink);
+      const siteStyleLink = document.querySelector('link[href*="style.css"], link[href*="rtl.css"]');
+      if (siteStyleLink && siteStyleLink.parentNode) {
+        siteStyleLink.parentNode.insertBefore(rtlLink, siteStyleLink);
+      } else {
+        document.head.appendChild(rtlLink);
+      }
     }
   } else {
     if (rtlLink) {
