@@ -17,9 +17,17 @@
   --color-primary-light: #CCFBF1;
   --color-primary-subtle: rgba(15, 118, 110, 0.08);
 
+  /* Primary Call-to-Action (CTA) Button Color - Fresh Emerald (#10B981) */
+  --color-cta: #10B981;
+  --color-cta-hover: #059669;
+  --color-cta-active: #047857;
+  --color-cta-light: #D1FAE5;
+  --color-cta-shadow: rgba(16, 185, 129, 0.32);
+  --color-cta-shadow-hover: rgba(16, 185, 129, 0.45);
+
   /* Bootstrap 5 Framework Variable Overrides */
-  --bs-primary: #0F766E;
-  --bs-primary-rgb: 15, 118, 110;
+  --bs-primary: #10B981;
+  --bs-primary-rgb: 16, 185, 129;
   --bs-link-color: #0F766E;
   --bs-link-hover-color: #0D5D56;
 
@@ -91,8 +99,15 @@
   --color-primary-light: rgba(20, 184, 166, 0.15);
   --color-primary-subtle: rgba(20, 184, 166, 0.12);
 
-  --bs-primary: #14B8A6;
-  --bs-primary-rgb: 20, 184, 166;
+  /* Primary CTA remains consistent Fresh Emerald in dark mode */
+  --color-cta: #10B981;
+  --color-cta-hover: #059669;
+  --color-cta-active: #047857;
+  --color-cta-shadow: rgba(16, 185, 129, 0.40);
+  --color-cta-shadow-hover: rgba(16, 185, 129, 0.55);
+
+  --bs-primary: #10B981;
+  --bs-primary-rgb: 16, 185, 129;
   --bs-link-color: #14B8A6;
   --bs-link-hover-color: #2DD4BF;
 
@@ -164,37 +179,37 @@ a:hover {
 
 .btn-primary,
 .btn-cta {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: var(--color-cta) !important;
+  border-color: var(--color-cta) !important;
   color: #FFFFFF !important;
-  --bs-btn-bg: var(--color-primary);
-  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-bg: var(--color-cta);
+  --bs-btn-border-color: var(--color-cta);
   --bs-btn-color: #FFFFFF;
-  --bs-btn-hover-bg: var(--color-primary-hover);
-  --bs-btn-hover-border-color: var(--color-primary-hover);
+  --bs-btn-hover-bg: var(--color-cta-hover);
+  --bs-btn-hover-border-color: var(--color-cta-hover);
   --bs-btn-hover-color: #FFFFFF;
-  --bs-btn-active-bg: var(--color-primary-hover);
-  --bs-btn-active-border-color: var(--color-primary-hover);
+  --bs-btn-active-bg: var(--color-cta-active);
+  --bs-btn-active-border-color: var(--color-cta-active);
   --bs-btn-active-color: #FFFFFF;
-  --bs-btn-disabled-bg: var(--color-primary);
-  --bs-btn-disabled-border-color: var(--color-primary);
+  --bs-btn-disabled-bg: var(--color-cta);
+  --bs-btn-disabled-border-color: var(--color-cta);
   --bs-btn-disabled-color: #FFFFFF;
-  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.25);
+  box-shadow: 0 4px 14px var(--color-cta-shadow);
 }
 
 .btn-primary:hover, .btn-primary:focus,
 .btn-cta:hover, .btn-cta:focus {
-  background-color: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
+  background-color: var(--color-cta-hover) !important;
+  border-color: var(--color-cta-hover) !important;
   color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(15, 118, 110, 0.35);
+  box-shadow: 0 8px 20px var(--color-cta-shadow-hover);
 }
 
 .btn-primary:active,
 .btn-cta:active {
-  background-color: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
+  background-color: var(--color-cta-active) !important;
+  border-color: var(--color-cta-active) !important;
   color: #FFFFFF !important;
   transform: translateY(0);
 }
@@ -206,37 +221,47 @@ a:hover {
   opacity: 0.65;
   cursor: not-allowed;
   pointer-events: none;
-  background-color: var(--color-primary) !important;
-  border-color: var(--color-primary) !important;
+  background-color: var(--color-cta) !important;
+  border-color: var(--color-cta) !important;
   color: #FFFFFF !important;
   box-shadow: none;
   transform: none;
 }
 
 .btn-secondary {
-  background-color: var(--color-secondary);
-  border-color: var(--color-secondary);
-  color: #FFFFFF;
+  background-color: var(--color-cta);
+  border-color: var(--color-cta);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px var(--color-cta-shadow);
 }
 
-.btn-secondary:hover {
-  background-color: var(--color-secondary-hover);
-  border-color: var(--color-secondary-hover);
-  color: #FFFFFF;
+.btn-secondary:hover, .btn-secondary:focus {
+  background-color: var(--color-cta-hover);
+  border-color: var(--color-cta-hover);
+  color: #FFFFFF !important;
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--color-cta-shadow-hover);
+}
+
+.btn-secondary:active {
+  background-color: var(--color-cta-active);
+  border-color: var(--color-cta-active);
+  color: #FFFFFF !important;
+  transform: translateY(0);
 }
 
 .btn-outline-primary {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+  color: var(--color-cta);
+  border-color: var(--color-cta);
   background-color: transparent;
 }
 
-.btn-outline-primary:hover {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #FFFFFF;
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+  background-color: var(--color-cta);
+  border-color: var(--color-cta);
+  color: #FFFFFF !important;
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--color-cta-shadow);
 }
 
 .btn-light {
@@ -1832,15 +1857,32 @@ a:hover {
   object-position: top center;
   display: block;
   transition: transform 0.4s ease;
+  transform-origin: top center;
 }
 
-/* Third leadership image specific facial alignment & fit */
+/* Third leadership image (David Chen) - perfect head alignment & headroom fit */
 .leadership-img-third {
-  object-position: center 15% !important;
+  object-position: center top !important;
+  transform-origin: top center;
 }
 
 .card-custom:hover .leadership-img {
-  transform: scale(1.05);
+  transform: scale(1.04);
+}
+
+@media (max-width: 991.98px) {
+  .leadership-img-box {
+    height: 280px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .leadership-img-box {
+    height: 290px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* ==========================================================================

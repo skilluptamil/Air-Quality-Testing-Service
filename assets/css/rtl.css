@@ -92,33 +92,30 @@
 
 /* ==========================================================================
    Primary Call-to-Action (CTA) Button Color & Contrast in RTL Mode
-   Guarantees distinct, vibrant brand teal (never grey) across all pages
+   Guarantees unified, vibrant Fresh Emerald Green (#10B981) across all pages
    ========================================================================== */
 [dir="rtl"] .btn-primary,
 html[dir="rtl"] .btn-primary,
 [dir="rtl"] .btn-cta,
 html[dir="rtl"] .btn-cta {
-  background-color: #0F766E !important;
-  background-color: var(--color-primary) !important;
-  border-color: #0F766E !important;
-  border-color: var(--color-primary) !important;
+  background-color: #10B981 !important;
+  background-color: var(--color-cta, #10B981) !important;
+  border-color: #10B981 !important;
+  border-color: var(--color-cta, #10B981) !important;
   color: #FFFFFF !important;
-  --bs-btn-bg: #0F766E !important;
-  --bs-btn-bg: var(--color-primary) !important;
-  --bs-btn-border-color: #0F766E !important;
-  --bs-btn-border-color: var(--color-primary) !important;
+  --bs-btn-bg: var(--color-cta, #10B981) !important;
+  --bs-btn-border-color: var(--color-cta, #10B981) !important;
   --bs-btn-color: #FFFFFF !important;
-  --bs-btn-hover-bg: #0D5D56 !important;
-  --bs-btn-hover-bg: var(--color-primary-hover) !important;
-  --bs-btn-hover-border-color: var(--color-primary-hover) !important;
+  --bs-btn-hover-bg: var(--color-cta-hover, #059669) !important;
+  --bs-btn-hover-border-color: var(--color-cta-hover, #059669) !important;
   --bs-btn-hover-color: #FFFFFF !important;
-  --bs-btn-active-bg: var(--color-primary-hover) !important;
-  --bs-btn-active-border-color: var(--color-primary-hover) !important;
+  --bs-btn-active-bg: var(--color-cta-active, #047857) !important;
+  --bs-btn-active-border-color: var(--color-cta-active, #047857) !important;
   --bs-btn-active-color: #FFFFFF !important;
-  --bs-btn-disabled-bg: var(--color-primary) !important;
-  --bs-btn-disabled-border-color: var(--color-primary) !important;
+  --bs-btn-disabled-bg: var(--color-cta, #10B981) !important;
+  --bs-btn-disabled-border-color: var(--color-cta, #10B981) !important;
   --bs-btn-disabled-color: #FFFFFF !important;
-  box-shadow: 0 4px 14px rgba(15, 118, 110, 0.35);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
 }
 
 [dir="rtl"] .btn-primary:hover,
@@ -129,19 +126,19 @@ html[dir="rtl"] .btn-primary:focus,
 [dir="rtl"] .btn-cta:focus,
 html[dir="rtl"] .btn-cta:hover,
 html[dir="rtl"] .btn-cta:focus {
-  background-color: var(--color-primary-hover) !important;
-  border-color: var(--color-primary-hover) !important;
+  background-color: var(--color-cta-hover, #059669) !important;
+  border-color: var(--color-cta-hover, #059669) !important;
   color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(15, 118, 110, 0.45);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.45);
 }
 
 [dir="rtl"] .btn-primary:active,
 html[dir="rtl"] .btn-primary:active,
 [dir="rtl"] .btn-cta:active,
 html[dir="rtl"] .btn-cta:active {
-  background-color: var(--color-primary-hover) !important;
-  border-color: var(--color-primary-hover) !important;
+  background-color: var(--color-cta-active, #047857) !important;
+  border-color: var(--color-cta-active, #047857) !important;
   color: #FFFFFF !important;
   transform: translateY(0);
 }
@@ -154,8 +151,8 @@ html[dir="rtl"] .btn-primary.disabled,
 [dir="rtl"] .btn-cta.disabled,
 html[dir="rtl"] .btn-cta:disabled,
 html[dir="rtl"] .btn-cta.disabled {
-  background-color: var(--color-primary) !important;
-  border-color: var(--color-primary) !important;
+  background-color: var(--color-cta, #10B981) !important;
+  border-color: var(--color-cta, #10B981) !important;
   color: #FFFFFF !important;
   opacity: 0.65 !important;
   cursor: not-allowed;
