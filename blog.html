@@ -54,13 +54,26 @@
             <li class="nav-item"><a class="nav-link text-nowrap" href="contact.html">Contact Us</a></li>
           </ul>
 
+                    <!-- Right Action Items: Dashboard, Auth, Controls -->
           <div class="nav-actions d-flex align-items-center gap-2 flex-nowrap">
-            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
-            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
-            <a href="login.html" class="btn btn-outline-primary btn-sm px-2 px-xl-3 text-nowrap"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+            <!-- RTL Toggle (Desktop) -->
+            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR">
+              <span class="rtl-badge-text nav-rtl-badge">RTL</span>
+            </button>
 
+            <!-- Dark/Light Mode Toggle (Desktop) -->
+            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme">
+              <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+            </button>
+
+            <!-- Login Primary CTA -->
+            <a href="login.html" class="btn btn-primary btn-sm btn-pill shadow-sm text-nowrap">
+              <i class="bi bi-box-arrow-in-right"></i> Login
+            </a>
+
+            <!-- Dashboard Dropdown -->
             <div class="dropdown">
-              <button class="btn btn-primary btn-sm btn-pill dropdown-toggle shadow-sm text-nowrap" type="button" data-bs-toggle="dropdown">
+              <button class="btn btn-outline-primary btn-sm btn-pill dropdown-toggle text-nowrap" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-speedometer2"></i> Dashboard
               </button>
               <ul class="dropdown-menu dropdown-menu-end shadow-lg">
@@ -131,40 +144,35 @@
   </section>
 
   <!-- =========================================================================
-       Sections 3 & 4: Searchable Blog Listing & Category Filters
-       ========================================================================= -->
-  <section class="py-4 bg-body border-bottom">
-    <div class="container">
-      <div class="row align-items-center g-3">
-        <!-- Live Search Bar -->
-        <div class="col-md-5">
-          <div class="input-group">
-            <span class="input-group-text bg-surface border-end-0"><i class="bi bi-search text-muted"></i></span>
-            <input type="text" id="blogSearchInput" class="form-control border-start-0" placeholder="Search articles by keyword (e.g., VOC, moisture, allergy)...">
-          </div>
-        </div>
-
-        <!-- Category Filters -->
-        <div class="col-md-7 d-flex flex-wrap gap-2 justify-content-md-end">
-          <button class="btn btn-sm btn-primary category-btn active" data-category="all">All Topics</button>
-          <button class="btn btn-sm btn-light border category-btn" data-category="mold">Mold Prevention</button>
-          <button class="btn btn-sm btn-light border category-btn" data-category="air">Air Quality Science</button>
-          <button class="btn btn-sm btn-light border category-btn" data-category="health">Health &amp; Symptoms</button>
-          <button class="btn btn-sm btn-light border category-btn" data-category="tech">Thermal &amp; Equipment</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       Section 5: Latest Articles Grid
+       Section 5: Field Reports & Science Articles Grid with Category Alignment
        ========================================================================= -->
   <section class="section-py bg-body">
     <div class="container">
-      <div class="text-center section-title mb-5 blog-section-heading">
+      <div class="text-center section-title mb-4 blog-section-heading">
         <span class="badge-tag badge-primary-soft">Field Reports &amp; Science</span>
-        <h2 class="mt-2 text-dark fw-bold">Environmental Investigation Journal</h2>
+        <h2 class="mt-2 fw-bold">Environmental Investigation Journal</h2>
         <p class="text-muted">Evidence-based microbiology protocols, laboratory diagnostic guides, and air quality standards.</p>
+      </div>
+
+      <!-- Search & Category Options Filter Bar -->
+      <div class="p-3 mb-5 rounded-4 bg-surface border shadow-sm">
+        <div class="row align-items-center g-3">
+          <div class="col-lg-4 col-md-5">
+            <div class="input-group">
+              <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search text-muted"></i></span>
+              <input type="text" id="blogSearchInput" class="form-control border-start-0" placeholder="Search articles by keyword...">
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-7">
+            <div class="d-flex flex-wrap gap-2 justify-content-md-end justify-content-center align-items-center">
+              <button class="category-btn active" data-category="all">All Topics</button>
+              <button class="category-btn btn-light border" data-category="mold">Mold Prevention</button>
+              <button class="category-btn btn-light border" data-category="air">Air Quality Science</button>
+              <button class="category-btn btn-light border" data-category="health">Health &amp; Symptoms</button>
+              <button class="category-btn btn-light border" data-category="tech">Thermal &amp; Equipment</button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="row g-4" id="articlesGrid">
@@ -330,13 +338,13 @@
   </section>
 
   <!-- =========================================================================
-       Section 6: Documented Field Case Studies Grid
+       Section 6: Documented Field Case Studies Grid (Proven Outcomes)
        ========================================================================= -->
   <section class="section-py bg-surface border-top border-bottom">
     <div class="container">
       <div class="text-center section-title mb-5 blog-section-heading">
         <span class="badge-tag badge-primary-soft">Proven Outcomes</span>
-        <h2 class="mt-2 text-dark fw-bold">Environmental Case Studies &amp; Clearance Audits</h2>
+        <h2 class="mt-2 fw-bold">Environmental Case Studies &amp; Clearance Audits</h2>
         <p class="text-muted">Explore documented indoor air remediation, laboratory particle counts, and clearance certification cases.</p>
       </div>
 
@@ -349,15 +357,15 @@
             </div>
             <span class="badge bg-secondary-subtle text-secondary fw-semibold mb-2 align-self-start">Commercial Escrow Clearance</span>
             <h5 class="case-study-title mb-2">
-              <a href="customer-dashboard.html#tab-reports" class="text-dark text-decoration-none">
+              <a href="customer-dashboard.html#tab-reports" class="text-decoration-none">
                 Emergency 12-Hour Clearance for a $1.8M Commercial Property Escrow
               </a>
             </h5>
             <p class="case-study-desc mb-3">
               Rapid Air-O-Cell spore trap deployment and AIHA-LAP emergency courier logistics cleared toxic mold contingencies under tight contract deadlines.
             </p>
-            <div class="p-2.5 rounded-3 bg-body border mb-3 small">
-              <strong class="text-success d-block"><i class="bi bi-shield-check"></i> 14,200 &rarr; &lt;150 spores/m³</strong>
+            <div class="metric-highlight small">
+              <strong class="text-success d-block mb-1"><i class="bi bi-shield-check"></i> 14,200 &rarr; &lt;150 spores/m³</strong>
               <span class="text-muted">Cleared closing contingencies in 12 hours</span>
             </div>
             <a href="customer-dashboard.html#tab-reports" class="btn btn-outline-primary btn-sm w-100 fw-semibold">
@@ -374,15 +382,15 @@
             </div>
             <span class="badge bg-info-subtle text-info fw-semibold mb-2 align-self-start">Healthcare Facility</span>
             <h5 class="case-study-title mb-2">
-              <a href="customer-dashboard.html#tab-reports" class="text-dark text-decoration-none">
+              <a href="customer-dashboard.html#tab-reports" class="text-decoration-none">
                 Zero Spore Migration in an Operational Outpatient Surgery Center
               </a>
             </h5>
             <p class="case-study-desc mb-3">
               Executing negative pressure containment with continuous laser particle counter logging and HEPA 500 scrubbers in an active clinical clinic.
             </p>
-            <div class="p-2.5 rounded-3 bg-body border mb-3 small">
-              <strong class="text-success d-block"><i class="bi bi-shield-check"></i> 0.00% Cross-Contamination</strong>
+            <div class="metric-highlight small">
+              <strong class="text-success d-block mb-1"><i class="bi bi-shield-check"></i> 0.00% Cross-Contamination</strong>
               <span class="text-muted">Zero airborne particle migration logged</span>
             </div>
             <a href="customer-dashboard.html#tab-reports" class="btn btn-outline-primary btn-sm w-100 fw-semibold">
@@ -399,15 +407,15 @@
             </div>
             <span class="badge bg-primary-subtle text-primary fw-semibold mb-2 align-self-start">Historic Restoration</span>
             <h5 class="case-study-title mb-2">
-              <a href="customer-dashboard.html#tab-reports" class="text-dark text-decoration-none">
+              <a href="customer-dashboard.html#tab-reports" class="text-decoration-none">
                 Non-Toxic Botanical Biocide Sanitization in a 1920s Heritage Attic
               </a>
             </h5>
             <p class="case-study-desc mb-3">
               Eradicating deep-rooted Chaetomium colonies without damaging original cedar framing or off-gassing synthetic VOCs into the living space.
             </p>
-            <div class="p-2.5 rounded-3 bg-body border mb-3 small">
-              <strong class="text-success d-block"><i class="bi bi-shield-check"></i> 100% Passing Clearance</strong>
+            <div class="metric-highlight small">
+              <strong class="text-success d-block mb-1"><i class="bi bi-shield-check"></i> 100% Passing Clearance</strong>
               <span class="text-muted">Passed certified inspection on first re-test</span>
             </div>
             <a href="customer-dashboard.html#tab-reports" class="btn btn-outline-primary btn-sm w-100 fw-semibold">
@@ -426,7 +434,7 @@
     <div class="container">
       <div class="text-center section-title mb-5 blog-section-heading">
         <span class="badge-tag badge-primary-soft">Regulatory &amp; Technical Standards</span>
-        <h2 class="mt-2 text-dark fw-bold">Microbiology Protocols &amp; Regulatory Guides</h2>
+        <h2 class="mt-2 fw-bold">Microbiology Protocols &amp; Regulatory Guides</h2>
         <p class="text-muted">Authoritative whitepapers and standardized testing methodologies from AIHA-LAP laboratory scientists.</p>
       </div>
 
@@ -439,7 +447,7 @@
             </div>
             <span class="badge bg-danger-subtle text-danger fw-semibold mb-2 align-self-start">EPA Regulatory Standard</span>
             <h5 class="case-study-title mb-2">
-              <a href="contact.html" class="text-dark text-decoration-none">
+              <a href="contact.html" class="text-decoration-none">
                 EPA Spore Count Reference Index &amp; Clean Air Thresholds
               </a>
             </h5>
@@ -464,7 +472,7 @@
             </div>
             <span class="badge bg-primary-subtle text-primary fw-semibold mb-2 align-self-start">ASTM Diagnostic Protocol</span>
             <h5 class="case-study-title mb-2">
-              <a href="contact.html" class="text-dark text-decoration-none">
+              <a href="contact.html" class="text-decoration-none">
                 Thermal Moisture Mapping Standard Operating Procedure (ASTM D7953)
               </a>
             </h5>
@@ -489,7 +497,7 @@
             </div>
             <span class="badge bg-success-subtle text-success fw-semibold mb-2 align-self-start">Legal &amp; Escrow Verification</span>
             <h5 class="case-study-title mb-2">
-              <a href="contact.html" class="text-dark text-decoration-none">
+              <a href="contact.html" class="text-decoration-none">
                 Post-Remediation Verification (PRV) Certificate Guide &amp; Legal Disclosures
               </a>
             </h5>

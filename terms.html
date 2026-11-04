@@ -29,7 +29,7 @@
     .legal-content-card h3, 
     .legal-content-card h4,
     .legal-content-card h5 {
-      color: #000000 !important;
+      color: var(--text-primary);
       font-weight: 700;
     }
     .sticky-toc {
@@ -106,13 +106,26 @@
             <li class="nav-item"><a class="nav-link text-nowrap" href="contact.html">Contact Us</a></li>
           </ul>
 
+                    <!-- Right Action Items: Dashboard, Auth, Controls -->
           <div class="nav-actions d-flex align-items-center gap-2 flex-nowrap">
-            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
-            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
-            <a href="login.html" class="btn btn-outline-primary btn-sm px-2 px-xl-3 text-nowrap"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+            <!-- RTL Toggle (Desktop) -->
+            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR">
+              <span class="rtl-badge-text nav-rtl-badge">RTL</span>
+            </button>
 
+            <!-- Dark/Light Mode Toggle (Desktop) -->
+            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme">
+              <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+            </button>
+
+            <!-- Login Primary CTA -->
+            <a href="login.html" class="btn btn-primary btn-sm btn-pill shadow-sm text-nowrap">
+              <i class="bi bi-box-arrow-in-right"></i> Login
+            </a>
+
+            <!-- Dashboard Dropdown -->
             <div class="dropdown">
-              <button class="btn btn-primary btn-sm btn-pill dropdown-toggle shadow-sm text-nowrap" type="button" data-bs-toggle="dropdown">
+              <button class="btn btn-outline-primary btn-sm btn-pill dropdown-toggle text-nowrap" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-speedometer2"></i> Dashboard
               </button>
               <ul class="dropdown-menu dropdown-menu-end shadow-lg">
@@ -164,7 +177,7 @@
           <div class="sticky-toc">
             
             <div class="p-4 rounded-4 bg-surface border mb-4 shadow-sm">
-              <h5 class="fw-bold mb-3" style="color: #000000;"><i class="bi bi-journal-text text-primary me-2"></i>Navigation Menu</h5>
+              <h5 class="fw-bold mb-3"><i class="bi bi-journal-text text-primary me-2"></i>Navigation Menu</h5>
               <nav class="d-flex flex-column gap-1">
                 <a href="#term-scope" class="toc-link"><i class="bi bi-chevron-right small me-1"></i> 1. Scope of Environmental Diagnostics</a>
                 <a href="#term-access" class="toc-link"><i class="bi bi-chevron-right small me-1"></i> 2. Property Access &amp; Safety</a>
@@ -181,7 +194,7 @@
             <div class="p-4 rounded-4 bg-success-subtle border border-success border-opacity-25 mb-4">
               <div class="d-flex align-items-center gap-3 mb-2">
                 <i class="bi bi-patch-check-fill text-success fs-3"></i>
-                <h6 class="fw-bold mb-0" style="color: #000000;">100% Clearance Guarantee</h6>
+                <h6 class="fw-bold mb-0">100% Clearance Guarantee</h6>
               </div>
               <p class="small text-secondary mb-0">
                 If post-remediation verification (PRV) air sampling fails after remediation performed by AeroPure certified crews, we re-treat and re-test at zero additional cost until formal clearance is achieved.
@@ -191,7 +204,7 @@
             <!-- Emergency Dispatch Card -->
             <div class="p-4 rounded-4 bg-surface border shadow-sm text-center">
               <i class="bi bi-headset text-primary fs-2 mb-2 d-block"></i>
-              <h6 class="fw-bold mb-1" style="color: #000000;">Need Immediate Dispatch?</h6>
+              <h6 class="fw-bold mb-1">Need Immediate Dispatch?</h6>
               <p class="small text-muted mb-3">Our 24/7 emergency hazardous containment team is standing by.</p>
               <a href="tel:18005557873" class="btn btn-primary btn-sm btn-pill w-100">
                 <i class="bi bi-telephone-fill me-1"></i> Call (800) 555-PURE
@@ -238,7 +251,7 @@
               The client or an authorized representative (such as a real estate agent or property manager) must ensure unobstructed and safe access to all target areas, including utility rooms, basements, HVAC units, and attic crawlway entries.
             </p>
             <div class="p-3 rounded-3 bg-body border mb-0">
-              <h6 class="fw-bold mb-2" style="color: #000000;"><i class="bi bi-shield-exclamation text-warning me-2"></i>Technician Safety Standards:</h6>
+              <h6 class="fw-bold mb-2"><i class="bi bi-shield-exclamation text-warning me-2"></i>Technician Safety Standards:</h6>
               <p class="small text-muted mb-0">
                 AeroPure field environmentalists retain the professional discretion to refuse entry into spaces exhibiting active bio-hazards (such as raw sewage pooling &gt;2 inches, live uninsulated electrical wiring, aggressive animals, or structurally compromised ceiling joists) until safe conditions are established.
               </p>
@@ -286,13 +299,13 @@
             <div class="row g-3 mb-3">
               <div class="col-md-6">
                 <div class="p-3 rounded-3 bg-body border h-100">
-                  <h6 class="fw-bold mb-1" style="color: #000000;">Passing Criteria</h6>
+                  <h6 class="fw-bold mb-1">Passing Criteria</h6>
                   <p class="small text-muted mb-0">Total indoor spore counts are at or below outdoor reference levels, with zero elevated indicator species (Stachybotrys, Chaetomium, Memnoniella).</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="p-3 rounded-3 bg-body border h-100">
-                  <h6 class="fw-bold mb-1" style="color: #000000;">Zero-Cost Re-Treatment</h6>
+                  <h6 class="fw-bold mb-1">Zero-Cost Re-Treatment</h6>
                   <p class="small text-muted mb-0">If a containment zone treated by our certified technicians fails PRV laboratory testing, we perform secondary HEPA vacuuming, antimicrobial fogging, and re-testing at our sole expense.</p>
                 </div>
               </div>

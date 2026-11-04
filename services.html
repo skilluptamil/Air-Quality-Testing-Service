@@ -54,13 +54,26 @@
             <li class="nav-item"><a class="nav-link text-nowrap" href="contact.html">Contact Us</a></li>
           </ul>
 
+                    <!-- Right Action Items: Dashboard, Auth, Controls -->
           <div class="nav-actions d-flex align-items-center gap-2 flex-nowrap">
-            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
-            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
-            <a href="login.html" class="btn btn-outline-primary btn-sm px-2 px-xl-3 text-nowrap"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+            <!-- RTL Toggle (Desktop) -->
+            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR">
+              <span class="rtl-badge-text nav-rtl-badge">RTL</span>
+            </button>
 
+            <!-- Dark/Light Mode Toggle (Desktop) -->
+            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme">
+              <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+            </button>
+
+            <!-- Login Primary CTA -->
+            <a href="login.html" class="btn btn-primary btn-sm btn-pill shadow-sm text-nowrap">
+              <i class="bi bi-box-arrow-in-right"></i> Login
+            </a>
+
+            <!-- Dashboard Dropdown -->
             <div class="dropdown">
-              <button class="btn btn-primary btn-sm btn-pill dropdown-toggle shadow-sm text-nowrap" type="button" data-bs-toggle="dropdown">
+              <button class="btn btn-outline-primary btn-sm btn-pill dropdown-toggle text-nowrap" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-speedometer2"></i> Dashboard
               </button>
               <ul class="dropdown-menu dropdown-menu-end shadow-lg">
@@ -131,8 +144,8 @@
       <div class="row g-4 align-items-stretch">
         <!-- Card 1 -->
         <div class="col-md-4 d-flex">
-          <div class="card-custom w-100">
-            <div class="card-icon-box"><i class="bi bi-search"></i></div>
+          <div class="card-custom w-100 p-3 h-100 d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&auto=format&fit=crop&q=80" alt="Visual and Moisture Assessment" class="img-fluid rounded-3 mb-3" style="height: 180px; width: 100%; object-fit: cover;">
             <h4>Visual &amp; Moisture Assessment</h4>
             <p class="text-muted small">Thorough forensic examination of crawl spaces, basements, HVAC plenums, and attics using radio-frequency surface hygrometers.</p>
             <ul class="list-unstyled small text-secondary mb-4">
@@ -149,8 +162,8 @@
 
         <!-- Card 2 -->
         <div class="col-md-4 d-flex">
-          <div class="card-custom w-100">
-            <div class="card-icon-box"><i class="bi bi-camera"></i></div>
+          <div class="card-custom w-100 p-3 h-100 d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="FLIR Thermal Moisture Imaging" class="img-fluid rounded-3 mb-3" style="height: 180px; width: 100%; object-fit: cover;">
             <h4>FLIR Thermal Moisture Imaging</h4>
             <p class="text-muted small">High-definition infrared thermography maps temperature differentials behind drywall, ceilings, and tiles to locate hidden leaks without demolition.</p>
             <ul class="list-unstyled small text-secondary mb-4">
@@ -167,8 +180,8 @@
 
         <!-- Card 3 -->
         <div class="col-md-4 d-flex">
-          <div class="card-custom w-100">
-            <div class="card-icon-box"><i class="bi bi-virus"></i></div>
+          <div class="card-custom w-100 p-3 h-100 d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80" alt="Spore Trap Air Cassette Analysis" class="img-fluid rounded-3 mb-3" style="height: 180px; width: 100%; object-fit: cover;">
             <h4>Spore Trap Air Cassette Analysis</h4>
             <p class="text-muted small">Calibrated pumps collect indoor air samples compared against outdoor ambient baseline air to verify exact fungal concentrations per cubic meter.</p>
             <ul class="list-unstyled small text-secondary mb-4">
@@ -188,6 +201,7 @@
 
   <!-- =========================================================================
        Section 4: Mold Remediation and Removal Services
+       (Unnecessary icons replaced with high-quality, relevant images)
        ========================================================================= -->
   <section class="section-py bg-surface border-top border-bottom">
     <div class="container">
@@ -199,11 +213,11 @@
         <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2">100% Clearance Warranty</span>
       </div>
 
-      <div class="row g-4">
+      <div class="row g-4 align-items-stretch">
         <!-- Card 1 -->
-        <div class="col-md-4">
-          <div class="card-custom">
-            <div class="card-icon-box"><i class="bi bi-shield-shaded"></i></div>
+        <div class="col-md-4 d-flex">
+          <div class="card-custom w-100 p-3 h-100 d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1584634731339-252c581abfc5?w=600&auto=format&fit=crop&q=80" alt="Airtight Negative Pressure Containment" class="img-fluid rounded-3 mb-3" style="height: 180px; width: 100%; object-fit: cover;">
             <h4>Airtight Negative Pressure Containment</h4>
             <p class="text-muted small">Sealing remediation zones with heavy 6-mil polyethylene chambers and HEPA blowers prevents airborne spores from cross-contaminating living spaces.</p>
             <ul class="list-unstyled small text-secondary mb-4">
@@ -219,9 +233,9 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="col-md-4">
-          <div class="card-custom">
-            <div class="card-icon-box"><i class="bi bi-fan"></i></div>
+        <div class="col-md-4 d-flex">
+          <div class="card-custom w-100 p-3 h-100 d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=600&auto=format&fit=crop&q=80" alt="HEPA 500 Industrial Air Scrubbing" class="img-fluid rounded-3 mb-3" style="height: 180px; width: 100%; object-fit: cover;">
             <h4>HEPA 500 Industrial Air Scrubbing</h4>
             <p class="text-muted small">Hospital-grade air filtration machines equipped with true medical HEPA and activated carbon filters circulate and purify 500 CFM of air constantly.</p>
             <ul class="list-unstyled small text-secondary mb-4">
@@ -237,9 +251,9 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="col-md-4">
-          <div class="card-custom">
-            <div class="card-icon-box"><i class="bi bi-droplet-half"></i></div>
+        <div class="col-md-4 d-flex">
+          <div class="card-custom w-100 p-3 h-100 d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&auto=format&fit=crop&q=80" alt="Botanical Antimicrobial Sanitization" class="img-fluid rounded-3 mb-3" style="height: 180px; width: 100%; object-fit: cover;">
             <h4>Botanical Antimicrobial Sanitization</h4>
             <p class="text-muted small">Application of EPA-registered, plant-based antimicrobial solutions (thyme and tea-tree extracts) that destroy fungal mycotoxins without synthetic chemical fumes.</p>
             <ul class="list-unstyled small text-secondary mb-4">
@@ -259,6 +273,7 @@
 
   <!-- =========================================================================
        Section 5: Indoor Air Quality Testing & Moisture Detection
+       (Unnecessary icons replaced with high-quality, relevant images)
        ========================================================================= -->
   <section class="section-py bg-body">
     <div class="container">
@@ -270,11 +285,11 @@
         <a href="home-2.html" class="btn btn-sm btn-outline-primary">Learn About IAQ Science <i class="bi bi-arrow-right"></i></a>
       </div>
 
-      <div class="row g-4">
+      <div class="row g-4 align-items-stretch">
         <!-- Card 1 -->
-        <div class="col-md-4">
-          <div class="card-custom">
-            <div class="card-icon-box"><i class="bi bi-wind"></i></div>
+        <div class="col-md-4 d-flex">
+          <div class="card-custom w-100 p-3 h-100 d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&auto=format&fit=crop&q=80" alt="TVOC and Formaldehyde Profiling" class="img-fluid rounded-3 mb-3" style="height: 180px; width: 100%; object-fit: cover;">
             <h4>TVOC &amp; Formaldehyde Profiling</h4>
             <p class="text-muted small">Identifies toxic volatile organic compounds off-gassing from engineered wood floors, carpets, cabinetry adhesives, and paint solvents.</p>
             <div class="mt-auto d-flex gap-2">
@@ -285,9 +300,9 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="col-md-4">
-          <div class="card-custom">
-            <div class="card-icon-box"><i class="bi bi-activity"></i></div>
+        <div class="col-md-4 d-flex">
+          <div class="card-custom w-100 p-3 h-100 d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop&q=80" alt="Allergen and Dust Mite Screening" class="img-fluid rounded-3 mb-3" style="height: 180px; width: 100%; object-fit: cover;">
             <h4>Allergen &amp; Dust Mite Screening</h4>
             <p class="text-muted small">Quantitative ELISA immunoassays evaluate concentrations of dust mite antigens, cockroach allergen, cat/dog dander, and pollen in fabrics.</p>
             <div class="mt-auto d-flex gap-2">
@@ -298,9 +313,9 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="col-md-4">
-          <div class="card-custom">
-            <div class="card-icon-box"><i class="bi bi-moisture"></i></div>
+        <div class="col-md-4 d-flex">
+          <div class="card-custom w-100 p-3 h-100 d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80" alt="Crawl Space Moisture Encapsulation" class="img-fluid rounded-3 mb-3" style="height: 180px; width: 100%; object-fit: cover;">
             <h4>Crawl Space Moisture Encapsulation</h4>
             <p class="text-muted small">20-mil vapor barriers, sump pump integration, and commercial dehumidification stop subterranean moisture from entering the home envelope.</p>
             <div class="mt-auto d-flex gap-2">

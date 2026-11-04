@@ -54,13 +54,26 @@
             <li class="nav-item"><a class="nav-link active text-nowrap" href="contact.html">Contact Us</a></li>
           </ul>
 
+                    <!-- Right Action Items: Dashboard, Auth, Controls -->
           <div class="nav-actions d-flex align-items-center gap-2 flex-nowrap">
-            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
-            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
-            <a href="login.html" class="btn btn-outline-primary btn-sm px-2 px-xl-3 text-nowrap"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+            <!-- RTL Toggle (Desktop) -->
+            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR">
+              <span class="rtl-badge-text nav-rtl-badge">RTL</span>
+            </button>
 
+            <!-- Dark/Light Mode Toggle (Desktop) -->
+            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme">
+              <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+            </button>
+
+            <!-- Login Primary CTA -->
+            <a href="login.html" class="btn btn-primary btn-sm btn-pill shadow-sm text-nowrap">
+              <i class="bi bi-box-arrow-in-right"></i> Login
+            </a>
+
+            <!-- Dashboard Dropdown -->
             <div class="dropdown">
-              <button class="btn btn-primary btn-sm btn-pill dropdown-toggle shadow-sm text-nowrap" type="button" data-bs-toggle="dropdown">
+              <button class="btn btn-outline-primary btn-sm btn-pill dropdown-toggle text-nowrap" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-speedometer2"></i> Dashboard
               </button>
               <ul class="dropdown-menu dropdown-menu-end shadow-lg">
@@ -258,7 +271,7 @@
       <div class="row g-4 text-secondary">
         <div class="col-md-4">
           <div class="p-4 rounded-4 border bg-body h-100 shadow-sm">
-            <h5 class="fw-bold mb-2 text-dark" style="color: #000000 !important;"><i class="bi bi-pin-map-fill text-danger me-2"></i> Metro Core &amp; Downtown</h5>
+            <h5 class="fw-bold mb-2"><i class="bi bi-pin-map-fill text-danger me-2"></i> Metro Core &amp; Downtown</h5>
             <span class="badge bg-success-subtle text-success mb-3">Avg Dispatch: &lt;45 Minutes</span>
             <ul class="list-unstyled small mb-0">
               <li>• Central Business District</li>
@@ -271,7 +284,7 @@
 
         <div class="col-md-4">
           <div class="p-4 rounded-4 border bg-body h-100 shadow-sm">
-            <h5 class="fw-bold mb-2 text-dark" style="color: #000000 !important;"><i class="bi bi-pin-map-fill text-danger me-2"></i> Northern Suburban Corridors</h5>
+            <h5 class="fw-bold mb-2"><i class="bi bi-pin-map-fill text-danger me-2"></i> Northern Suburban Corridors</h5>
             <span class="badge bg-primary-subtle text-primary mb-3">Avg Dispatch: &lt;60 Minutes</span>
             <ul class="list-unstyled small mb-0">
               <li>• Residential subdivisions &amp; family estates</li>
@@ -284,7 +297,7 @@
 
         <div class="col-md-4">
           <div class="p-4 rounded-4 border bg-body h-100 shadow-sm">
-            <h5 class="fw-bold mb-2 text-dark" style="color: #000000 !important;"><i class="bi bi-pin-map-fill text-danger me-2"></i> Greater County &amp; Rural</h5>
+            <h5 class="fw-bold mb-2"><i class="bi bi-pin-map-fill text-danger me-2"></i> Greater County &amp; Rural</h5>
             <span class="badge bg-info-subtle text-info mb-3">Avg Dispatch: &lt;75 Minutes</span>
             <ul class="list-unstyled small mb-0">
               <li>• Equestrian facilities &amp; agrarian properties</li>
@@ -305,7 +318,7 @@
     <div class="container">
       <div class="text-center section-title mb-5">
         <span class="badge-tag badge-primary-soft">Immediate Help</span>
-        <h2 class="mt-2 text-dark fw-bold">Frequently Asked Questions</h2>
+        <h2 class="mt-2 fw-bold">Frequently Asked Questions</h2>
         <p class="text-muted">What to do while waiting for our dispatch team.</p>
       </div>
 
@@ -314,7 +327,7 @@
           <div class="accordion shadow-sm rounded-4 overflow-hidden border" id="contactFaq">
             <div class="accordion-item border-0 border-bottom">
               <h2 class="accordion-header">
-                <button class="accordion-button fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#cf1" style="color: #000000 !important;">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cf1">
                   What should I do immediately if I discover severe active mold?
                 </button>
               </h2>
@@ -327,7 +340,7 @@
 
             <div class="accordion-item border-0">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#cf2" style="color: #000000 !important;">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf2">
                   Can I schedule an appointment directly online without calling?
                 </button>
               </h2>

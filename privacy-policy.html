@@ -29,7 +29,7 @@
     .legal-content-card h3, 
     .legal-content-card h4,
     .legal-content-card h5 {
-      color: #000000 !important;
+      color: var(--text-primary);
       font-weight: 700;
     }
     .sticky-toc {
@@ -106,13 +106,26 @@
             <li class="nav-item"><a class="nav-link text-nowrap" href="contact.html">Contact Us</a></li>
           </ul>
 
+                    <!-- Right Action Items: Dashboard, Auth, Controls -->
           <div class="nav-actions d-flex align-items-center gap-2 flex-nowrap">
-            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
-            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
-            <a href="login.html" class="btn btn-outline-primary btn-sm px-2 px-xl-3 text-nowrap"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+            <!-- RTL Toggle (Desktop) -->
+            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR">
+              <span class="rtl-badge-text nav-rtl-badge">RTL</span>
+            </button>
 
+            <!-- Dark/Light Mode Toggle (Desktop) -->
+            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme">
+              <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+            </button>
+
+            <!-- Login Primary CTA -->
+            <a href="login.html" class="btn btn-primary btn-sm btn-pill shadow-sm text-nowrap">
+              <i class="bi bi-box-arrow-in-right"></i> Login
+            </a>
+
+            <!-- Dashboard Dropdown -->
             <div class="dropdown">
-              <button class="btn btn-primary btn-sm btn-pill dropdown-toggle shadow-sm text-nowrap" type="button" data-bs-toggle="dropdown">
+              <button class="btn btn-outline-primary btn-sm btn-pill dropdown-toggle text-nowrap" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-speedometer2"></i> Dashboard
               </button>
               <ul class="dropdown-menu dropdown-menu-end shadow-lg">
@@ -164,7 +177,7 @@
           <div class="sticky-toc">
             
             <div class="p-4 rounded-4 bg-surface border mb-4 shadow-sm">
-              <h5 class="fw-bold mb-3" style="color: #000000;"><i class="bi bi-list-nested text-primary me-2"></i>Table of Contents</h5>
+              <h5 class="fw-bold mb-3"><i class="bi bi-list-nested text-primary me-2"></i>Table of Contents</h5>
               <nav class="d-flex flex-column gap-1">
                 <a href="#section-intro" class="toc-link"><i class="bi bi-chevron-right small me-1"></i> 1. Introduction &amp; Commitment</a>
                 <a href="#section-collection" class="toc-link"><i class="bi bi-chevron-right small me-1"></i> 2. Categories of Data Collected</a>
@@ -181,7 +194,7 @@
             <div class="p-4 rounded-4 bg-primary-subtle border border-primary border-opacity-25 mb-4">
               <div class="d-flex align-items-center gap-3 mb-2">
                 <i class="bi bi-shield-slash-fill text-primary fs-3"></i>
-                <h6 class="fw-bold mb-0" style="color: #000000;">Zero MLS Disclosure</h6>
+                <h6 class="fw-bold mb-0">Zero MLS Disclosure</h6>
               </div>
               <p class="small text-secondary mb-0">
                 AeroPure will <strong>never</strong> disclose your mold spore counts, indoor air diagnostics, or remediation records to real estate MLS systems, municipal code enforcement, or insurance databases without your explicit written approval.
@@ -191,7 +204,7 @@
             <!-- Need Help Card -->
             <div class="p-4 rounded-4 bg-surface border shadow-sm text-center">
               <i class="bi bi-envelope-paper-heart-fill text-primary fs-2 mb-2 d-block"></i>
-              <h6 class="fw-bold mb-1" style="color: #000000;">Have Privacy Questions?</h6>
+              <h6 class="fw-bold mb-1">Have Privacy Questions?</h6>
               <p class="small text-muted mb-3">Our Dedicated Data Compliance Officer is ready to assist you.</p>
               <a href="mailto:privacy@aeropuresolutions.com" class="btn btn-outline-primary btn-sm btn-pill w-100 mb-2">
                 <i class="bi bi-envelope-at me-1"></i> privacy@aeropuresolutions.com
@@ -304,7 +317,7 @@
             <div class="alert alert-info border-0 d-flex align-items-start gap-3 mb-3">
               <i class="bi bi-exclamation-octagon-fill fs-4 text-primary flex-shrink-0"></i>
               <div>
-                <strong class="d-block mb-1" style="color: #000000;">Client Confidentiality Policy:</strong>
+                <strong class="d-block mb-1">Client Confidentiality Policy:</strong>
                 <span class="small">The contracting client who pays for the inspection owns the diagnostic report in its entirety.</span>
               </div>
             </div>
@@ -335,25 +348,25 @@
             <div class="row g-3">
               <div class="col-sm-6">
                 <div class="p-3 rounded-3 bg-body border">
-                  <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-file-earmark-lock text-primary me-2"></i>256-Bit AES Encryption</h6>
+                  <h6 class="fw-bold mb-1"><i class="bi bi-file-earmark-lock text-primary me-2"></i>256-Bit AES Encryption</h6>
                   <p class="small text-muted mb-0">All inspection certificates and laboratory reports are encrypted at rest using AES-256 cryptographic standards.</p>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="p-3 rounded-3 bg-body border">
-                  <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-broadcast text-primary me-2"></i>TLS 1.3 In-Transit</h6>
+                  <h6 class="fw-bold mb-1"><i class="bi bi-broadcast text-primary me-2"></i>TLS 1.3 In-Transit</h6>
                   <p class="small text-muted mb-0">All web traffic between your browser and our servers is secured via modern TLS 1.3 cipher suites.</p>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="p-3 rounded-3 bg-body border">
-                  <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-shield-shaded text-primary me-2"></i>Role-Based Access (RBAC)</h6>
+                  <h6 class="fw-bold mb-1"><i class="bi bi-shield-shaded text-primary me-2"></i>Role-Based Access (RBAC)</h6>
                   <p class="small text-muted mb-0">Only certified environmental hygienists assigned directly to your project can access your active file.</p>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="p-3 rounded-3 bg-body border">
-                  <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-cloud-arrow-up text-primary me-2"></i>Air-Gapped Cold Backups</h6>
+                  <h6 class="fw-bold mb-1"><i class="bi bi-cloud-arrow-up text-primary me-2"></i>Air-Gapped Cold Backups</h6>
                   <p class="small text-muted mb-0">Redundant disaster recovery vaults ensure historical test records remain secure against ransomware.</p>
                 </div>
               </div>
@@ -422,7 +435,7 @@
             <div class="p-4 rounded-4 bg-surface border">
               <div class="row g-3">
                 <div class="col-md-6">
-                  <h6 class="fw-bold mb-1" style="color: #000000;">AeroPure Compliance Division</h6>
+                  <h6 class="fw-bold mb-1">AeroPure Compliance Division</h6>
                   <p class="small text-muted mb-0">
                     Attn: Chief Privacy Officer<br>
                     4400 Airway Business Center, Suite 300<br>
@@ -430,7 +443,7 @@
                   </p>
                 </div>
                 <div class="col-md-6">
-                  <h6 class="fw-bold mb-1" style="color: #000000;">Direct Contact</h6>
+                  <h6 class="fw-bold mb-1">Direct Contact</h6>
                   <p class="small text-muted mb-1">
                     Email: <a href="mailto:privacy@aeropuresolutions.com" class="text-primary fw-semibold">privacy@aeropuresolutions.com</a>
                   </p>

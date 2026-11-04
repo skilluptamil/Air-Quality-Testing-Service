@@ -284,59 +284,62 @@
              USER TAB 2: MY PROFILE
              ===================================================================== -->
         <section id="tab-profile" class="dashboard-tab-content" style="display:none;">
-          <div class="row g-4">
-            <div class="col-lg-7">
-              <div class="p-4 p-md-5 rounded-4 bg-surface border shadow-sm">
-                <h5 class="text-primary mb-4 fw-bold"><i class="bi bi-person text-primary me-2"></i> Personal Profile &amp; Contact Information</h5>
+          <div class="row g-4 align-items-stretch">
+            <div class="col-lg-7 d-flex">
+              <div class="p-4 p-md-5 rounded-4 bg-surface border shadow-sm w-100 h-100 d-flex flex-column justify-content-between">
+                <div>
+                  <h5 class="text-primary mb-4 fw-bold"><i class="bi bi-person text-primary me-2"></i> Personal Profile &amp; Contact Information</h5>
 
-                <form onsubmit="event.preventDefault(); showNotification('Profile Saved', 'Your user personal profile details have been saved.', 'success');">
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <label class="form-label">Full Name</label>
-                      <input type="text" class="form-control" data-type="name" value="Michael Torres" required pattern="[a-zA-Z\s'.\-]+">
-                      <div class="invalid-feedback">Name only: Letters and spaces allowed.</div>
+                  <form id="userProfileForm" onsubmit="event.preventDefault(); showNotification('Profile Saved', 'Your user personal profile details have been saved.', 'success');">
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" data-type="name" value="Michael Torres" required pattern="[a-zA-Z\s'.\-]+">
+                        <div class="invalid-feedback">Name only: Letters and spaces allowed.</div>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" data-type="email" value="michael.torres@example.com" required>
+                        <div class="invalid-feedback">Please enter a valid Email ID (e.g. name@domain.com).</div>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" data-type="phone" inputmode="tel" value="(555) 342-9981">
+                        <div class="invalid-feedback">Numbers only: Letters are not allowed.</div>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Account Role</label>
+                        <input type="text" class="form-control bg-muted" value="Registered Member" readonly>
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label">Bio / Notes</label>
+                        <textarea class="form-control" rows="3">Residential property owner managing 2 family rentals in North Dallas area.</textarea>
+                      </div>
                     </div>
-                    <div class="col-md-6">
-                      <label class="form-label">Email Address</label>
-                      <input type="email" class="form-control" data-type="email" value="michael.torres@example.com" required>
-                      <div class="invalid-feedback">Please enter a valid Email ID (e.g. name@domain.com).</div>
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label">Phone Number</label>
-                      <input type="tel" class="form-control" data-type="phone" inputmode="tel" value="(555) 342-9981">
-                      <div class="invalid-feedback">Numbers only: Letters are not allowed.</div>
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label">Account Role</label>
-                      <input type="text" class="form-control bg-muted" value="Registered Member" readonly>
-                    </div>
-                    <div class="col-12">
-                      <label class="form-label">Bio / Notes</label>
-                      <textarea class="form-control" rows="3">Residential property owner managing 2 family rentals in North Dallas area.</textarea>
-                    </div>
-                    <div class="col-12 mt-3 d-flex flex-wrap gap-2">
-                      <button type="submit" class="btn btn-primary btn-pill">
-                        <i class="bi bi-check2-circle me-1"></i> Save Profile Changes
-                      </button>
-                      <button type="button" class="btn btn-outline-primary btn-pill" data-target-tab="tab-saved-services">
-                        <i class="bi bi-bookmark-heart me-1"></i> Saved Services
-                      </button>
-                      <button type="button" class="btn btn-outline-secondary btn-pill" data-target-tab="tab-settings">
-                        <i class="bi bi-gear me-1"></i> Security Settings
-                      </button>
-                    </div>
-                  </div>
-                </form>
+                  </form>
+                </div>
+
+                <div class="col-12 mt-4 pt-2 d-flex flex-wrap gap-2">
+                  <button type="submit" form="userProfileForm" class="btn btn-primary btn-pill">
+                    <i class="bi bi-check2-circle me-1"></i> Save Profile Changes
+                  </button>
+                  <button type="button" class="btn btn-outline-primary btn-pill" data-target-tab="tab-saved-services">
+                    <i class="bi bi-bookmark-heart me-1"></i> Saved Services
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary btn-pill" data-target-tab="tab-settings">
+                    <i class="bi bi-gear me-1"></i> Security Settings
+                  </button>
+                </div>
               </div>
             </div>
 
             <!-- Saved Properties Section -->
-            <div class="col-lg-5">
-              <div class="p-4 rounded-4 bg-surface border shadow-sm h-100 d-flex flex-column justify-content-between">
+            <div class="col-lg-5 d-flex">
+              <div class="p-4 p-md-5 rounded-4 bg-surface border shadow-sm w-100 h-100 d-flex flex-column justify-content-between">
                 <div>
-                  <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
                     <h5 class="text-primary fw-bold mb-0"><i class="bi bi-building text-info me-2"></i> Saved Properties</h5>
-                    <span class="badge bg-info-subtle text-info">2 Units</span>
+                    <span class="badge bg-info-subtle text-info px-3 py-1 rounded-pill">2 Units</span>
                   </div>
                   
                   <div class="card-custom p-3 mb-3 border">
@@ -345,7 +348,7 @@
                       <span class="badge bg-success-subtle text-success">Active</span>
                     </div>
                     <p class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> 742 Evergreen Terrace, Springfield, OR</p>
-                    <a href="customer-dashboard.html#tab-schedule" class="btn btn-sm btn-outline-primary w-100">
+                    <a href="customer-dashboard.html#tab-schedule" class="btn btn-sm btn-outline-primary btn-pill w-100">
                       <i class="bi bi-calendar-plus me-1"></i> Book Inspection for this Unit
                     </a>
                   </div>
@@ -356,13 +359,13 @@
                       <span class="badge bg-secondary-subtle text-secondary">Tenant Occupied</span>
                     </div>
                     <p class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> 1840 Oakridge Blvd #4B, Springfield, OR</p>
-                    <a href="customer-dashboard.html#tab-schedule" class="btn btn-sm btn-outline-primary w-100">
+                    <a href="customer-dashboard.html#tab-schedule" class="btn btn-sm btn-outline-primary btn-pill w-100">
                       <i class="bi bi-calendar-plus me-1"></i> Book Inspection for this Unit
                     </a>
                   </div>
                 </div>
 
-                <button type="button" class="btn btn-outline-secondary btn-sm w-100 mt-2" onclick="showNotification('Property Added', 'Simulated demo: New property profile added.', 'success')">
+                <button type="button" class="btn btn-outline-primary btn-pill btn-sm w-100 mt-3" onclick="showNotification('Property Added', 'Simulated demo: New property profile added.', 'success')">
                   <i class="bi bi-plus-lg me-1"></i> Add Another Property
                 </button>
               </div>

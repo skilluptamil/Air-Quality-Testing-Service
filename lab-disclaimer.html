@@ -29,7 +29,7 @@
     .legal-content-card h3, 
     .legal-content-card h4,
     .legal-content-card h5 {
-      color: #000000 !important;
+      color: var(--text-primary);
       font-weight: 700;
     }
     .sticky-toc {
@@ -116,13 +116,26 @@
             <li class="nav-item"><a class="nav-link text-nowrap" href="contact.html">Contact Us</a></li>
           </ul>
 
+                    <!-- Right Action Items: Dashboard, Auth, Controls -->
           <div class="nav-actions d-flex align-items-center gap-2 flex-nowrap">
-            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
-            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
-            <a href="login.html" class="btn btn-outline-primary btn-sm px-2 px-xl-3 text-nowrap"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+            <!-- RTL Toggle (Desktop) -->
+            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR">
+              <span class="rtl-badge-text nav-rtl-badge">RTL</span>
+            </button>
 
+            <!-- Dark/Light Mode Toggle (Desktop) -->
+            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme">
+              <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+            </button>
+
+            <!-- Login Primary CTA -->
+            <a href="login.html" class="btn btn-primary btn-sm btn-pill shadow-sm text-nowrap">
+              <i class="bi bi-box-arrow-in-right"></i> Login
+            </a>
+
+            <!-- Dashboard Dropdown -->
             <div class="dropdown">
-              <button class="btn btn-primary btn-sm btn-pill dropdown-toggle shadow-sm text-nowrap" type="button" data-bs-toggle="dropdown">
+              <button class="btn btn-outline-primary btn-sm btn-pill dropdown-toggle text-nowrap" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-speedometer2"></i> Dashboard
               </button>
               <ul class="dropdown-menu dropdown-menu-end shadow-lg">
@@ -174,7 +187,7 @@
           <div class="sticky-toc">
             
             <div class="p-4 rounded-4 bg-surface border mb-4 shadow-sm">
-              <h5 class="fw-bold mb-3" style="color: #000000;"><i class="bi bi-journals text-primary me-2"></i>Scientific Topics</h5>
+              <h5 class="fw-bold mb-3"><i class="bi bi-journals text-primary me-2"></i>Scientific Topics</h5>
               <nav class="d-flex flex-column gap-1">
                 <a href="#lab-accreditation" class="toc-link"><i class="bi bi-chevron-right small me-1"></i> 1. AIHA-LAP &amp; ISO Accreditation</a>
                 <a href="#lab-methodology" class="toc-link"><i class="bi bi-chevron-right small me-1"></i> 2. Spore Enumeration Methodology</a>
@@ -190,7 +203,7 @@
             <div class="p-4 rounded-4 bg-danger-subtle border border-danger border-opacity-25 mb-4">
               <div class="d-flex align-items-center gap-2 mb-2">
                 <i class="bi bi-heart-pulse-fill text-danger fs-4"></i>
-                <h6 class="fw-bold mb-0" style="color: #000000;">Medical Advisory</h6>
+                <h6 class="fw-bold mb-0">Medical Advisory</h6>
               </div>
               <p class="small text-secondary mb-0">
                 AeroPure laboratory reports reflect environmental particulate concentrations and mold fungal structures. They are <strong>not medical diagnoses</strong>. Individuals suffering from allergic reactions, respiratory distress, or immune conditions should consult licensed medical physicians.
@@ -200,7 +213,7 @@
             <!-- Consult Hygienist Card -->
             <div class="p-4 rounded-4 bg-surface border shadow-sm text-center">
               <i class="bi bi-chat-quote-fill text-primary fs-2 mb-2 d-block"></i>
-              <h6 class="fw-bold mb-1" style="color: #000000;">Need Help Interpreting Results?</h6>
+              <h6 class="fw-bold mb-1">Need Help Interpreting Results?</h6>
               <p class="small text-muted mb-3">Schedule a free 15-minute phone consultation with our Senior Certified Industrial Hygienist.</p>
               <a href="contact.html" class="btn btn-outline-primary btn-sm btn-pill w-100">
                 <i class="bi bi-calendar-event me-1"></i> Book Lab Review Session
@@ -249,13 +262,13 @@
             <div class="row g-3 mb-3">
               <div class="col-md-6">
                 <div class="lab-metric-box">
-                  <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-check-circle-fill text-success me-1"></i> Spores Counted (Viable &amp; Non-Viable)</h6>
+                  <h6 class="fw-bold mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Spores Counted (Viable &amp; Non-Viable)</h6>
                   <p class="small text-muted mb-0">Direct microscopy detects both viable (living) and non-viable (dead) spores. Because dead spores still contain allergenic proteins and mycotoxins, optical counting provides complete exposure assessment.</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="lab-metric-box">
-                  <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-info-circle-fill text-info me-1"></i> Genus-Level Classification Groupings</h6>
+                  <h6 class="fw-bold mb-1"><i class="bi bi-info-circle-fill text-info me-1"></i> Genus-Level Classification Groupings</h6>
                   <p class="small text-muted mb-0">Certain fungal spores possess identical optical morphology. For example, <em>Penicillium</em> and <em>Aspergillus</em> cannot be visually differentiated under direct optical microscopy and are grouped as <em>Penicillium/Aspergillus-like</em>.</p>
                 </div>
               </div>
@@ -277,7 +290,7 @@
               Fungi are omnipresent in the natural outdoor environment. A home or commercial building is never expected to be a sterile surgical cleanroom. In every certified inspection, AeroPure gathers simultaneous <strong>outdoor control baseline samples</strong>.
             </p>
             <div class="p-3 rounded-3 bg-body border mb-3">
-              <h6 class="fw-bold mb-2" style="color: #000000;"><i class="bi bi-wind text-primary me-2"></i>Atmospheric Factors Affecting Spore Counts:</h6>
+              <h6 class="fw-bold mb-2"><i class="bi bi-wind text-primary me-2"></i>Atmospheric Factors Affecting Spore Counts:</h6>
               <ul class="text-secondary small mb-0 ps-3 d-flex flex-column gap-1">
                 <li><strong>Wind Gusts &amp; Lawn Mowing:</strong> Recent grass mowing or strong winds can temporarily surge outdoor Cladosporium or Alternaria counts by 10,000+ spores/m&sup3;.</li>
                 <li><strong>Recent Rainfall:</strong> Heavy rain suppresses airborne spore counts during precipitation, followed by a dramatic spike 24-48 hours later as moisture stimulates fungal fruiting bodies.</li>
@@ -298,7 +311,7 @@
               </div>
             </div>
             <div class="alert alert-warning border-0 mb-3">
-              <strong class="d-block mb-1" style="color: #000000;"><i class="bi bi-exclamation-triangle-fill text-warning me-1"></i> Important Legal &amp; Health Disclaimer:</strong>
+              <strong class="d-block mb-1"><i class="bi bi-exclamation-triangle-fill text-warning me-1"></i> Important Legal &amp; Health Disclaimer:</strong>
               <p class="small mb-0 text-dark">
                 AeroPure Environmental Solutions is an environmental diagnostic engineering and remediation company. We are NOT medical doctors, toxicologists, or healthcare providers.
               </p>
@@ -366,13 +379,13 @@
             <div class="row g-3">
               <div class="col-sm-6">
                 <div class="p-3 rounded-3 bg-body border h-100">
-                  <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-speedometer text-primary me-2"></i>Rotameter Field Calibration</h6>
+                  <h6 class="fw-bold mb-1"><i class="bi bi-speedometer text-primary me-2"></i>Rotameter Field Calibration</h6>
                   <p class="small text-muted mb-0">High-volume sampling pumps are calibrated before and after each sample run with NIST-traceable TSI Primary Calibrators.</p>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="p-3 rounded-3 bg-body border h-100">
-                  <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-box-seam-fill text-primary me-2"></i>Field Blanks &amp; Controls</h6>
+                  <h6 class="fw-bold mb-1"><i class="bi bi-box-seam-fill text-primary me-2"></i>Field Blanks &amp; Controls</h6>
                   <p class="small text-muted mb-0">Unopened field blank cassettes are submitted periodically to verify zero transit contamination or cassette manufacturing defects.</p>
                 </div>
               </div>

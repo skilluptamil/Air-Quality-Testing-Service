@@ -27,7 +27,7 @@
       border-color: var(--color-primary);
     }
     .status-card h4, .status-card h5, .status-card h3 {
-      color: #000000 !important;
+      color: var(--text-primary);
       font-weight: 700;
     }
     .pulse-dot {
@@ -111,13 +111,26 @@
             <li class="nav-item"><a class="nav-link text-nowrap" href="contact.html">Contact Us</a></li>
           </ul>
 
+                    <!-- Right Action Items: Dashboard, Auth, Controls -->
           <div class="nav-actions d-flex align-items-center gap-2 flex-nowrap">
-            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR"><span class="rtl-badge-text nav-rtl-badge">RTL</span></button>
-            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
-            <a href="login.html" class="btn btn-outline-primary btn-sm px-2 px-xl-3 text-nowrap"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+            <!-- RTL Toggle (Desktop) -->
+            <button class="nav-control-btn rtl-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle RTL/LTR" title="Switch RTL/LTR">
+              <span class="rtl-badge-text nav-rtl-badge">RTL</span>
+            </button>
 
+            <!-- Dark/Light Mode Toggle (Desktop) -->
+            <button class="nav-control-btn theme-toggle-btn d-none d-lg-inline-flex" aria-label="Toggle Theme" title="Switch Dark/Light Theme">
+              <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+            </button>
+
+            <!-- Login Primary CTA -->
+            <a href="login.html" class="btn btn-primary btn-sm btn-pill shadow-sm text-nowrap">
+              <i class="bi bi-box-arrow-in-right"></i> Login
+            </a>
+
+            <!-- Dashboard Dropdown -->
             <div class="dropdown">
-              <button class="btn btn-primary btn-sm btn-pill dropdown-toggle shadow-sm text-nowrap" type="button" data-bs-toggle="dropdown">
+              <button class="btn btn-outline-primary btn-sm btn-pill dropdown-toggle text-nowrap" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-speedometer2"></i> Dashboard
               </button>
               <ul class="dropdown-menu dropdown-menu-end shadow-lg">
@@ -160,7 +173,7 @@
     <div class="container">
       <div class="text-center max-w-lg mx-auto mb-5">
         <span class="badge-tag badge-primary-soft mb-2">Live Infrastructure Telemetry</span>
-        <h2 class="mb-2" style="color: #000000;">Operational Service Health</h2>
+        <h2 class="mb-2">Operational Service Health</h2>
         <p class="text-muted">Real-time status metrics updated continuously across all regional environmental diagnostic facilities.</p>
       </div>
 
@@ -246,7 +259,7 @@
       <div class="row align-items-center g-4">
         <div class="col-lg-6">
           <span class="badge-tag badge-primary-soft mb-2">Scheduled Maintenance Routine</span>
-          <h2 class="mb-3" style="color: #000000;">Routine Diagnostic System Calibration</h2>
+          <h2 class="mb-3">Routine Diagnostic System Calibration</h2>
           <p class="text-secondary leading-relaxed mb-4">
             To guarantee 100% scientific accuracy and zero data loss, AeroPure performs weekly automated database optimization and laboratory API synchronizations during low-volume hours.
           </p>
@@ -256,7 +269,7 @@
                 <i class="bi bi-clock-history"></i>
               </div>
               <div>
-                <h6 class="fw-bold mb-1" style="color: #000000;">Upcoming Maintenance Window</h6>
+                <h6 class="fw-bold mb-1">Upcoming Maintenance Window</h6>
                 <p class="small text-muted mb-0">Every Sunday from <strong>02:00 AM – 04:00 AM EST</strong>. During this brief 2-hour window, the customer portal remains accessible for viewing existing reports; new test order submissions are queued automatically.</p>
               </div>
             </div>
@@ -267,7 +280,7 @@
                 <i class="bi bi-telephone-inbound-fill"></i>
               </div>
               <div>
-                <h6 class="fw-bold mb-1" style="color: #000000;">Zero Interruption for Emergency Dispatch</h6>
+                <h6 class="fw-bold mb-1">Zero Interruption for Emergency Dispatch</h6>
                 <p class="small text-muted mb-0">Our 24/7 live telephone emergency hotline at <a href="tel:18005557873" class="text-danger fw-bold">(800) 555-PURE</a> and mobile containment vehicles operate independently of cloud servers and are never interrupted.</p>
               </div>
             </div>
@@ -277,7 +290,7 @@
         <div class="col-lg-6">
           <div class="p-4 rounded-4 bg-body border shadow-sm">
             <div class="d-flex align-items-center justify-content-between mb-4">
-              <h5 class="fw-bold mb-0" style="color: #000000;"><i class="bi bi-calendar2-range text-primary me-2"></i>90-Day System Uptime History</h5>
+              <h5 class="fw-bold mb-0"><i class="bi bi-calendar2-range text-primary me-2"></i>90-Day System Uptime History</h5>
               <span class="badge bg-success-subtle text-success">99.98% Overall</span>
             </div>
             
@@ -331,7 +344,7 @@
     <div class="container">
       <div class="text-center max-w-lg mx-auto mb-5">
         <span class="badge-tag badge-primary-soft mb-2">Scientific Quality Assurance</span>
-        <h2 class="mb-2" style="color: #000000;">Field Equipment Maintenance &amp; Calibration</h2>
+        <h2 class="mb-2">Field Equipment Maintenance &amp; Calibration</h2>
         <p class="text-muted">Certified indoor environmental diagnostics require rigorously calibrated diagnostic instrumentation.</p>
       </div>
 
@@ -389,7 +402,7 @@
       <div class="row align-items-center g-4">
         <div class="col-lg-5">
           <span class="badge-tag badge-primary-soft mb-2">Preventive Guidelines</span>
-          <h2 class="mb-3" style="color: #000000;">IAQ &amp; HVAC Facility Maintenance Checklist</h2>
+          <h2 class="mb-3">IAQ &amp; HVAC Facility Maintenance Checklist</h2>
           <p class="text-secondary leading-relaxed mb-4">
             Routine preventive property maintenance is the single most effective defense against toxic mold amplification, high humidity, and airborne dust mite allergens.
           </p>
@@ -402,25 +415,25 @@
           <div class="row g-3">
             <div class="col-md-6">
               <div class="p-3 rounded-3 bg-body border">
-                <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-filter-circle text-primary me-2"></i>Filter Replacements</h6>
+                <h6 class="fw-bold mb-1"><i class="bi bi-filter-circle text-primary me-2"></i>Filter Replacements</h6>
                 <p class="small text-muted mb-0">Replace HVAC filters with MERV 11 to 13 pleated media every 60-90 days (or 30 days in homes with shedding pets or recent remodeling).</p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="p-3 rounded-3 bg-body border">
-                <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-droplet-half text-primary me-2"></i>Relative Humidity Control</h6>
+                <h6 class="fw-bold mb-1"><i class="bi bi-droplet-half text-primary me-2"></i>Relative Humidity Control</h6>
                 <p class="small text-muted mb-0">Maintain indoor relative humidity between 30% and 50%. Relative humidity exceeding 60% triggers rapid fungal germination within 48 hours.</p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="p-3 rounded-3 bg-body border">
-                <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-sun text-primary me-2"></i>UV-C Germicidal Sanitation</h6>
+                <h6 class="fw-bold mb-1"><i class="bi bi-sun text-primary me-2"></i>UV-C Germicidal Sanitation</h6>
                 <p class="small text-muted mb-0">Service in-duct UV-C germicidal air lamps every 12 months to neutralize bacterial biofilms on indoor AC evaporator coils.</p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="p-3 rounded-3 bg-body border">
-                <h6 class="fw-bold mb-1" style="color: #000000;"><i class="bi bi-water text-primary me-2"></i>Sump Pump &amp; Crawlspace</h6>
+                <h6 class="fw-bold mb-1"><i class="bi bi-water text-primary me-2"></i>Sump Pump &amp; Crawlspace</h6>
                 <p class="small text-muted mb-0">Test sump pump float switches and inspect crawlspace 20-mil vapor barriers twice annually before rainy seasonal cycles.</p>
               </div>
             </div>

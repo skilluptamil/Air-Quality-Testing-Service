@@ -22,6 +22,17 @@
   z-index: 1030;
 }
 
+/* Sticky sidebar navigation on desktop viewports */
+@media (min-width: 992px) {
+  .dashboard-sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}
+
 .dashboard-sidebar-header {
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid var(--border-color);
@@ -139,14 +150,14 @@
   border-color: var(--color-primary);
 }
 
-/* Sharp bold black headings for all dashboard headings */
+/* Standardized 600 font weight headings for all dashboard headings */
 .dashboard-topbar h5,
 .dashboard-content-body h4,
 .dashboard-content-body h5,
 .dashboard-content-body h6,
 .dashboard-menu-heading {
-  color: #000000 !important;
-  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
 }
 
 [data-bs-theme="dark"] .dashboard-topbar h5,
